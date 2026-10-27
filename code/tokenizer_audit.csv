@@ -1,0 +1,4 @@
+model_key,hf_id,status,tokenizer_class,vocab_size,probe_sentence_tokens,bn_mean_tpw,bn_mean_strr,bn_mean_tpc,en_mean_tpw,bn_over_en_tpw
+llama32_3b,meta-llama/Llama-3.2-3B-Instruct,ok,TokenizersBackend,128256,61,7.322,0.08,1.348,1.368,5.35
+titullm_1b,hishab/titulm-llama-3.2-1b-v1.1,ok,TokenizersBackend,128256,61,7.322,0.08,1.348,1.368,5.35
+tigerllm_1b,md-nishat-008/TigerLLM-1B-it,ok,GemmaTokenizer,262145,9,1.995,0.257,0.385,1.39,1.44

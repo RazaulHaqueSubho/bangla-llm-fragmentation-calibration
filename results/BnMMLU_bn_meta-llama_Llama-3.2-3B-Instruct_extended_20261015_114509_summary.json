@@ -1,0 +1,315 @@
+{
+  "model_id": "meta-llama/Llama-3.2-3B-Instruct",
+  "mode": "extended",
+  "benchmark": "BnMMLU",
+  "language": "bn",
+  "total_items": 50,
+  "accuracy_percent": 12.0,
+  "subject_accuracy": {
+    "Agricultural Sciences": {
+      "count": 2,
+      "accuracy_percent": 0.0
+    },
+    "Algebra & Number Theory": {
+      "count": 1,
+      "accuracy_percent": 0.0
+    },
+    "Banking & Investment": {
+      "count": 2,
+      "accuracy_percent": 0.0
+    },
+    "Behavioral Psychology": {
+      "count": 1,
+      "accuracy_percent": 0.0
+    },
+    "Bengali Language & Syntax": {
+      "count": 4,
+      "accuracy_percent": 25.0
+    },
+    "Bengali Literature": {
+      "count": 2,
+      "accuracy_percent": 50.0
+    },
+    "Bengali Poetry": {
+      "count": 1,
+      "accuracy_percent": 0.0
+    },
+    "Business Strategy & Management": {
+      "count": 2,
+      "accuracy_percent": 0.0
+    },
+    "Calculus & Analysis": {
+      "count": 1,
+      "accuracy_percent": 0.0
+    },
+    "Cell Biology & Genetics": {
+      "count": 2,
+      "accuracy_percent": 0.0
+    },
+    "Civics & Governance": {
+      "count": 1,
+      "accuracy_percent": 0.0
+    },
+    "Cognitive Psychology": {
+      "count": 1,
+      "accuracy_percent": 0.0
+    },
+    "Comparative Religion": {
+      "count": 1,
+      "accuracy_percent": 0.0
+    },
+    "Conceptual Physics (basic laws)": {
+      "count": 1,
+      "accuracy_percent": 0.0
+    },
+    "Corporate Finance": {
+      "count": 1,
+      "accuracy_percent": 0.0
+    },
+    "Critical Thinking": {
+      "count": 1,
+      "accuracy_percent": 0.0
+    },
+    "Ecology & Environmental Biology": {
+      "count": 1,
+      "accuracy_percent": 0.0
+    },
+    "Economics": {
+      "count": 1,
+      "accuracy_percent": 0.0
+    },
+    "Entrepreneurship": {
+      "count": 3,
+      "accuracy_percent": 33.33333333333333
+    },
+    "Financial Accounting": {
+      "count": 1,
+      "accuracy_percent": 0.0
+    },
+    "Formal Logic": {
+      "count": 1,
+      "accuracy_percent": 100.0
+    },
+    "General Science": {
+      "count": 1,
+      "accuracy_percent": 0.0
+    },
+    "Geography": {
+      "count": 1,
+      "accuracy_percent": 0.0
+    },
+    "Global Facts & Current Affairs": {
+      "count": 1,
+      "accuracy_percent": 0.0
+    },
+    "History & Culture (Bangladesh/World basics)": {
+      "count": 2,
+      "accuracy_percent": 0.0
+    },
+    "Human Biology & Anatomy": {
+      "count": 1,
+      "accuracy_percent": 0.0
+    },
+    "Inorganic Chemistry": {
+      "count": 1,
+      "accuracy_percent": 0.0
+    },
+    "Mechanics": {
+      "count": 1,
+      "accuracy_percent": 0.0
+    },
+    "Miscellaneous GK (sports, arts, pop culture)": {
+      "count": 1,
+      "accuracy_percent": 0.0
+    },
+    "Moral & Ethical Studies": {
+      "count": 1,
+      "accuracy_percent": 0.0
+    },
+    "Networking & Security": {
+      "count": 1,
+      "accuracy_percent": 0.0
+    },
+    "Organic Chemistry": {
+      "count": 1,
+      "accuracy_percent": 0.0
+    },
+    "Physical & Analytical Chemistry": {
+      "count": 1,
+      "accuracy_percent": 0.0
+    },
+    "Production & Operations": {
+      "count": 2,
+      "accuracy_percent": 0.0
+    },
+    "Programming & Algorithms": {
+      "count": 1,
+      "accuracy_percent": 100.0
+    },
+    "Relativity & Modern Physics": {
+      "count": 1,
+      "accuracy_percent": 0.0
+    },
+    "Statistics: Probability & Inference": {
+      "count": 1,
+      "accuracy_percent": 100.0
+    },
+    "Thermodynamics & Electromagnetism": {
+      "count": 1,
+      "accuracy_percent": 0.0
+    }
+  },
+  "calibration_metrics": {
+    "sample_size": 50,
+    "accuracy": 0.12,
+    "mean_confidence": 0.504888983577208,
+    "ece_uniform_10": 0.3848889835772081,
+    "ece_quantile_10": 0.38488898357720813,
+    "mce": 0.7599575639792585,
+    "brier_score": 0.2734607191625756,
+    "multiclass_brier_score": 0.9521618654622608,
+    "nll": 1.7881011096754276,
+    "bins": [
+      {
+        "bin_index": 0,
+        "bin_lower": 0.0,
+        "bin_upper": 0.1,
+        "sample_count": 0,
+        "sample_fraction": 0.0,
+        "mean_confidence": 0.05,
+        "accuracy": 0.0,
+        "calibration_gap": 0.0
+      },
+      {
+        "bin_index": 1,
+        "bin_lower": 0.1,
+        "bin_upper": 0.2,
+        "sample_count": 0,
+        "sample_fraction": 0.0,
+        "mean_confidence": 0.15000000000000002,
+        "accuracy": 0.0,
+        "calibration_gap": 0.0
+      },
+      {
+        "bin_index": 2,
+        "bin_lower": 0.2,
+        "bin_upper": 0.30000000000000004,
+        "sample_count": 1,
+        "sample_fraction": 0.02,
+        "mean_confidence": 0.294129067157223,
+        "accuracy": 0.0,
+        "calibration_gap": 0.294129067157223
+      },
+      {
+        "bin_index": 3,
+        "bin_lower": 0.30000000000000004,
+        "bin_upper": 0.4,
+        "sample_count": 16,
+        "sample_fraction": 0.32,
+        "mean_confidence": 0.368870349549974,
+        "accuracy": 0.125,
+        "calibration_gap": 0.243870349549974
+      },
+      {
+        "bin_index": 4,
+        "bin_lower": 0.4,
+        "bin_upper": 0.5,
+        "sample_count": 7,
+        "sample_fraction": 0.14,
+        "mean_confidence": 0.4447662918257116,
+        "accuracy": 0.0,
+        "calibration_gap": 0.4447662918257116
+      },
+      {
+        "bin_index": 5,
+        "bin_lower": 0.5,
+        "bin_upper": 0.6000000000000001,
+        "sample_count": 14,
+        "sample_fraction": 0.28,
+        "mean_confidence": 0.5526377275553362,
+        "accuracy": 0.21428571428571427,
+        "calibration_gap": 0.33835201326962194
+      },
+      {
+        "bin_index": 6,
+        "bin_lower": 0.6000000000000001,
+        "bin_upper": 0.7000000000000001,
+        "sample_count": 8,
+        "sample_fraction": 0.16,
+        "mean_confidence": 0.6447840043039841,
+        "accuracy": 0.125,
+        "calibration_gap": 0.5197840043039841
+      },
+      {
+        "bin_index": 7,
+        "bin_lower": 0.7000000000000001,
+        "bin_upper": 0.8,
+        "sample_count": 4,
+        "sample_fraction": 0.08,
+        "mean_confidence": 0.7599575639792585,
+        "accuracy": 0.0,
+        "calibration_gap": 0.7599575639792585
+      },
+      {
+        "bin_index": 8,
+        "bin_lower": 0.8,
+        "bin_upper": 0.9,
+        "sample_count": 0,
+        "sample_fraction": 0.0,
+        "mean_confidence": 0.8500000000000001,
+        "accuracy": 0.0,
+        "calibration_gap": 0.0
+      },
+      {
+        "bin_index": 9,
+        "bin_lower": 0.9,
+        "bin_upper": 1.0,
+        "sample_count": 0,
+        "sample_fraction": 0.0,
+        "mean_confidence": 0.95,
+        "accuracy": 0.0,
+        "calibration_gap": 0.0
+      }
+    ]
+  },
+  "fragmentation_stats": {
+    "overall_tpw": {
+      "mean": 3.0466153080517335,
+      "std": 2.13756743586243,
+      "median": 2.4869281045751634,
+      "min": 1.3157894736842106,
+      "max": 11.9
+    },
+    "overall_strr": {
+      "mean": 0.24831054523507912,
+      "std": 0.21640902871559697,
+      "median": 0.2,
+      "min": 0.0,
+      "max": 0.7777777777777778
+    },
+    "overall_tpc": {
+      "mean": 0.4397205259679412,
+      "std": 0.06757952191145736,
+      "median": 0.4571184659837142,
+      "min": 0.2486111111111111,
+      "max": 0.5952380952380952
+    }
+  },
+  "stratified_by_tpw_median": {
+    "tpw_median_split_threshold": 2.4869281045751634,
+    "low_fragmentation": {
+      "count": 25,
+      "mean_tpw": 2.0259407939545127,
+      "accuracy_percent": 12.0,
+      "ece_uniform_10": 0.38061099821598804,
+      "brier_score": 0.2805372444875522
+    },
+    "high_fragmentation": {
+      "count": 25,
+      "mean_tpw": 4.067289822148956,
+      "accuracy_percent": 12.0,
+      "ece_uniform_10": 0.38916696893842817,
+      "brier_score": 0.26638419383759887
+    }
+  }
+}
