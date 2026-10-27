@@ -2,6 +2,20 @@
 
 Evaluating small LLMs on Bangla multiple-choice questions (BnMMLU), looking at accuracy and how well calibrated the models are.
 
+In this project I tested how well some small LLMs answer Bangla multiple choice questions, and also how much they can trust their own answers (calibration).
+
+## What I did
+
+I took the BnMMLU dataset (134,382 questions, 4 options each) and ran three models on all of it:
+
+Llama-3.2-3B-Instruct
+TituLLM-1B v2.0
+TigerLLM-1B-it
+
+All three got the same questions in the same order and the same prompt, so the numbers can be compared fairly.
+
+Dataset: https://huggingface.co/datasets/samanjoy2/BnMMLU
+
 ## What this repo does
 
 Runs three models on the full BnMMLU dataset (134,382 questions) with the same pipeline:
