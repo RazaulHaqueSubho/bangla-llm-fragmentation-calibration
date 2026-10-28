@@ -12,9 +12,9 @@ bangla-llm-fragmentation-calibration
 └── src
     ├── data
     │   └── full
-    │       ├── bnmmlu_full_failed.csv                                  # contains the dataset which was failed to translate
-    │       ├── bnmmlu_translated_to_en_from_0k_to_70k_dataset.csv      # contains the dataset which successfully translated from 0k to 70k
-    │       └── bnmmlu_translated_to_en_from_70k_to_134k_dataset.csv    # contains the dataset which successfully translated from 70k to 134k
+    │       ├── bnmmlu_full_failed.csv                                  # contains the dataset [full] which was failed to translate
+    │       ├── bnmmlu_translated_to_en_from_0k_to_70k_dataset.csv      # contains the dataset [full] which successfully translated from 0k to 70k
+    │       └── bnmmlu_translated_to_en_from_70k_to_134k_dataset.csv    # contains the dataset [full] which successfully translated from 70k to 134k
     ├── docs
     │   └── bnmmlu_dataset_translation_from_bn_to_en.md                 # we are here! in the markdown file!
     └── notebook
@@ -29,4 +29,3 @@ bangla-llm-fragmentation-calibration
             └── bangla_to_english_translation.py                        # marimo notebook that enables this translation or source pipeline
 
 ```
-
