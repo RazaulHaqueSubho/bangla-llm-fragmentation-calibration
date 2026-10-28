@@ -1,0 +1,16 @@
+{
+  "dataset": "samanjoy2/BnMMLU",
+  "config": "full",
+  "dataset_sha": "6e4c8d165855cd61387a2f72937336eaadc8212e",
+  "source_split_counts": {
+    "train": 134382
+  },
+  "source_rows": 134382,
+  "valid_rows": 134375,
+  "invalid_rows": 7,
+  "unique_question_groups": 128595,
+  "repeated_question_rows": 9853,
+  "conflicting_answer_rows": 6086,
+  "sampled": false,
+  "deduplicated": false
+}
