@@ -1,0 +1,7 @@
+model,precision,status,source_rows,valid_rows,scored_rows,invalid_source_rows,context_exceeded_rows,failed_rows,pending_rows,coverage_source,processing_complete,all_source_rows_scored,detail
+Qwen/Qwen2.5-1.5B-Instruct,fp16,complete,134382,134375,134375,7,0,0,0,0.9999479096902859,True,False,All pending rows attempted; check per-row coverage and errors.
+HuggingFaceTB/SmolLM2-1.7B-Instruct,fp16,complete,134382,134375,134375,7,0,0,0,0.9999479096902859,True,False,All pending rows attempted; check per-row coverage and errors.
+hishab/titulm-llama-3.2-3b-v2.0,fp16,complete,134382,134375,134375,7,0,0,0,0.9999479096902859,True,False,All pending rows attempted; check per-row coverage and errors.
+md-nishat-008/TigerLLM-1B-it,fp32,complete,134382,134375,134375,7,0,0,0,0.9999479096902859,True,False,All pending rows attempted; check per-row coverage and errors.
+meta-llama/Llama-3.2-3B-Instruct,fp16,complete,134382,134375,134375,7,0,0,0,0.9999479096902859,True,False,All pending rows attempted; check per-row coverage and errors.
+mistralai/Mixtral-8x7B-Instruct-v0.1,nf4,resource_blocked,134382,134375,0,7,0,0,134375,0.0,False,False,ResourceBlocked: mixtral_8x7b: need at least 26 GiB free GPU memory; available=19.2 GiB. Mixtral requires multiple sufficiently large GPUs.
