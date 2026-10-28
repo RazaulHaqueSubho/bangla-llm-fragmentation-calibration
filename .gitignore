@@ -218,3 +218,19 @@ __marimo__/
 
 # Streamlit
 .streamlit/secrets.toml
+
+# Bangla LLM Calibration project-specific
+.env
+*.env
+local_settings.py
+.venv/
+env/
+venv/
+ENV/
+.ipynb_checkpoints
+.DS_Store
+Thumbs.db
+# Local model / dataset caches (regenerated, not committed)
+.hf_cache/
+hf_cache/
+.cache/

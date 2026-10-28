@@ -1,0 +1,337 @@
+{
+  "dataset_summary": {
+    "total_analyzed_items": 50,
+    "languages": [
+      "bn"
+    ],
+    "models": [
+      "meta-llama/Llama-3.2-3B-Instruct"
+    ],
+    "mean_accuracy": 0.12,
+    "mean_confidence": 0.504888983577208,
+    "mean_calibration_residual": 0.506380687806387
+  },
+  "correlations": {
+    "tpw": {
+      "metric": "tpw",
+      "sample_size": 50,
+      "calibration_residual": {
+        "pearson_r": -0.040850056048850635,
+        "pearson_pvalue": 0.7782002808462818,
+        "spearman_rho": 0.046921525796780626,
+        "spearman_pvalue": 0.7462622568749847
+      },
+      "accuracy": {
+        "pearson_r": -0.09245209816999374,
+        "pearson_pvalue": 0.5231026357603613,
+        "spearman_rho": -0.04692030095889994,
+        "spearman_pvalue": 0.746268659561747
+      },
+      "confidence": {
+        "pearson_r": -0.034998616462552534,
+        "pearson_pvalue": 0.809328776966015,
+        "spearman_rho": 0.07463260090910653,
+        "spearman_pvalue": 0.6064805830951085
+      }
+    },
+    "strr": {
+      "metric": "strr",
+      "sample_size": 50,
+      "calibration_residual": {
+        "pearson_r": -0.1258274999597606,
+        "pearson_pvalue": 0.3839186995121461,
+        "spearman_rho": -0.07293559151493943,
+        "spearman_pvalue": 0.6147115894691622
+      },
+      "accuracy": {
+        "pearson_r": 0.09260467381800634,
+        "pearson_pvalue": 0.5224141467486622,
+        "spearman_rho": 0.11109747736793507,
+        "spearman_pvalue": 0.4424333886428266
+      },
+      "confidence": {
+        "pearson_r": -0.09811158513990534,
+        "pearson_pvalue": 0.49787007217696627,
+        "spearman_rho": -0.11676430119179287,
+        "spearman_pvalue": 0.41935945688257403
+      }
+    }
+  },
+  "stratified_calibration": {
+    "tpw_median_split": {
+      "threshold": 2.4869281045751634,
+      "low_frag": {
+        "sample_size": 25,
+        "accuracy": 0.12,
+        "mean_confidence": 0.500610998215988,
+        "ece_uniform_10": 0.38061099821598804,
+        "ece_quantile_10": 0.385695985428289,
+        "mce": 0.7746871778006131,
+        "brier_score": 0.2805372444875522,
+        "multiclass_brier_score": NaN,
+        "nll": NaN,
+        "bins": [
+          {
+            "bin_index": 0,
+            "bin_lower": 0.0,
+            "bin_upper": 0.1,
+            "sample_count": 0,
+            "sample_fraction": 0.0,
+            "mean_confidence": 0.05,
+            "accuracy": 0.0,
+            "calibration_gap": 0.0
+          },
+          {
+            "bin_index": 1,
+            "bin_lower": 0.1,
+            "bin_upper": 0.2,
+            "sample_count": 0,
+            "sample_fraction": 0.0,
+            "mean_confidence": 0.15000000000000002,
+            "accuracy": 0.0,
+            "calibration_gap": 0.0
+          },
+          {
+            "bin_index": 2,
+            "bin_lower": 0.2,
+            "bin_upper": 0.30000000000000004,
+            "sample_count": 1,
+            "sample_fraction": 0.04,
+            "mean_confidence": 0.294129067157223,
+            "accuracy": 0.0,
+            "calibration_gap": 0.294129067157223
+          },
+          {
+            "bin_index": 3,
+            "bin_lower": 0.30000000000000004,
+            "bin_upper": 0.4,
+            "sample_count": 8,
+            "sample_fraction": 0.32,
+            "mean_confidence": 0.36516353773329,
+            "accuracy": 0.25,
+            "calibration_gap": 0.11516353773329002
+          },
+          {
+            "bin_index": 4,
+            "bin_lower": 0.4,
+            "bin_upper": 0.5,
+            "sample_count": 3,
+            "sample_fraction": 0.12,
+            "mean_confidence": 0.42838862670443284,
+            "accuracy": 0.0,
+            "calibration_gap": 0.42838862670443284
+          },
+          {
+            "bin_index": 5,
+            "bin_lower": 0.5,
+            "bin_upper": 0.6000000000000001,
+            "sample_count": 7,
+            "sample_fraction": 0.28,
+            "mean_confidence": 0.5599410056305897,
+            "accuracy": 0.0,
+            "calibration_gap": 0.5599410056305897
+          },
+          {
+            "bin_index": 6,
+            "bin_lower": 0.6000000000000001,
+            "bin_upper": 0.7000000000000001,
+            "sample_count": 4,
+            "sample_fraction": 0.16,
+            "mean_confidence": 0.6364275778118762,
+            "accuracy": 0.25,
+            "calibration_gap": 0.3864275778118762
+          },
+          {
+            "bin_index": 7,
+            "bin_lower": 0.7000000000000001,
+            "bin_upper": 0.8,
+            "sample_count": 2,
+            "sample_fraction": 0.08,
+            "mean_confidence": 0.7746871778006131,
+            "accuracy": 0.0,
+            "calibration_gap": 0.7746871778006131
+          },
+          {
+            "bin_index": 8,
+            "bin_lower": 0.8,
+            "bin_upper": 0.9,
+            "sample_count": 0,
+            "sample_fraction": 0.0,
+            "mean_confidence": 0.8500000000000001,
+            "accuracy": 0.0,
+            "calibration_gap": 0.0
+          },
+          {
+            "bin_index": 9,
+            "bin_lower": 0.9,
+            "bin_upper": 1.0,
+            "sample_count": 0,
+            "sample_fraction": 0.0,
+            "mean_confidence": 0.95,
+            "accuracy": 0.0,
+            "calibration_gap": 0.0
+          }
+        ]
+      },
+      "high_frag": {
+        "sample_size": 25,
+        "accuracy": 0.12,
+        "mean_confidence": 0.5091669689384282,
+        "ece_uniform_10": 0.38916696893842817,
+        "ece_quantile_10": 0.467658118886384,
+        "mce": 0.7452279501579038,
+        "brier_score": 0.26638419383759887,
+        "multiclass_brier_score": NaN,
+        "nll": NaN,
+        "bins": [
+          {
+            "bin_index": 0,
+            "bin_lower": 0.0,
+            "bin_upper": 0.1,
+            "sample_count": 0,
+            "sample_fraction": 0.0,
+            "mean_confidence": 0.05,
+            "accuracy": 0.0,
+            "calibration_gap": 0.0
+          },
+          {
+            "bin_index": 1,
+            "bin_lower": 0.1,
+            "bin_upper": 0.2,
+            "sample_count": 0,
+            "sample_fraction": 0.0,
+            "mean_confidence": 0.15000000000000002,
+            "accuracy": 0.0,
+            "calibration_gap": 0.0
+          },
+          {
+            "bin_index": 2,
+            "bin_lower": 0.2,
+            "bin_upper": 0.30000000000000004,
+            "sample_count": 0,
+            "sample_fraction": 0.0,
+            "mean_confidence": 0.25,
+            "accuracy": 0.0,
+            "calibration_gap": 0.0
+          },
+          {
+            "bin_index": 3,
+            "bin_lower": 0.30000000000000004,
+            "bin_upper": 0.4,
+            "sample_count": 8,
+            "sample_fraction": 0.32,
+            "mean_confidence": 0.372577161366658,
+            "accuracy": 0.0,
+            "calibration_gap": 0.372577161366658
+          },
+          {
+            "bin_index": 4,
+            "bin_lower": 0.4,
+            "bin_upper": 0.5,
+            "sample_count": 4,
+            "sample_fraction": 0.16,
+            "mean_confidence": 0.4570495406666706,
+            "accuracy": 0.0,
+            "calibration_gap": 0.4570495406666706
+          },
+          {
+            "bin_index": 5,
+            "bin_lower": 0.5,
+            "bin_upper": 0.6000000000000001,
+            "sample_count": 7,
+            "sample_fraction": 0.28,
+            "mean_confidence": 0.5453344494800829,
+            "accuracy": 0.42857142857142855,
+            "calibration_gap": 0.11676302090865437
+          },
+          {
+            "bin_index": 6,
+            "bin_lower": 0.6000000000000001,
+            "bin_upper": 0.7000000000000001,
+            "sample_count": 4,
+            "sample_fraction": 0.16,
+            "mean_confidence": 0.6531404307960923,
+            "accuracy": 0.0,
+            "calibration_gap": 0.6531404307960923
+          },
+          {
+            "bin_index": 7,
+            "bin_lower": 0.7000000000000001,
+            "bin_upper": 0.8,
+            "sample_count": 2,
+            "sample_fraction": 0.08,
+            "mean_confidence": 0.7452279501579038,
+            "accuracy": 0.0,
+            "calibration_gap": 0.7452279501579038
+          },
+          {
+            "bin_index": 8,
+            "bin_lower": 0.8,
+            "bin_upper": 0.9,
+            "sample_count": 0,
+            "sample_fraction": 0.0,
+            "mean_confidence": 0.8500000000000001,
+            "accuracy": 0.0,
+            "calibration_gap": 0.0
+          },
+          {
+            "bin_index": 9,
+            "bin_lower": 0.9,
+            "bin_upper": 1.0,
+            "sample_count": 0,
+            "sample_fraction": 0.0,
+            "mean_confidence": 0.95,
+            "accuracy": 0.0,
+            "calibration_gap": 0.0
+          }
+        ]
+      }
+    }
+  },
+  "regression": {
+    "tpw_model": {
+      "status": "success",
+      "formula": "calibration_residual ~ frag_std + is_correct",
+      "sample_size": 50,
+      "r_squared": 0.0016868953073723159,
+      "r_squared_adj": -0.04079451340295237,
+      "f_statistic": 0.05594600226761843,
+      "se_type": "clustered_by_subject",
+      "coefficients": {
+        "Intercept": {
+          "coef": 0.5065870336384166,
+          "std_err": 0.019441420906511096,
+          "pvalue": 1.1178640937348938e-149,
+          "ci_lower_95": 0.4684825488533708,
+          "ci_upper_95": 0.5446915184234624
+        },
+        "frag_std": {
+          "coef": -0.005438673890394482,
+          "std_err": 0.016278455999792836,
+          "pvalue": 0.7383021652107564,
+          "ci_lower_95": -0.037343861373908396,
+          "ci_upper_95": 0.026466513593119436
+        },
+        "is_correct": {
+          "coef": -0.001719548600246562,
+          "std_err": 0.04636713445600213,
+          "pvalue": 0.9704168293521298,
+          "ci_lower_95": -0.09259746220033693,
+          "ci_upper_95": 0.08915836499984381
+        }
+      },
+      "summary_text": "                             OLS Regression Results                             \n================================================================================\nDep. Variable:     calibration_residual   R-squared:                       0.002\nModel:                              OLS   Adj. R-squared:                 -0.041\nMethod:                   Least Squares   F-statistic:                   0.05595\nDate:                  Thu, 15 Oct 2026   Prob (F-statistic):              0.946\nTime:                          11:46:19   Log-Likelihood:                 30.901\nNo. Observations:                    50   AIC:                            -55.80\nDf Residuals:                        47   BIC:                            -50.07\nDf Model:                             2                                         \nCovariance Type:                cluster                                         \n==============================================================================\n                 coef    std err          z      P>|z|      [0.025      0.975]\n------------------------------------------------------------------------------\nIntercept      0.5066      0.019     26.057      0.000       0.468       0.545\nfrag_std      -0.0054      0.016     -0.334      0.738      -0.037       0.026\nis_correct    -0.0017      0.046     -0.037      0.970      -0.093       0.089\n==============================================================================\nOmnibus:                        4.987   Durbin-Watson:                   2.455\nProb(Omnibus):                  0.083   Jarque-Bera (JB):                2.861\nSkew:                           0.369   Prob(JB):                        0.239\nKurtosis:                       2.090   Cond. No.                         3.14\n==============================================================================\n\nNotes:\n[1] Standard Errors are robust to cluster correlation (CRV1)"
+    }
+  },
+  "multicollinearity_vif": {
+    "tpw": 1.0086210781773683,
+    "is_correct": 1.0086210781773681
+  },
+  "sensitivity_analysis": {
+    "incorrect_items_tpw_vs_overconfidence": {
+      "n": 44,
+      "pearson_r": -0.04128215165307632,
+      "pvalue": 0.7901891893443946
+    }
+  }
+}

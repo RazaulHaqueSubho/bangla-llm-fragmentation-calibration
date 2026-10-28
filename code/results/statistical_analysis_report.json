@@ -1,0 +1,4342 @@
+{
+  "dataset_summary": {
+    "total_analyzed_items": 180,
+    "models": [
+      "llama32_3b",
+      "titullm_1b",
+      "tigerllm_1b"
+    ],
+    "languages": [
+      "bn",
+      "en"
+    ],
+    "mean_accuracy": 0.21666666666666667,
+    "mean_confidence": 0.5056234293777173,
+    "mean_calibration_residual": 0.5033570111366966
+  },
+  "within_model_results": {
+    "llama32_3b_bn": {
+      "model_key": "llama32_3b",
+      "language": "bn",
+      "sample_size": 30,
+      "accuracy": 20.0,
+      "mean_tpw": 1.0769230769230769,
+      "mean_strr": 0.9230769230769232,
+      "mean_tpc": 0.28769841269841273,
+      "calibration": {
+        "sample_size": 30,
+        "accuracy": 0.2,
+        "mean_confidence": 0.516016043370382,
+        "ece_uniform_10": 0.3160160433703821,
+        "ece_quantile_10": 0.31601604337038214,
+        "mce": 0.7525630447845439,
+        "brier_score": 0.2638728068209036,
+        "multiclass_brier_score": 0.9701522014615838,
+        "nll": 2.060011946835077
+      },
+      "mass_filtered_calibration": {
+        "n_mass_filtered": 30,
+        "share_mass_filtered_out": 0.0,
+        "ece_mass_filtered": 0.3160160433703821,
+        "brier_mass_filtered": 0.2638728068209036
+      },
+      "bootstrap_ci": {
+        "ece_ci_95": [
+          0.18142177957066236,
+          0.4461430496606795
+        ],
+        "brier_ci_95": [
+          0.2221357560686681,
+          0.3062623137527564
+        ]
+      },
+      "correlations": {
+        "tpw": {
+          "metric": "tpw",
+          "sample_size": 30,
+          "status": "insufficient_data"
+        },
+        "strr": {
+          "metric": "strr",
+          "sample_size": 30,
+          "status": "insufficient_data"
+        },
+        "tpc": {
+          "metric": "tpc",
+          "sample_size": 30,
+          "calibration_residual": {
+            "pearson_r": 0.2036571022202496,
+            "pearson_pvalue": 0.2803913749506026,
+            "spearman_rho": 0.08986456253471144,
+            "spearman_pvalue": 0.6367474705675951
+          },
+          "accuracy": {
+            "pearson_r": -0.17677669529663692,
+            "pearson_pvalue": 0.3500501379643915,
+            "spearman_rho": -0.17677669529663687,
+            "spearman_pvalue": 0.35005013796439177
+          },
+          "confidence": {
+            "pearson_r": 0.05472835611365259,
+            "pearson_pvalue": 0.7739304410875982,
+            "spearman_rho": -0.05718653979481637,
+            "spearman_pvalue": 0.7640551976790051
+          }
+        }
+      },
+      "h2_models": {
+        "tpw": {
+          "status": "success",
+          "metric": "tpw",
+          "length_column": "total_tokens",
+          "sample_size": 30,
+          "n_clusters": 3,
+          "few_clusters_cluster_SE_unreliable": true,
+          "vif": NaN,
+          "models": {
+            "M1_confidence": {
+              "formula": "confidence ~ frag_z + length_z + C(subject_norm)",
+              "r_squared": 0.019808618949922807,
+              "coef": 0.0,
+              "std_err": 0.0,
+              "pvalue": NaN,
+              "ci_95": [
+                0.0,
+                0.0
+              ],
+              "hc3_std_err": 0.0,
+              "hc3_pvalue": NaN,
+              "hc3_ci_95": [
+                0.0,
+                0.0
+              ],
+              "holm_pvalue": NaN
+            },
+            "M2_is_correct": {
+              "formula": "is_correct ~ frag_z + length_z + C(subject_norm)",
+              "r_squared": 0.0,
+              "coef": 0.0,
+              "std_err": 0.0,
+              "pvalue": NaN,
+              "ci_95": [
+                0.0,
+                0.0
+              ],
+              "hc3_std_err": 0.0,
+              "hc3_pvalue": NaN,
+              "hc3_ci_95": [
+                0.0,
+                0.0
+              ],
+              "holm_pvalue": NaN
+            },
+            "M3_overconfidence": {
+              "formula": "overconfidence ~ frag_z + length_z + C(subject_norm)",
+              "r_squared": 0.0014906225095279169,
+              "coef": 0.0,
+              "std_err": 0.0,
+              "pvalue": NaN,
+              "ci_95": [
+                0.0,
+                0.0
+              ],
+              "hc3_std_err": 0.0,
+              "hc3_pvalue": NaN,
+              "hc3_ci_95": [
+                0.0,
+                0.0
+              ],
+              "holm_pvalue": NaN
+            },
+            "M4_confidence_cond": {
+              "formula": "confidence ~ frag_z + is_correct + length_z + C(subject_norm)",
+              "r_squared": 0.028604101318104647,
+              "coef": 0.0,
+              "std_err": 0.0,
+              "pvalue": NaN,
+              "ci_95": [
+                0.0,
+                0.0
+              ],
+              "hc3_std_err": 0.0,
+              "hc3_pvalue": NaN,
+              "hc3_ci_95": [
+                0.0,
+                0.0
+              ]
+            }
+          }
+        },
+        "strr": {
+          "status": "success",
+          "metric": "strr",
+          "length_column": "total_tokens",
+          "sample_size": 30,
+          "n_clusters": 3,
+          "few_clusters_cluster_SE_unreliable": true,
+          "vif": NaN,
+          "models": {
+            "M1_confidence": {
+              "formula": "confidence ~ frag_z + length_z + C(subject_norm)",
+              "r_squared": 0.019808618949922807,
+              "coef": 0.0,
+              "std_err": 0.0,
+              "pvalue": NaN,
+              "ci_95": [
+                0.0,
+                0.0
+              ],
+              "hc3_std_err": 0.0,
+              "hc3_pvalue": NaN,
+              "hc3_ci_95": [
+                0.0,
+                0.0
+              ],
+              "holm_pvalue": NaN
+            },
+            "M2_is_correct": {
+              "formula": "is_correct ~ frag_z + length_z + C(subject_norm)",
+              "r_squared": 0.0,
+              "coef": 0.0,
+              "std_err": 0.0,
+              "pvalue": NaN,
+              "ci_95": [
+                0.0,
+                0.0
+              ],
+              "hc3_std_err": 0.0,
+              "hc3_pvalue": NaN,
+              "hc3_ci_95": [
+                0.0,
+                0.0
+              ],
+              "holm_pvalue": NaN
+            },
+            "M3_overconfidence": {
+              "formula": "overconfidence ~ frag_z + length_z + C(subject_norm)",
+              "r_squared": 0.0014906225095279169,
+              "coef": 0.0,
+              "std_err": 0.0,
+              "pvalue": NaN,
+              "ci_95": [
+                0.0,
+                0.0
+              ],
+              "hc3_std_err": 0.0,
+              "hc3_pvalue": NaN,
+              "hc3_ci_95": [
+                0.0,
+                0.0
+              ],
+              "holm_pvalue": NaN
+            },
+            "M4_confidence_cond": {
+              "formula": "confidence ~ frag_z + is_correct + length_z + C(subject_norm)",
+              "r_squared": 0.028604101318104647,
+              "coef": 0.0,
+              "std_err": 0.0,
+              "pvalue": NaN,
+              "ci_95": [
+                0.0,
+                0.0
+              ],
+              "hc3_std_err": 0.0,
+              "hc3_pvalue": NaN,
+              "hc3_ci_95": [
+                0.0,
+                0.0
+              ]
+            }
+          }
+        },
+        "tpc": {
+          "status": "success",
+          "metric": "tpc",
+          "length_column": "total_tokens",
+          "sample_size": 30,
+          "n_clusters": 3,
+          "few_clusters_cluster_SE_unreliable": true,
+          "vif": NaN,
+          "models": {
+            "M1_confidence": {
+              "formula": "confidence ~ frag_z + length_z + C(subject_norm)",
+              "r_squared": 0.023435062749435964,
+              "coef": 0.006838675507582475,
+              "std_err": 0.034502665922176545,
+              "pvalue": 0.8428829838755002,
+              "ci_95": [
+                -0.060785307070501005,
+                0.07446265808566596
+              ],
+              "hc3_std_err": 0.02779395330118997,
+              "hc3_pvalue": 0.805644271238533,
+              "hc3_ci_95": [
+                -0.047636471950738,
+                0.06131382296590296
+              ],
+              "holm_pvalue": 1.0
+            },
+            "M2_is_correct": {
+              "formula": "is_correct ~ frag_z + length_z + C(subject_norm)",
+              "r_squared": 0.03156565656565713,
+              "coef": -0.0726459547705128,
+              "std_err": 0.08493609301312227,
+              "pvalue": 0.3923843419884194,
+              "ci_95": [
+                -0.2391176380637766,
+                0.09382572852275098
+              ],
+              "hc3_std_err": 0.07964529874097193,
+              "hc3_pvalue": 0.36170631187130764,
+              "hc3_ci_95": [
+                -0.2287478718407511,
+                0.08345596229972549
+              ],
+              "holm_pvalue": 1.0
+            },
+            "M3_overconfidence": {
+              "formula": "overconfidence ~ frag_z + length_z + C(subject_norm)",
+              "r_squared": 0.03835583584515423,
+              "coef": 0.07948463027809527,
+              "std_err": 0.07572064003448818,
+              "pvalue": 0.29385196742880304,
+              "ci_95": [
+                -0.06892509707582331,
+                0.22789435763201385
+              ],
+              "hc3_std_err": 0.08547602159052528,
+              "hc3_pvalue": 0.35241996852122603,
+              "hc3_ci_95": [
+                -0.08804529358110236,
+                0.2470145541372929
+              ],
+              "holm_pvalue": 1.0
+            },
+            "M4_confidence_cond": {
+              "formula": "confidence ~ frag_z + is_correct + length_z + C(subject_norm)",
+              "r_squared": 0.034707659871167196,
+              "coef": 0.00901546201403973,
+              "std_err": 0.03465397091087706,
+              "pvalue": 0.7947429184727572,
+              "ci_95": [
+                -0.058905072892578,
+                0.07693599692065746
+              ],
+              "hc3_std_err": 0.02853696363927037,
+              "hc3_pvalue": 0.7520615163953477,
+              "hc3_ci_95": [
+                -0.04691595894705927,
+                0.06494688297513873
+              ]
+            }
+          }
+        },
+        "strr_ctx": {
+          "status": "success",
+          "metric": "strr_ctx",
+          "length_column": "total_tokens",
+          "sample_size": 30,
+          "n_clusters": 3,
+          "few_clusters_cluster_SE_unreliable": true,
+          "vif": NaN,
+          "models": {
+            "M1_confidence": {
+              "formula": "confidence ~ frag_z + length_z + C(subject_norm)",
+              "r_squared": 0.019808618949922807,
+              "coef": 0.0,
+              "std_err": 0.0,
+              "pvalue": NaN,
+              "ci_95": [
+                0.0,
+                0.0
+              ],
+              "hc3_std_err": 0.0,
+              "hc3_pvalue": NaN,
+              "hc3_ci_95": [
+                0.0,
+                0.0
+              ],
+              "holm_pvalue": NaN
+            },
+            "M2_is_correct": {
+              "formula": "is_correct ~ frag_z + length_z + C(subject_norm)",
+              "r_squared": 0.0,
+              "coef": 0.0,
+              "std_err": 0.0,
+              "pvalue": NaN,
+              "ci_95": [
+                0.0,
+                0.0
+              ],
+              "hc3_std_err": 0.0,
+              "hc3_pvalue": NaN,
+              "hc3_ci_95": [
+                0.0,
+                0.0
+              ],
+              "holm_pvalue": NaN
+            },
+            "M3_overconfidence": {
+              "formula": "overconfidence ~ frag_z + length_z + C(subject_norm)",
+              "r_squared": 0.0014906225095279169,
+              "coef": 0.0,
+              "std_err": 0.0,
+              "pvalue": NaN,
+              "ci_95": [
+                0.0,
+                0.0
+              ],
+              "hc3_std_err": 0.0,
+              "hc3_pvalue": NaN,
+              "hc3_ci_95": [
+                0.0,
+                0.0
+              ],
+              "holm_pvalue": NaN
+            },
+            "M4_confidence_cond": {
+              "formula": "confidence ~ frag_z + is_correct + length_z + C(subject_norm)",
+              "r_squared": 0.028604101318104647,
+              "coef": 0.0,
+              "std_err": 0.0,
+              "pvalue": NaN,
+              "ci_95": [
+                0.0,
+                0.0
+              ],
+              "hc3_std_err": 0.0,
+              "hc3_pvalue": NaN,
+              "hc3_ci_95": [
+                0.0,
+                0.0
+              ]
+            }
+          }
+        }
+      },
+      "sensitivity_tpw_words": {
+        "status": "success",
+        "metric": "tpw",
+        "length_column": "total_words",
+        "sample_size": 30,
+        "n_clusters": 3,
+        "few_clusters_cluster_SE_unreliable": true,
+        "vif": NaN,
+        "models": {
+          "M1_confidence": {
+            "formula": "confidence ~ frag_z + length_z + C(subject_norm)",
+            "r_squared": 0.019808618949922807,
+            "coef": 0.0,
+            "std_err": 0.0,
+            "pvalue": NaN,
+            "ci_95": [
+              0.0,
+              0.0
+            ],
+            "hc3_std_err": 0.0,
+            "hc3_pvalue": NaN,
+            "hc3_ci_95": [
+              0.0,
+              0.0
+            ]
+          },
+          "M2_is_correct": {
+            "formula": "is_correct ~ frag_z + length_z + C(subject_norm)",
+            "r_squared": 0.0,
+            "coef": 0.0,
+            "std_err": 0.0,
+            "pvalue": NaN,
+            "ci_95": [
+              0.0,
+              0.0
+            ],
+            "hc3_std_err": 0.0,
+            "hc3_pvalue": NaN,
+            "hc3_ci_95": [
+              0.0,
+              0.0
+            ]
+          },
+          "M3_overconfidence": {
+            "formula": "overconfidence ~ frag_z + length_z + C(subject_norm)",
+            "r_squared": 0.0014906225095279169,
+            "coef": 0.0,
+            "std_err": 0.0,
+            "pvalue": NaN,
+            "ci_95": [
+              0.0,
+              0.0
+            ],
+            "hc3_std_err": 0.0,
+            "hc3_pvalue": NaN,
+            "hc3_ci_95": [
+              0.0,
+              0.0
+            ]
+          },
+          "M4_confidence_cond": {
+            "formula": "confidence ~ frag_z + is_correct + length_z + C(subject_norm)",
+            "r_squared": 0.028604101318104647,
+            "coef": 0.0,
+            "std_err": 0.0,
+            "pvalue": NaN,
+            "ci_95": [
+              0.0,
+              0.0
+            ],
+            "hc3_std_err": 0.0,
+            "hc3_pvalue": NaN,
+            "hc3_ci_95": [
+              0.0,
+              0.0
+            ]
+          }
+        }
+      },
+      "regression": {
+        "status": "success",
+        "formula": "calibration_residual ~ frag_std + is_correct + total_tokens + C(subject_norm)",
+        "sample_size": 30,
+        "r_squared": 0.061801181386182735,
+        "r_squared_adj": -0.04645252845387304,
+        "se_type": "clustered_by_subject_norm",
+        "coefficients": {
+          "Intercept": {
+            "coef": 0.002494541004164572,
+            "std_err": 5.845805898270096e-05,
+            "pvalue": 0.0,
+            "ci_lower_95": 0.00237996531395236,
+            "ci_upper_95": 0.0026091166943767842
+          },
+          "C(subject_norm)[T.elementary mathematics]": {
+            "coef": 0.04753434138085564,
+            "std_err": 1.2004581145981456e-16,
+            "pvalue": 0.0,
+            "ci_lower_95": 0.047534341380855404,
+            "ci_upper_95": 0.047534341380855875
+          },
+          "C(subject_norm)[T.high school psychology]": {
+            "coef": 0.010611868939450923,
+            "std_err": 5.298555276405969e-17,
+            "pvalue": 0.0,
+            "ci_lower_95": 0.01061186893945082,
+            "ci_upper_95": 0.010611868939451027
+          },
+          "frag_std": {
+            "coef": -7.646410455118762e-19,
+            "std_err": 2.4698452809962145e-33,
+            "pvalue": 0.0,
+            "ci_lower_95": -7.64641045511881e-19,
+            "ci_upper_95": -7.646410455118714e-19
+          },
+          "is_correct": {
+            "coef": -0.04766027307035753,
+            "std_err": 0.057581188097959084,
+            "pvalue": 0.4078372348587793,
+            "ci_lower_95": -0.16051732792938375,
+            "ci_upper_95": 0.0651967817886687
+          },
+          "total_tokens": {
+            "coef": 0.03492357405830364,
+            "std_err": 0.000818412825757794,
+            "pvalue": 0.0,
+            "ci_lower_95": 0.033319514395332706,
+            "ci_upper_95": 0.03652763372127457
+          }
+        },
+        "note": "secondary / mechanically tied to correctness"
+      },
+      "tpw_quartiles": {
+        "Q1_lowest": {
+          "sample_count": 8,
+          "mean_metric": 1.0769230769230769,
+          "mean_tpw": 1.0769230769230769,
+          "ece_10": 0.3695084734130882,
+          "brier_score": 0.2746088734891311,
+          "accuracy": 12.5
+        },
+        "Q2_low_mid": {
+          "sample_count": 7,
+          "mean_metric": 1.0769230769230769,
+          "mean_tpw": 1.0769230769230769,
+          "ece_10": 0.29423731028343003,
+          "brier_score": 0.28962498225850475,
+          "accuracy": 28.57142857142857
+        },
+        "Q3_high_mid": {
+          "sample_count": 7,
+          "mean_metric": 1.0769230769230769,
+          "mean_tpw": 1.0769230769230769,
+          "ece_10": 0.3540749803337418,
+          "brier_score": 0.27801252559898054,
+          "accuracy": 14.285714285714285
+        },
+        "Q4_highest": {
+          "sample_count": 8,
+          "mean_metric": 1.0769230769230769,
+          "mean_tpw": 1.0769230769230769,
+          "ece_10": 0.24827843493581922,
+          "brier_score": 0.21823133271395773,
+          "accuracy": 25.0
+        }
+      },
+      "tpc_quartiles": {
+        "Q1_lowest": {
+          "sample_count": 8,
+          "mean_metric": 0.2857142857142857,
+          "mean_tpc": 0.2857142857142857,
+          "ece_10": 0.2892718877782341,
+          "brier_score": 0.2484448782572194,
+          "accuracy": 25.0
+        },
+        "Q2_low_mid": {
+          "sample_count": 7,
+          "mean_metric": 0.28571428571428564,
+          "mean_tpc": 0.28571428571428564,
+          "ece_10": 0.3347283346214795,
+          "brier_score": 0.2598143131876748,
+          "accuracy": 14.285714285714285
+        },
+        "Q3_high_mid": {
+          "sample_count": 7,
+          "mean_metric": 0.2874149659863945,
+          "mean_tpc": 0.2874149659863945,
+          "ece_10": 0.29866440116395815,
+          "brier_score": 0.20564255503682843,
+          "accuracy": 28.57142857142857
+        },
+        "Q4_highest": {
+          "sample_count": 8,
+          "mean_metric": 0.2916666666666667,
+          "mean_tpc": 0.2916666666666667,
+          "ece_10": 0.4432748882503365,
+          "brier_score": 0.33380338762472866,
+          "accuracy": 12.5
+        }
+      }
+    },
+    "llama32_3b_en": {
+      "model_key": "llama32_3b",
+      "language": "en",
+      "sample_size": 30,
+      "accuracy": 23.333333333333332,
+      "mean_tpw": 1.0769230769230769,
+      "mean_strr": 0.9230769230769232,
+      "mean_tpc": 0.28769841269841273,
+      "calibration": {
+        "sample_size": 30,
+        "accuracy": 0.23333333333333334,
+        "mean_confidence": 0.4952308153850527,
+        "ece_uniform_10": 0.31511753508931795,
+        "ece_quantile_10": 0.38608180937803793,
+        "mce": 0.7412915048540688,
+        "brier_score": 0.26870863432154357,
+        "multiclass_brier_score": 0.9450849254070347,
+        "nll": 1.9578463330750677
+      },
+      "mass_filtered_calibration": {
+        "n_mass_filtered": 30,
+        "share_mass_filtered_out": 0.0,
+        "ece_mass_filtered": 0.31511753508931795,
+        "brier_mass_filtered": 0.26870863432154357
+      },
+      "bootstrap_ci": {
+        "ece_ci_95": [
+          0.19940770035278338,
+          0.4580591190326354
+        ],
+        "brier_ci_95": [
+          0.22740633842561359,
+          0.3134091301983917
+        ]
+      },
+      "correlations": {
+        "tpw": {
+          "metric": "tpw",
+          "sample_size": 30,
+          "status": "insufficient_data"
+        },
+        "strr": {
+          "metric": "strr",
+          "sample_size": 30,
+          "status": "insufficient_data"
+        },
+        "tpc": {
+          "metric": "tpc",
+          "sample_size": 30,
+          "calibration_residual": {
+            "pearson_r": -0.06504063698178901,
+            "pearson_pvalue": 0.7327521864126075,
+            "spearman_rho": -0.07352555116476389,
+            "spearman_pvalue": 0.6994023605030242
+          },
+          "accuracy": {
+            "pearson_r": -0.05572782125753524,
+            "pearson_pvalue": 0.769911028445767,
+            "spearman_rho": -0.05572782125753528,
+            "spearman_pvalue": 0.7699110284457666
+          },
+          "confidence": {
+            "pearson_r": -0.09301801816868244,
+            "pearson_pvalue": 0.6249165342942482,
+            "spearman_rho": -0.07352555116476389,
+            "spearman_pvalue": 0.6994023605030242
+          }
+        }
+      },
+      "h2_models": {
+        "tpw": {
+          "status": "success",
+          "metric": "tpw",
+          "length_column": "total_tokens",
+          "sample_size": 30,
+          "n_clusters": 3,
+          "few_clusters_cluster_SE_unreliable": true,
+          "vif": NaN,
+          "models": {
+            "M1_confidence": {
+              "formula": "confidence ~ frag_z + length_z + C(subject_norm)",
+              "r_squared": 0.051896344844018505,
+              "coef": 0.0,
+              "std_err": 0.0,
+              "pvalue": NaN,
+              "ci_95": [
+                0.0,
+                0.0
+              ],
+              "hc3_std_err": 0.0,
+              "hc3_pvalue": NaN,
+              "hc3_ci_95": [
+                0.0,
+                0.0
+              ],
+              "holm_pvalue": NaN
+            },
+            "M2_is_correct": {
+              "formula": "is_correct ~ frag_z + length_z + C(subject_norm)",
+              "r_squared": 0.012422360248446451,
+              "coef": 0.0,
+              "std_err": 0.0,
+              "pvalue": NaN,
+              "ci_95": [
+                0.0,
+                0.0
+              ],
+              "hc3_std_err": 0.0,
+              "hc3_pvalue": NaN,
+              "hc3_ci_95": [
+                0.0,
+                0.0
+              ],
+              "holm_pvalue": NaN
+            },
+            "M3_overconfidence": {
+              "formula": "overconfidence ~ frag_z + length_z + C(subject_norm)",
+              "r_squared": 0.0076194282182185935,
+              "coef": 0.0,
+              "std_err": 0.0,
+              "pvalue": NaN,
+              "ci_95": [
+                0.0,
+                0.0
+              ],
+              "hc3_std_err": 0.0,
+              "hc3_pvalue": NaN,
+              "hc3_ci_95": [
+                0.0,
+                0.0
+              ],
+              "holm_pvalue": NaN
+            },
+            "M4_confidence_cond": {
+              "formula": "confidence ~ frag_z + is_correct + length_z + C(subject_norm)",
+              "r_squared": 0.06127126189145449,
+              "coef": 0.0,
+              "std_err": 0.0,
+              "pvalue": NaN,
+              "ci_95": [
+                0.0,
+                0.0
+              ],
+              "hc3_std_err": 0.0,
+              "hc3_pvalue": NaN,
+              "hc3_ci_95": [
+                0.0,
+                0.0
+              ]
+            }
+          }
+        },
+        "strr": {
+          "status": "success",
+          "metric": "strr",
+          "length_column": "total_tokens",
+          "sample_size": 30,
+          "n_clusters": 3,
+          "few_clusters_cluster_SE_unreliable": true,
+          "vif": NaN,
+          "models": {
+            "M1_confidence": {
+              "formula": "confidence ~ frag_z + length_z + C(subject_norm)",
+              "r_squared": 0.051896344844018505,
+              "coef": 0.0,
+              "std_err": 0.0,
+              "pvalue": NaN,
+              "ci_95": [
+                0.0,
+                0.0
+              ],
+              "hc3_std_err": 0.0,
+              "hc3_pvalue": NaN,
+              "hc3_ci_95": [
+                0.0,
+                0.0
+              ],
+              "holm_pvalue": NaN
+            },
+            "M2_is_correct": {
+              "formula": "is_correct ~ frag_z + length_z + C(subject_norm)",
+              "r_squared": 0.012422360248446451,
+              "coef": 0.0,
+              "std_err": 0.0,
+              "pvalue": NaN,
+              "ci_95": [
+                0.0,
+                0.0
+              ],
+              "hc3_std_err": 0.0,
+              "hc3_pvalue": NaN,
+              "hc3_ci_95": [
+                0.0,
+                0.0
+              ],
+              "holm_pvalue": NaN
+            },
+            "M3_overconfidence": {
+              "formula": "overconfidence ~ frag_z + length_z + C(subject_norm)",
+              "r_squared": 0.0076194282182185935,
+              "coef": 0.0,
+              "std_err": 0.0,
+              "pvalue": NaN,
+              "ci_95": [
+                0.0,
+                0.0
+              ],
+              "hc3_std_err": 0.0,
+              "hc3_pvalue": NaN,
+              "hc3_ci_95": [
+                0.0,
+                0.0
+              ],
+              "holm_pvalue": NaN
+            },
+            "M4_confidence_cond": {
+              "formula": "confidence ~ frag_z + is_correct + length_z + C(subject_norm)",
+              "r_squared": 0.06127126189145449,
+              "coef": 0.0,
+              "std_err": 0.0,
+              "pvalue": NaN,
+              "ci_95": [
+                0.0,
+                0.0
+              ],
+              "hc3_std_err": 0.0,
+              "hc3_pvalue": NaN,
+              "hc3_ci_95": [
+                0.0,
+                0.0
+              ]
+            }
+          }
+        },
+        "tpc": {
+          "status": "success",
+          "metric": "tpc",
+          "length_column": "total_tokens",
+          "sample_size": 30,
+          "n_clusters": 3,
+          "few_clusters_cluster_SE_unreliable": true,
+          "vif": NaN,
+          "models": {
+            "M1_confidence": {
+              "formula": "confidence ~ frag_z + length_z + C(subject_norm)",
+              "r_squared": 0.0631989009910704,
+              "coef": -0.012507839155497413,
+              "std_err": 0.017024614544462344,
+              "pvalue": 0.4625274139336092,
+              "ci_95": [
+                -0.04587547051332039,
+                0.02085979220232556
+              ],
+              "hc3_std_err": 0.020871829855084276,
+              "hc3_pvalue": 0.5489935629964794,
+              "hc3_ci_95": [
+                -0.05341587396291045,
+                0.028400195651915622
+              ],
+              "holm_pvalue": 1.0
+            },
+            "M2_is_correct": {
+              "formula": "is_correct ~ frag_z + length_z + C(subject_norm)",
+              "r_squared": 0.016939582156973,
+              "coef": -0.029058381908205103,
+              "std_err": 0.12376475706888729,
+              "pvalue": 0.8143738958658245,
+              "ci_95": [
+                -0.27163284831857326,
+                0.21351608450216303
+              ],
+              "hc3_std_err": 0.09715095192428465,
+              "hc3_pvalue": 0.7648595667160096,
+              "hc3_ci_95": [
+                -0.2194707487435853,
+                0.16135398492717506
+              ],
+              "holm_pvalue": 1.0
+            },
+            "M3_overconfidence": {
+              "formula": "overconfidence ~ frag_z + length_z + C(subject_norm)",
+              "r_squared": 0.008929362535999075,
+              "coef": 0.016550542752707682,
+              "std_err": 0.1279393357915018,
+              "pvalue": 0.8970708781764621,
+              "ci_95": [
+                -0.2342059476046121,
+                0.26730703311002746
+              ],
+              "hc3_std_err": 0.10048253577578621,
+              "hc3_pvalue": 0.869171742048625,
+              "hc3_ci_95": [
+                -0.1803916084430908,
+                0.21349269394850615
+              ],
+              "holm_pvalue": 1.0
+            },
+            "M4_confidence_cond": {
+              "formula": "confidence ~ frag_z + is_correct + length_z + C(subject_norm)",
+              "r_squared": 0.07406759218394132,
+              "coef": -0.013339273928368717,
+              "std_err": 0.017371465060624095,
+              "pvalue": 0.44255597211702047,
+              "ci_95": [
+                -0.04738671980588785,
+                0.02070817194915042
+              ],
+              "hc3_std_err": 0.0220475205051649,
+              "hc3_pvalue": 0.5451632043763439,
+              "hc3_ci_95": [
+                -0.05655162006690026,
+                0.02987307221016283
+              ]
+            }
+          }
+        },
+        "strr_ctx": {
+          "status": "success",
+          "metric": "strr_ctx",
+          "length_column": "total_tokens",
+          "sample_size": 30,
+          "n_clusters": 3,
+          "few_clusters_cluster_SE_unreliable": true,
+          "vif": NaN,
+          "models": {
+            "M1_confidence": {
+              "formula": "confidence ~ frag_z + length_z + C(subject_norm)",
+              "r_squared": 0.051896344844018505,
+              "coef": 0.0,
+              "std_err": 0.0,
+              "pvalue": NaN,
+              "ci_95": [
+                0.0,
+                0.0
+              ],
+              "hc3_std_err": 0.0,
+              "hc3_pvalue": NaN,
+              "hc3_ci_95": [
+                0.0,
+                0.0
+              ],
+              "holm_pvalue": NaN
+            },
+            "M2_is_correct": {
+              "formula": "is_correct ~ frag_z + length_z + C(subject_norm)",
+              "r_squared": 0.012422360248446451,
+              "coef": 0.0,
+              "std_err": 0.0,
+              "pvalue": NaN,
+              "ci_95": [
+                0.0,
+                0.0
+              ],
+              "hc3_std_err": 0.0,
+              "hc3_pvalue": NaN,
+              "hc3_ci_95": [
+                0.0,
+                0.0
+              ],
+              "holm_pvalue": NaN
+            },
+            "M3_overconfidence": {
+              "formula": "overconfidence ~ frag_z + length_z + C(subject_norm)",
+              "r_squared": 0.0076194282182185935,
+              "coef": 0.0,
+              "std_err": 0.0,
+              "pvalue": NaN,
+              "ci_95": [
+                0.0,
+                0.0
+              ],
+              "hc3_std_err": 0.0,
+              "hc3_pvalue": NaN,
+              "hc3_ci_95": [
+                0.0,
+                0.0
+              ],
+              "holm_pvalue": NaN
+            },
+            "M4_confidence_cond": {
+              "formula": "confidence ~ frag_z + is_correct + length_z + C(subject_norm)",
+              "r_squared": 0.06127126189145449,
+              "coef": 0.0,
+              "std_err": 0.0,
+              "pvalue": NaN,
+              "ci_95": [
+                0.0,
+                0.0
+              ],
+              "hc3_std_err": 0.0,
+              "hc3_pvalue": NaN,
+              "hc3_ci_95": [
+                0.0,
+                0.0
+              ]
+            }
+          }
+        }
+      },
+      "sensitivity_tpw_words": {
+        "status": "success",
+        "metric": "tpw",
+        "length_column": "total_words",
+        "sample_size": 30,
+        "n_clusters": 3,
+        "few_clusters_cluster_SE_unreliable": true,
+        "vif": NaN,
+        "models": {
+          "M1_confidence": {
+            "formula": "confidence ~ frag_z + length_z + C(subject_norm)",
+            "r_squared": 0.051896344844018505,
+            "coef": 0.0,
+            "std_err": 0.0,
+            "pvalue": NaN,
+            "ci_95": [
+              0.0,
+              0.0
+            ],
+            "hc3_std_err": 0.0,
+            "hc3_pvalue": NaN,
+            "hc3_ci_95": [
+              0.0,
+              0.0
+            ]
+          },
+          "M2_is_correct": {
+            "formula": "is_correct ~ frag_z + length_z + C(subject_norm)",
+            "r_squared": 0.012422360248446451,
+            "coef": 0.0,
+            "std_err": 0.0,
+            "pvalue": NaN,
+            "ci_95": [
+              0.0,
+              0.0
+            ],
+            "hc3_std_err": 0.0,
+            "hc3_pvalue": NaN,
+            "hc3_ci_95": [
+              0.0,
+              0.0
+            ]
+          },
+          "M3_overconfidence": {
+            "formula": "overconfidence ~ frag_z + length_z + C(subject_norm)",
+            "r_squared": 0.0076194282182185935,
+            "coef": 0.0,
+            "std_err": 0.0,
+            "pvalue": NaN,
+            "ci_95": [
+              0.0,
+              0.0
+            ],
+            "hc3_std_err": 0.0,
+            "hc3_pvalue": NaN,
+            "hc3_ci_95": [
+              0.0,
+              0.0
+            ]
+          },
+          "M4_confidence_cond": {
+            "formula": "confidence ~ frag_z + is_correct + length_z + C(subject_norm)",
+            "r_squared": 0.06127126189145449,
+            "coef": 0.0,
+            "std_err": 0.0,
+            "pvalue": NaN,
+            "ci_95": [
+              0.0,
+              0.0
+            ],
+            "hc3_std_err": 0.0,
+            "hc3_pvalue": NaN,
+            "hc3_ci_95": [
+              0.0,
+              0.0
+            ]
+          }
+        }
+      },
+      "regression": {
+        "status": "success",
+        "formula": "calibration_residual ~ frag_std + is_correct + total_tokens + C(subject_norm)",
+        "sample_size": 30,
+        "r_squared": 0.015092869205543868,
+        "r_squared_adj": -0.09855026127073963,
+        "se_type": "clustered_by_subject_norm",
+        "coefficients": {
+          "Intercept": {
+            "coef": 0.0025064592198525784,
+            "std_err": 7.991819940111011e-05,
+            "pvalue": 6.508175257571982e-216,
+            "ci_lower_95": 0.002349822427317112,
+            "ci_upper_95": 0.002663096012388045
+          },
+          "C(subject_norm)[T.elementary mathematics]": {
+            "coef": -0.0025105784838255346,
+            "std_err": 0.005247961760672591,
+            "pvalue": 0.6323718284134179,
+            "ci_lower_95": -0.012796394526987222,
+            "ci_upper_95": 0.007775237559336153
+          },
+          "C(subject_norm)[T.high school psychology]": {
+            "coef": 0.021671445987298046,
+            "std_err": 0.0052479617606726505,
+            "pvalue": 3.635566494481955e-05,
+            "ci_lower_95": 0.011385629944136241,
+            "ci_upper_95": 0.03195726203045985
+          },
+          "frag_std": {
+            "coef": 1.3811299242755625e-19,
+            "std_err": 4.147310694563854e-34,
+            "pvalue": 0.0,
+            "ci_lower_95": 1.3811299242755543e-19,
+            "ci_upper_95": 1.3811299242755707e-19
+          },
+          "is_correct": {
+            "coef": 0.022628600634958737,
+            "std_err": 0.052479617606727334,
+            "pvalue": 0.666331411488629,
+            "ci_lower_95": -0.08022955979666094,
+            "ci_upper_95": 0.1254867610665784
+          },
+          "total_tokens": {
+            "coef": 0.03509042907793667,
+            "std_err": 0.001118854791615516,
+            "pvalue": 6.508175257320161e-216,
+            "ci_lower_95": 0.032897513982440195,
+            "ci_upper_95": 0.037283344173433146
+          }
+        },
+        "note": "secondary / mechanically tied to correctness"
+      },
+      "tpw_quartiles": {
+        "Q1_lowest": {
+          "sample_count": 8,
+          "mean_metric": 1.0769230769230769,
+          "mean_tpw": 1.0769230769230769,
+          "ece_10": 0.38936945091448544,
+          "brier_score": 0.23713584216901035,
+          "accuracy": 12.5
+        },
+        "Q2_low_mid": {
+          "sample_count": 7,
+          "mean_metric": 1.0769230769230769,
+          "mean_tpw": 1.0769230769230769,
+          "ece_10": 0.3001526879968536,
+          "brier_score": 0.22422745864325316,
+          "accuracy": 28.57142857142857
+        },
+        "Q3_high_mid": {
+          "sample_count": 7,
+          "mean_metric": 1.0769230769230769,
+          "mean_tpw": 1.0769230769230769,
+          "ece_10": 0.4104455130986852,
+          "brier_score": 0.2927463691480862,
+          "accuracy": 42.857142857142854
+        },
+        "Q4_highest": {
+          "sample_count": 8,
+          "mean_metric": 1.0769230769230769,
+          "mean_tpw": 1.0769230769230769,
+          "ece_10": 0.4553925664232813,
+          "brier_score": 0.31816943721935587,
+          "accuracy": 12.5
+        }
+      },
+      "tpc_quartiles": {
+        "Q1_lowest": {
+          "sample_count": 8,
+          "mean_metric": 0.2857142857142857,
+          "mean_tpc": 0.2857142857142857,
+          "ece_10": 0.13473545076990326,
+          "brier_score": 0.22270439262669,
+          "accuracy": 37.5
+        },
+        "Q2_low_mid": {
+          "sample_count": 7,
+          "mean_metric": 0.28571428571428564,
+          "mean_tpc": 0.28571428571428564,
+          "ece_10": 0.532870112390602,
+          "brier_score": 0.29784633655137693,
+          "accuracy": 28.57142857142857
+        },
+        "Q3_high_mid": {
+          "sample_count": 7,
+          "mean_metric": 0.2874149659863945,
+          "mean_tpc": 0.2874149659863945,
+          "ece_10": 0.44764472178604375,
+          "brier_score": 0.3260696850366362,
+          "accuracy": 14.285714285714285
+        },
+        "Q4_highest": {
+          "sample_count": 8,
+          "mean_metric": 0.2916666666666667,
+          "mean_tpc": 0.2916666666666667,
+          "ece_10": 0.37048711259178146,
+          "brier_score": 0.2390264671895867,
+          "accuracy": 12.5
+        }
+      }
+    },
+    "tigerllm_1b_bn": {
+      "model_key": "tigerllm_1b",
+      "language": "bn",
+      "sample_size": 30,
+      "accuracy": 20.0,
+      "mean_tpw": 1.0769230769230769,
+      "mean_strr": 0.9230769230769232,
+      "mean_tpc": 0.28769841269841273,
+      "calibration": {
+        "sample_size": 30,
+        "accuracy": 0.2,
+        "mean_confidence": 0.516016043370382,
+        "ece_uniform_10": 0.3160160433703821,
+        "ece_quantile_10": 0.31601604337038214,
+        "mce": 0.7525630447845439,
+        "brier_score": 0.2638728068209036,
+        "multiclass_brier_score": 0.9701522014615838,
+        "nll": 2.060011946835077
+      },
+      "mass_filtered_calibration": {
+        "n_mass_filtered": 30,
+        "share_mass_filtered_out": 0.0,
+        "ece_mass_filtered": 0.3160160433703821,
+        "brier_mass_filtered": 0.2638728068209036
+      },
+      "bootstrap_ci": {
+        "ece_ci_95": [
+          0.18142177957066236,
+          0.4461430496606795
+        ],
+        "brier_ci_95": [
+          0.2221357560686681,
+          0.3062623137527564
+        ]
+      },
+      "correlations": {
+        "tpw": {
+          "metric": "tpw",
+          "sample_size": 30,
+          "status": "insufficient_data"
+        },
+        "strr": {
+          "metric": "strr",
+          "sample_size": 30,
+          "status": "insufficient_data"
+        },
+        "tpc": {
+          "metric": "tpc",
+          "sample_size": 30,
+          "calibration_residual": {
+            "pearson_r": 0.2036571022202496,
+            "pearson_pvalue": 0.2803913749506026,
+            "spearman_rho": 0.08986456253471144,
+            "spearman_pvalue": 0.6367474705675951
+          },
+          "accuracy": {
+            "pearson_r": -0.17677669529663692,
+            "pearson_pvalue": 0.3500501379643915,
+            "spearman_rho": -0.17677669529663687,
+            "spearman_pvalue": 0.35005013796439177
+          },
+          "confidence": {
+            "pearson_r": 0.05472835611365259,
+            "pearson_pvalue": 0.7739304410875982,
+            "spearman_rho": -0.05718653979481637,
+            "spearman_pvalue": 0.7640551976790051
+          }
+        }
+      },
+      "h2_models": {
+        "tpw": {
+          "status": "success",
+          "metric": "tpw",
+          "length_column": "total_tokens",
+          "sample_size": 30,
+          "n_clusters": 3,
+          "few_clusters_cluster_SE_unreliable": true,
+          "vif": NaN,
+          "models": {
+            "M1_confidence": {
+              "formula": "confidence ~ frag_z + length_z + C(subject_norm)",
+              "r_squared": 0.019808618949922807,
+              "coef": 0.0,
+              "std_err": 0.0,
+              "pvalue": NaN,
+              "ci_95": [
+                0.0,
+                0.0
+              ],
+              "hc3_std_err": 0.0,
+              "hc3_pvalue": NaN,
+              "hc3_ci_95": [
+                0.0,
+                0.0
+              ],
+              "holm_pvalue": NaN
+            },
+            "M2_is_correct": {
+              "formula": "is_correct ~ frag_z + length_z + C(subject_norm)",
+              "r_squared": 0.0,
+              "coef": 0.0,
+              "std_err": 0.0,
+              "pvalue": NaN,
+              "ci_95": [
+                0.0,
+                0.0
+              ],
+              "hc3_std_err": 0.0,
+              "hc3_pvalue": NaN,
+              "hc3_ci_95": [
+                0.0,
+                0.0
+              ],
+              "holm_pvalue": NaN
+            },
+            "M3_overconfidence": {
+              "formula": "overconfidence ~ frag_z + length_z + C(subject_norm)",
+              "r_squared": 0.0014906225095279169,
+              "coef": 0.0,
+              "std_err": 0.0,
+              "pvalue": NaN,
+              "ci_95": [
+                0.0,
+                0.0
+              ],
+              "hc3_std_err": 0.0,
+              "hc3_pvalue": NaN,
+              "hc3_ci_95": [
+                0.0,
+                0.0
+              ],
+              "holm_pvalue": NaN
+            },
+            "M4_confidence_cond": {
+              "formula": "confidence ~ frag_z + is_correct + length_z + C(subject_norm)",
+              "r_squared": 0.028604101318104647,
+              "coef": 0.0,
+              "std_err": 0.0,
+              "pvalue": NaN,
+              "ci_95": [
+                0.0,
+                0.0
+              ],
+              "hc3_std_err": 0.0,
+              "hc3_pvalue": NaN,
+              "hc3_ci_95": [
+                0.0,
+                0.0
+              ]
+            }
+          }
+        },
+        "strr": {
+          "status": "success",
+          "metric": "strr",
+          "length_column": "total_tokens",
+          "sample_size": 30,
+          "n_clusters": 3,
+          "few_clusters_cluster_SE_unreliable": true,
+          "vif": NaN,
+          "models": {
+            "M1_confidence": {
+              "formula": "confidence ~ frag_z + length_z + C(subject_norm)",
+              "r_squared": 0.019808618949922807,
+              "coef": 0.0,
+              "std_err": 0.0,
+              "pvalue": NaN,
+              "ci_95": [
+                0.0,
+                0.0
+              ],
+              "hc3_std_err": 0.0,
+              "hc3_pvalue": NaN,
+              "hc3_ci_95": [
+                0.0,
+                0.0
+              ],
+              "holm_pvalue": NaN
+            },
+            "M2_is_correct": {
+              "formula": "is_correct ~ frag_z + length_z + C(subject_norm)",
+              "r_squared": 0.0,
+              "coef": 0.0,
+              "std_err": 0.0,
+              "pvalue": NaN,
+              "ci_95": [
+                0.0,
+                0.0
+              ],
+              "hc3_std_err": 0.0,
+              "hc3_pvalue": NaN,
+              "hc3_ci_95": [
+                0.0,
+                0.0
+              ],
+              "holm_pvalue": NaN
+            },
+            "M3_overconfidence": {
+              "formula": "overconfidence ~ frag_z + length_z + C(subject_norm)",
+              "r_squared": 0.0014906225095279169,
+              "coef": 0.0,
+              "std_err": 0.0,
+              "pvalue": NaN,
+              "ci_95": [
+                0.0,
+                0.0
+              ],
+              "hc3_std_err": 0.0,
+              "hc3_pvalue": NaN,
+              "hc3_ci_95": [
+                0.0,
+                0.0
+              ],
+              "holm_pvalue": NaN
+            },
+            "M4_confidence_cond": {
+              "formula": "confidence ~ frag_z + is_correct + length_z + C(subject_norm)",
+              "r_squared": 0.028604101318104647,
+              "coef": 0.0,
+              "std_err": 0.0,
+              "pvalue": NaN,
+              "ci_95": [
+                0.0,
+                0.0
+              ],
+              "hc3_std_err": 0.0,
+              "hc3_pvalue": NaN,
+              "hc3_ci_95": [
+                0.0,
+                0.0
+              ]
+            }
+          }
+        },
+        "tpc": {
+          "status": "success",
+          "metric": "tpc",
+          "length_column": "total_tokens",
+          "sample_size": 30,
+          "n_clusters": 3,
+          "few_clusters_cluster_SE_unreliable": true,
+          "vif": NaN,
+          "models": {
+            "M1_confidence": {
+              "formula": "confidence ~ frag_z + length_z + C(subject_norm)",
+              "r_squared": 0.023435062749435964,
+              "coef": 0.006838675507582475,
+              "std_err": 0.034502665922176545,
+              "pvalue": 0.8428829838755002,
+              "ci_95": [
+                -0.060785307070501005,
+                0.07446265808566596
+              ],
+              "hc3_std_err": 0.02779395330118997,
+              "hc3_pvalue": 0.805644271238533,
+              "hc3_ci_95": [
+                -0.047636471950738,
+                0.06131382296590296
+              ],
+              "holm_pvalue": 1.0
+            },
+            "M2_is_correct": {
+              "formula": "is_correct ~ frag_z + length_z + C(subject_norm)",
+              "r_squared": 0.03156565656565713,
+              "coef": -0.0726459547705128,
+              "std_err": 0.08493609301312227,
+              "pvalue": 0.3923843419884194,
+              "ci_95": [
+                -0.2391176380637766,
+                0.09382572852275098
+              ],
+              "hc3_std_err": 0.07964529874097193,
+              "hc3_pvalue": 0.36170631187130764,
+              "hc3_ci_95": [
+                -0.2287478718407511,
+                0.08345596229972549
+              ],
+              "holm_pvalue": 1.0
+            },
+            "M3_overconfidence": {
+              "formula": "overconfidence ~ frag_z + length_z + C(subject_norm)",
+              "r_squared": 0.03835583584515423,
+              "coef": 0.07948463027809527,
+              "std_err": 0.07572064003448818,
+              "pvalue": 0.29385196742880304,
+              "ci_95": [
+                -0.06892509707582331,
+                0.22789435763201385
+              ],
+              "hc3_std_err": 0.08547602159052528,
+              "hc3_pvalue": 0.35241996852122603,
+              "hc3_ci_95": [
+                -0.08804529358110236,
+                0.2470145541372929
+              ],
+              "holm_pvalue": 1.0
+            },
+            "M4_confidence_cond": {
+              "formula": "confidence ~ frag_z + is_correct + length_z + C(subject_norm)",
+              "r_squared": 0.034707659871167196,
+              "coef": 0.00901546201403973,
+              "std_err": 0.03465397091087706,
+              "pvalue": 0.7947429184727572,
+              "ci_95": [
+                -0.058905072892578,
+                0.07693599692065746
+              ],
+              "hc3_std_err": 0.02853696363927037,
+              "hc3_pvalue": 0.7520615163953477,
+              "hc3_ci_95": [
+                -0.04691595894705927,
+                0.06494688297513873
+              ]
+            }
+          }
+        },
+        "strr_ctx": {
+          "status": "success",
+          "metric": "strr_ctx",
+          "length_column": "total_tokens",
+          "sample_size": 30,
+          "n_clusters": 3,
+          "few_clusters_cluster_SE_unreliable": true,
+          "vif": NaN,
+          "models": {
+            "M1_confidence": {
+              "formula": "confidence ~ frag_z + length_z + C(subject_norm)",
+              "r_squared": 0.019808618949922807,
+              "coef": 0.0,
+              "std_err": 0.0,
+              "pvalue": NaN,
+              "ci_95": [
+                0.0,
+                0.0
+              ],
+              "hc3_std_err": 0.0,
+              "hc3_pvalue": NaN,
+              "hc3_ci_95": [
+                0.0,
+                0.0
+              ],
+              "holm_pvalue": NaN
+            },
+            "M2_is_correct": {
+              "formula": "is_correct ~ frag_z + length_z + C(subject_norm)",
+              "r_squared": 0.0,
+              "coef": 0.0,
+              "std_err": 0.0,
+              "pvalue": NaN,
+              "ci_95": [
+                0.0,
+                0.0
+              ],
+              "hc3_std_err": 0.0,
+              "hc3_pvalue": NaN,
+              "hc3_ci_95": [
+                0.0,
+                0.0
+              ],
+              "holm_pvalue": NaN
+            },
+            "M3_overconfidence": {
+              "formula": "overconfidence ~ frag_z + length_z + C(subject_norm)",
+              "r_squared": 0.0014906225095279169,
+              "coef": 0.0,
+              "std_err": 0.0,
+              "pvalue": NaN,
+              "ci_95": [
+                0.0,
+                0.0
+              ],
+              "hc3_std_err": 0.0,
+              "hc3_pvalue": NaN,
+              "hc3_ci_95": [
+                0.0,
+                0.0
+              ],
+              "holm_pvalue": NaN
+            },
+            "M4_confidence_cond": {
+              "formula": "confidence ~ frag_z + is_correct + length_z + C(subject_norm)",
+              "r_squared": 0.028604101318104647,
+              "coef": 0.0,
+              "std_err": 0.0,
+              "pvalue": NaN,
+              "ci_95": [
+                0.0,
+                0.0
+              ],
+              "hc3_std_err": 0.0,
+              "hc3_pvalue": NaN,
+              "hc3_ci_95": [
+                0.0,
+                0.0
+              ]
+            }
+          }
+        }
+      },
+      "sensitivity_tpw_words": {
+        "status": "success",
+        "metric": "tpw",
+        "length_column": "total_words",
+        "sample_size": 30,
+        "n_clusters": 3,
+        "few_clusters_cluster_SE_unreliable": true,
+        "vif": NaN,
+        "models": {
+          "M1_confidence": {
+            "formula": "confidence ~ frag_z + length_z + C(subject_norm)",
+            "r_squared": 0.019808618949922807,
+            "coef": 0.0,
+            "std_err": 0.0,
+            "pvalue": NaN,
+            "ci_95": [
+              0.0,
+              0.0
+            ],
+            "hc3_std_err": 0.0,
+            "hc3_pvalue": NaN,
+            "hc3_ci_95": [
+              0.0,
+              0.0
+            ]
+          },
+          "M2_is_correct": {
+            "formula": "is_correct ~ frag_z + length_z + C(subject_norm)",
+            "r_squared": 0.0,
+            "coef": 0.0,
+            "std_err": 0.0,
+            "pvalue": NaN,
+            "ci_95": [
+              0.0,
+              0.0
+            ],
+            "hc3_std_err": 0.0,
+            "hc3_pvalue": NaN,
+            "hc3_ci_95": [
+              0.0,
+              0.0
+            ]
+          },
+          "M3_overconfidence": {
+            "formula": "overconfidence ~ frag_z + length_z + C(subject_norm)",
+            "r_squared": 0.0014906225095279169,
+            "coef": 0.0,
+            "std_err": 0.0,
+            "pvalue": NaN,
+            "ci_95": [
+              0.0,
+              0.0
+            ],
+            "hc3_std_err": 0.0,
+            "hc3_pvalue": NaN,
+            "hc3_ci_95": [
+              0.0,
+              0.0
+            ]
+          },
+          "M4_confidence_cond": {
+            "formula": "confidence ~ frag_z + is_correct + length_z + C(subject_norm)",
+            "r_squared": 0.028604101318104647,
+            "coef": 0.0,
+            "std_err": 0.0,
+            "pvalue": NaN,
+            "ci_95": [
+              0.0,
+              0.0
+            ],
+            "hc3_std_err": 0.0,
+            "hc3_pvalue": NaN,
+            "hc3_ci_95": [
+              0.0,
+              0.0
+            ]
+          }
+        }
+      },
+      "regression": {
+        "status": "success",
+        "formula": "calibration_residual ~ frag_std + is_correct + total_tokens + C(subject_norm)",
+        "sample_size": 30,
+        "r_squared": 0.061801181386182735,
+        "r_squared_adj": -0.04645252845387304,
+        "se_type": "clustered_by_subject_norm",
+        "coefficients": {
+          "Intercept": {
+            "coef": 0.002494541004164572,
+            "std_err": 5.845805898270096e-05,
+            "pvalue": 0.0,
+            "ci_lower_95": 0.00237996531395236,
+            "ci_upper_95": 0.0026091166943767842
+          },
+          "C(subject_norm)[T.elementary mathematics]": {
+            "coef": 0.04753434138085564,
+            "std_err": 1.2004581145981456e-16,
+            "pvalue": 0.0,
+            "ci_lower_95": 0.047534341380855404,
+            "ci_upper_95": 0.047534341380855875
+          },
+          "C(subject_norm)[T.high school psychology]": {
+            "coef": 0.010611868939450923,
+            "std_err": 5.298555276405969e-17,
+            "pvalue": 0.0,
+            "ci_lower_95": 0.01061186893945082,
+            "ci_upper_95": 0.010611868939451027
+          },
+          "frag_std": {
+            "coef": -7.646410455118762e-19,
+            "std_err": 2.4698452809962145e-33,
+            "pvalue": 0.0,
+            "ci_lower_95": -7.64641045511881e-19,
+            "ci_upper_95": -7.646410455118714e-19
+          },
+          "is_correct": {
+            "coef": -0.04766027307035753,
+            "std_err": 0.057581188097959084,
+            "pvalue": 0.4078372348587793,
+            "ci_lower_95": -0.16051732792938375,
+            "ci_upper_95": 0.0651967817886687
+          },
+          "total_tokens": {
+            "coef": 0.03492357405830364,
+            "std_err": 0.000818412825757794,
+            "pvalue": 0.0,
+            "ci_lower_95": 0.033319514395332706,
+            "ci_upper_95": 0.03652763372127457
+          }
+        },
+        "note": "secondary / mechanically tied to correctness"
+      },
+      "tpw_quartiles": {
+        "Q1_lowest": {
+          "sample_count": 8,
+          "mean_metric": 1.0769230769230769,
+          "mean_tpw": 1.0769230769230769,
+          "ece_10": 0.3695084734130882,
+          "brier_score": 0.2746088734891311,
+          "accuracy": 12.5
+        },
+        "Q2_low_mid": {
+          "sample_count": 7,
+          "mean_metric": 1.0769230769230769,
+          "mean_tpw": 1.0769230769230769,
+          "ece_10": 0.29423731028343003,
+          "brier_score": 0.28962498225850475,
+          "accuracy": 28.57142857142857
+        },
+        "Q3_high_mid": {
+          "sample_count": 7,
+          "mean_metric": 1.0769230769230769,
+          "mean_tpw": 1.0769230769230769,
+          "ece_10": 0.3540749803337418,
+          "brier_score": 0.27801252559898054,
+          "accuracy": 14.285714285714285
+        },
+        "Q4_highest": {
+          "sample_count": 8,
+          "mean_metric": 1.0769230769230769,
+          "mean_tpw": 1.0769230769230769,
+          "ece_10": 0.24827843493581922,
+          "brier_score": 0.21823133271395773,
+          "accuracy": 25.0
+        }
+      },
+      "tpc_quartiles": {
+        "Q1_lowest": {
+          "sample_count": 8,
+          "mean_metric": 0.2857142857142857,
+          "mean_tpc": 0.2857142857142857,
+          "ece_10": 0.2892718877782341,
+          "brier_score": 0.2484448782572194,
+          "accuracy": 25.0
+        },
+        "Q2_low_mid": {
+          "sample_count": 7,
+          "mean_metric": 0.28571428571428564,
+          "mean_tpc": 0.28571428571428564,
+          "ece_10": 0.3347283346214795,
+          "brier_score": 0.2598143131876748,
+          "accuracy": 14.285714285714285
+        },
+        "Q3_high_mid": {
+          "sample_count": 7,
+          "mean_metric": 0.2874149659863945,
+          "mean_tpc": 0.2874149659863945,
+          "ece_10": 0.29866440116395815,
+          "brier_score": 0.20564255503682843,
+          "accuracy": 28.57142857142857
+        },
+        "Q4_highest": {
+          "sample_count": 8,
+          "mean_metric": 0.2916666666666667,
+          "mean_tpc": 0.2916666666666667,
+          "ece_10": 0.4432748882503365,
+          "brier_score": 0.33380338762472866,
+          "accuracy": 12.5
+        }
+      }
+    },
+    "tigerllm_1b_en": {
+      "model_key": "tigerllm_1b",
+      "language": "en",
+      "sample_size": 30,
+      "accuracy": 23.333333333333332,
+      "mean_tpw": 1.0769230769230769,
+      "mean_strr": 0.9230769230769232,
+      "mean_tpc": 0.28769841269841273,
+      "calibration": {
+        "sample_size": 30,
+        "accuracy": 0.23333333333333334,
+        "mean_confidence": 0.4952308153850527,
+        "ece_uniform_10": 0.31511753508931795,
+        "ece_quantile_10": 0.38608180937803793,
+        "mce": 0.7412915048540688,
+        "brier_score": 0.26870863432154357,
+        "multiclass_brier_score": 0.9450849254070347,
+        "nll": 1.9578463330750677
+      },
+      "mass_filtered_calibration": {
+        "n_mass_filtered": 30,
+        "share_mass_filtered_out": 0.0,
+        "ece_mass_filtered": 0.31511753508931795,
+        "brier_mass_filtered": 0.26870863432154357
+      },
+      "bootstrap_ci": {
+        "ece_ci_95": [
+          0.19940770035278338,
+          0.4580591190326354
+        ],
+        "brier_ci_95": [
+          0.22740633842561359,
+          0.3134091301983917
+        ]
+      },
+      "correlations": {
+        "tpw": {
+          "metric": "tpw",
+          "sample_size": 30,
+          "status": "insufficient_data"
+        },
+        "strr": {
+          "metric": "strr",
+          "sample_size": 30,
+          "status": "insufficient_data"
+        },
+        "tpc": {
+          "metric": "tpc",
+          "sample_size": 30,
+          "calibration_residual": {
+            "pearson_r": -0.06504063698178901,
+            "pearson_pvalue": 0.7327521864126075,
+            "spearman_rho": -0.07352555116476389,
+            "spearman_pvalue": 0.6994023605030242
+          },
+          "accuracy": {
+            "pearson_r": -0.05572782125753524,
+            "pearson_pvalue": 0.769911028445767,
+            "spearman_rho": -0.05572782125753528,
+            "spearman_pvalue": 0.7699110284457666
+          },
+          "confidence": {
+            "pearson_r": -0.09301801816868244,
+            "pearson_pvalue": 0.6249165342942482,
+            "spearman_rho": -0.07352555116476389,
+            "spearman_pvalue": 0.6994023605030242
+          }
+        }
+      },
+      "h2_models": {
+        "tpw": {
+          "status": "success",
+          "metric": "tpw",
+          "length_column": "total_tokens",
+          "sample_size": 30,
+          "n_clusters": 3,
+          "few_clusters_cluster_SE_unreliable": true,
+          "vif": NaN,
+          "models": {
+            "M1_confidence": {
+              "formula": "confidence ~ frag_z + length_z + C(subject_norm)",
+              "r_squared": 0.051896344844018505,
+              "coef": 0.0,
+              "std_err": 0.0,
+              "pvalue": NaN,
+              "ci_95": [
+                0.0,
+                0.0
+              ],
+              "hc3_std_err": 0.0,
+              "hc3_pvalue": NaN,
+              "hc3_ci_95": [
+                0.0,
+                0.0
+              ],
+              "holm_pvalue": NaN
+            },
+            "M2_is_correct": {
+              "formula": "is_correct ~ frag_z + length_z + C(subject_norm)",
+              "r_squared": 0.012422360248446451,
+              "coef": 0.0,
+              "std_err": 0.0,
+              "pvalue": NaN,
+              "ci_95": [
+                0.0,
+                0.0
+              ],
+              "hc3_std_err": 0.0,
+              "hc3_pvalue": NaN,
+              "hc3_ci_95": [
+                0.0,
+                0.0
+              ],
+              "holm_pvalue": NaN
+            },
+            "M3_overconfidence": {
+              "formula": "overconfidence ~ frag_z + length_z + C(subject_norm)",
+              "r_squared": 0.0076194282182185935,
+              "coef": 0.0,
+              "std_err": 0.0,
+              "pvalue": NaN,
+              "ci_95": [
+                0.0,
+                0.0
+              ],
+              "hc3_std_err": 0.0,
+              "hc3_pvalue": NaN,
+              "hc3_ci_95": [
+                0.0,
+                0.0
+              ],
+              "holm_pvalue": NaN
+            },
+            "M4_confidence_cond": {
+              "formula": "confidence ~ frag_z + is_correct + length_z + C(subject_norm)",
+              "r_squared": 0.06127126189145449,
+              "coef": 0.0,
+              "std_err": 0.0,
+              "pvalue": NaN,
+              "ci_95": [
+                0.0,
+                0.0
+              ],
+              "hc3_std_err": 0.0,
+              "hc3_pvalue": NaN,
+              "hc3_ci_95": [
+                0.0,
+                0.0
+              ]
+            }
+          }
+        },
+        "strr": {
+          "status": "success",
+          "metric": "strr",
+          "length_column": "total_tokens",
+          "sample_size": 30,
+          "n_clusters": 3,
+          "few_clusters_cluster_SE_unreliable": true,
+          "vif": NaN,
+          "models": {
+            "M1_confidence": {
+              "formula": "confidence ~ frag_z + length_z + C(subject_norm)",
+              "r_squared": 0.051896344844018505,
+              "coef": 0.0,
+              "std_err": 0.0,
+              "pvalue": NaN,
+              "ci_95": [
+                0.0,
+                0.0
+              ],
+              "hc3_std_err": 0.0,
+              "hc3_pvalue": NaN,
+              "hc3_ci_95": [
+                0.0,
+                0.0
+              ],
+              "holm_pvalue": NaN
+            },
+            "M2_is_correct": {
+              "formula": "is_correct ~ frag_z + length_z + C(subject_norm)",
+              "r_squared": 0.012422360248446451,
+              "coef": 0.0,
+              "std_err": 0.0,
+              "pvalue": NaN,
+              "ci_95": [
+                0.0,
+                0.0
+              ],
+              "hc3_std_err": 0.0,
+              "hc3_pvalue": NaN,
+              "hc3_ci_95": [
+                0.0,
+                0.0
+              ],
+              "holm_pvalue": NaN
+            },
+            "M3_overconfidence": {
+              "formula": "overconfidence ~ frag_z + length_z + C(subject_norm)",
+              "r_squared": 0.0076194282182185935,
+              "coef": 0.0,
+              "std_err": 0.0,
+              "pvalue": NaN,
+              "ci_95": [
+                0.0,
+                0.0
+              ],
+              "hc3_std_err": 0.0,
+              "hc3_pvalue": NaN,
+              "hc3_ci_95": [
+                0.0,
+                0.0
+              ],
+              "holm_pvalue": NaN
+            },
+            "M4_confidence_cond": {
+              "formula": "confidence ~ frag_z + is_correct + length_z + C(subject_norm)",
+              "r_squared": 0.06127126189145449,
+              "coef": 0.0,
+              "std_err": 0.0,
+              "pvalue": NaN,
+              "ci_95": [
+                0.0,
+                0.0
+              ],
+              "hc3_std_err": 0.0,
+              "hc3_pvalue": NaN,
+              "hc3_ci_95": [
+                0.0,
+                0.0
+              ]
+            }
+          }
+        },
+        "tpc": {
+          "status": "success",
+          "metric": "tpc",
+          "length_column": "total_tokens",
+          "sample_size": 30,
+          "n_clusters": 3,
+          "few_clusters_cluster_SE_unreliable": true,
+          "vif": NaN,
+          "models": {
+            "M1_confidence": {
+              "formula": "confidence ~ frag_z + length_z + C(subject_norm)",
+              "r_squared": 0.0631989009910704,
+              "coef": -0.012507839155497413,
+              "std_err": 0.017024614544462344,
+              "pvalue": 0.4625274139336092,
+              "ci_95": [
+                -0.04587547051332039,
+                0.02085979220232556
+              ],
+              "hc3_std_err": 0.020871829855084276,
+              "hc3_pvalue": 0.5489935629964794,
+              "hc3_ci_95": [
+                -0.05341587396291045,
+                0.028400195651915622
+              ],
+              "holm_pvalue": 1.0
+            },
+            "M2_is_correct": {
+              "formula": "is_correct ~ frag_z + length_z + C(subject_norm)",
+              "r_squared": 0.016939582156973,
+              "coef": -0.029058381908205103,
+              "std_err": 0.12376475706888729,
+              "pvalue": 0.8143738958658245,
+              "ci_95": [
+                -0.27163284831857326,
+                0.21351608450216303
+              ],
+              "hc3_std_err": 0.09715095192428465,
+              "hc3_pvalue": 0.7648595667160096,
+              "hc3_ci_95": [
+                -0.2194707487435853,
+                0.16135398492717506
+              ],
+              "holm_pvalue": 1.0
+            },
+            "M3_overconfidence": {
+              "formula": "overconfidence ~ frag_z + length_z + C(subject_norm)",
+              "r_squared": 0.008929362535999075,
+              "coef": 0.016550542752707682,
+              "std_err": 0.1279393357915018,
+              "pvalue": 0.8970708781764621,
+              "ci_95": [
+                -0.2342059476046121,
+                0.26730703311002746
+              ],
+              "hc3_std_err": 0.10048253577578621,
+              "hc3_pvalue": 0.869171742048625,
+              "hc3_ci_95": [
+                -0.1803916084430908,
+                0.21349269394850615
+              ],
+              "holm_pvalue": 1.0
+            },
+            "M4_confidence_cond": {
+              "formula": "confidence ~ frag_z + is_correct + length_z + C(subject_norm)",
+              "r_squared": 0.07406759218394132,
+              "coef": -0.013339273928368717,
+              "std_err": 0.017371465060624095,
+              "pvalue": 0.44255597211702047,
+              "ci_95": [
+                -0.04738671980588785,
+                0.02070817194915042
+              ],
+              "hc3_std_err": 0.0220475205051649,
+              "hc3_pvalue": 0.5451632043763439,
+              "hc3_ci_95": [
+                -0.05655162006690026,
+                0.02987307221016283
+              ]
+            }
+          }
+        },
+        "strr_ctx": {
+          "status": "success",
+          "metric": "strr_ctx",
+          "length_column": "total_tokens",
+          "sample_size": 30,
+          "n_clusters": 3,
+          "few_clusters_cluster_SE_unreliable": true,
+          "vif": NaN,
+          "models": {
+            "M1_confidence": {
+              "formula": "confidence ~ frag_z + length_z + C(subject_norm)",
+              "r_squared": 0.051896344844018505,
+              "coef": 0.0,
+              "std_err": 0.0,
+              "pvalue": NaN,
+              "ci_95": [
+                0.0,
+                0.0
+              ],
+              "hc3_std_err": 0.0,
+              "hc3_pvalue": NaN,
+              "hc3_ci_95": [
+                0.0,
+                0.0
+              ],
+              "holm_pvalue": NaN
+            },
+            "M2_is_correct": {
+              "formula": "is_correct ~ frag_z + length_z + C(subject_norm)",
+              "r_squared": 0.012422360248446451,
+              "coef": 0.0,
+              "std_err": 0.0,
+              "pvalue": NaN,
+              "ci_95": [
+                0.0,
+                0.0
+              ],
+              "hc3_std_err": 0.0,
+              "hc3_pvalue": NaN,
+              "hc3_ci_95": [
+                0.0,
+                0.0
+              ],
+              "holm_pvalue": NaN
+            },
+            "M3_overconfidence": {
+              "formula": "overconfidence ~ frag_z + length_z + C(subject_norm)",
+              "r_squared": 0.0076194282182185935,
+              "coef": 0.0,
+              "std_err": 0.0,
+              "pvalue": NaN,
+              "ci_95": [
+                0.0,
+                0.0
+              ],
+              "hc3_std_err": 0.0,
+              "hc3_pvalue": NaN,
+              "hc3_ci_95": [
+                0.0,
+                0.0
+              ],
+              "holm_pvalue": NaN
+            },
+            "M4_confidence_cond": {
+              "formula": "confidence ~ frag_z + is_correct + length_z + C(subject_norm)",
+              "r_squared": 0.06127126189145449,
+              "coef": 0.0,
+              "std_err": 0.0,
+              "pvalue": NaN,
+              "ci_95": [
+                0.0,
+                0.0
+              ],
+              "hc3_std_err": 0.0,
+              "hc3_pvalue": NaN,
+              "hc3_ci_95": [
+                0.0,
+                0.0
+              ]
+            }
+          }
+        }
+      },
+      "sensitivity_tpw_words": {
+        "status": "success",
+        "metric": "tpw",
+        "length_column": "total_words",
+        "sample_size": 30,
+        "n_clusters": 3,
+        "few_clusters_cluster_SE_unreliable": true,
+        "vif": NaN,
+        "models": {
+          "M1_confidence": {
+            "formula": "confidence ~ frag_z + length_z + C(subject_norm)",
+            "r_squared": 0.051896344844018505,
+            "coef": 0.0,
+            "std_err": 0.0,
+            "pvalue": NaN,
+            "ci_95": [
+              0.0,
+              0.0
+            ],
+            "hc3_std_err": 0.0,
+            "hc3_pvalue": NaN,
+            "hc3_ci_95": [
+              0.0,
+              0.0
+            ]
+          },
+          "M2_is_correct": {
+            "formula": "is_correct ~ frag_z + length_z + C(subject_norm)",
+            "r_squared": 0.012422360248446451,
+            "coef": 0.0,
+            "std_err": 0.0,
+            "pvalue": NaN,
+            "ci_95": [
+              0.0,
+              0.0
+            ],
+            "hc3_std_err": 0.0,
+            "hc3_pvalue": NaN,
+            "hc3_ci_95": [
+              0.0,
+              0.0
+            ]
+          },
+          "M3_overconfidence": {
+            "formula": "overconfidence ~ frag_z + length_z + C(subject_norm)",
+            "r_squared": 0.0076194282182185935,
+            "coef": 0.0,
+            "std_err": 0.0,
+            "pvalue": NaN,
+            "ci_95": [
+              0.0,
+              0.0
+            ],
+            "hc3_std_err": 0.0,
+            "hc3_pvalue": NaN,
+            "hc3_ci_95": [
+              0.0,
+              0.0
+            ]
+          },
+          "M4_confidence_cond": {
+            "formula": "confidence ~ frag_z + is_correct + length_z + C(subject_norm)",
+            "r_squared": 0.06127126189145449,
+            "coef": 0.0,
+            "std_err": 0.0,
+            "pvalue": NaN,
+            "ci_95": [
+              0.0,
+              0.0
+            ],
+            "hc3_std_err": 0.0,
+            "hc3_pvalue": NaN,
+            "hc3_ci_95": [
+              0.0,
+              0.0
+            ]
+          }
+        }
+      },
+      "regression": {
+        "status": "success",
+        "formula": "calibration_residual ~ frag_std + is_correct + total_tokens + C(subject_norm)",
+        "sample_size": 30,
+        "r_squared": 0.015092869205543868,
+        "r_squared_adj": -0.09855026127073963,
+        "se_type": "clustered_by_subject_norm",
+        "coefficients": {
+          "Intercept": {
+            "coef": 0.0025064592198525784,
+            "std_err": 7.991819940111011e-05,
+            "pvalue": 6.508175257571982e-216,
+            "ci_lower_95": 0.002349822427317112,
+            "ci_upper_95": 0.002663096012388045
+          },
+          "C(subject_norm)[T.elementary mathematics]": {
+            "coef": -0.0025105784838255346,
+            "std_err": 0.005247961760672591,
+            "pvalue": 0.6323718284134179,
+            "ci_lower_95": -0.012796394526987222,
+            "ci_upper_95": 0.007775237559336153
+          },
+          "C(subject_norm)[T.high school psychology]": {
+            "coef": 0.021671445987298046,
+            "std_err": 0.0052479617606726505,
+            "pvalue": 3.635566494481955e-05,
+            "ci_lower_95": 0.011385629944136241,
+            "ci_upper_95": 0.03195726203045985
+          },
+          "frag_std": {
+            "coef": 1.3811299242755625e-19,
+            "std_err": 4.147310694563854e-34,
+            "pvalue": 0.0,
+            "ci_lower_95": 1.3811299242755543e-19,
+            "ci_upper_95": 1.3811299242755707e-19
+          },
+          "is_correct": {
+            "coef": 0.022628600634958737,
+            "std_err": 0.052479617606727334,
+            "pvalue": 0.666331411488629,
+            "ci_lower_95": -0.08022955979666094,
+            "ci_upper_95": 0.1254867610665784
+          },
+          "total_tokens": {
+            "coef": 0.03509042907793667,
+            "std_err": 0.001118854791615516,
+            "pvalue": 6.508175257320161e-216,
+            "ci_lower_95": 0.032897513982440195,
+            "ci_upper_95": 0.037283344173433146
+          }
+        },
+        "note": "secondary / mechanically tied to correctness"
+      },
+      "tpw_quartiles": {
+        "Q1_lowest": {
+          "sample_count": 8,
+          "mean_metric": 1.0769230769230769,
+          "mean_tpw": 1.0769230769230769,
+          "ece_10": 0.38936945091448544,
+          "brier_score": 0.23713584216901035,
+          "accuracy": 12.5
+        },
+        "Q2_low_mid": {
+          "sample_count": 7,
+          "mean_metric": 1.0769230769230769,
+          "mean_tpw": 1.0769230769230769,
+          "ece_10": 0.3001526879968536,
+          "brier_score": 0.22422745864325316,
+          "accuracy": 28.57142857142857
+        },
+        "Q3_high_mid": {
+          "sample_count": 7,
+          "mean_metric": 1.0769230769230769,
+          "mean_tpw": 1.0769230769230769,
+          "ece_10": 0.4104455130986852,
+          "brier_score": 0.2927463691480862,
+          "accuracy": 42.857142857142854
+        },
+        "Q4_highest": {
+          "sample_count": 8,
+          "mean_metric": 1.0769230769230769,
+          "mean_tpw": 1.0769230769230769,
+          "ece_10": 0.4553925664232813,
+          "brier_score": 0.31816943721935587,
+          "accuracy": 12.5
+        }
+      },
+      "tpc_quartiles": {
+        "Q1_lowest": {
+          "sample_count": 8,
+          "mean_metric": 0.2857142857142857,
+          "mean_tpc": 0.2857142857142857,
+          "ece_10": 0.13473545076990326,
+          "brier_score": 0.22270439262669,
+          "accuracy": 37.5
+        },
+        "Q2_low_mid": {
+          "sample_count": 7,
+          "mean_metric": 0.28571428571428564,
+          "mean_tpc": 0.28571428571428564,
+          "ece_10": 0.532870112390602,
+          "brier_score": 0.29784633655137693,
+          "accuracy": 28.57142857142857
+        },
+        "Q3_high_mid": {
+          "sample_count": 7,
+          "mean_metric": 0.2874149659863945,
+          "mean_tpc": 0.2874149659863945,
+          "ece_10": 0.44764472178604375,
+          "brier_score": 0.3260696850366362,
+          "accuracy": 14.285714285714285
+        },
+        "Q4_highest": {
+          "sample_count": 8,
+          "mean_metric": 0.2916666666666667,
+          "mean_tpc": 0.2916666666666667,
+          "ece_10": 0.37048711259178146,
+          "brier_score": 0.2390264671895867,
+          "accuracy": 12.5
+        }
+      }
+    },
+    "titullm_1b_bn": {
+      "model_key": "titullm_1b",
+      "language": "bn",
+      "sample_size": 30,
+      "accuracy": 20.0,
+      "mean_tpw": 1.0769230769230769,
+      "mean_strr": 0.9230769230769232,
+      "mean_tpc": 0.28769841269841273,
+      "calibration": {
+        "sample_size": 30,
+        "accuracy": 0.2,
+        "mean_confidence": 0.516016043370382,
+        "ece_uniform_10": 0.3160160433703821,
+        "ece_quantile_10": 0.31601604337038214,
+        "mce": 0.7525630447845439,
+        "brier_score": 0.2638728068209036,
+        "multiclass_brier_score": 0.9701522014615838,
+        "nll": 2.060011946835077
+      },
+      "mass_filtered_calibration": {
+        "n_mass_filtered": 30,
+        "share_mass_filtered_out": 0.0,
+        "ece_mass_filtered": 0.3160160433703821,
+        "brier_mass_filtered": 0.2638728068209036
+      },
+      "bootstrap_ci": {
+        "ece_ci_95": [
+          0.18142177957066236,
+          0.4461430496606795
+        ],
+        "brier_ci_95": [
+          0.2221357560686681,
+          0.3062623137527564
+        ]
+      },
+      "correlations": {
+        "tpw": {
+          "metric": "tpw",
+          "sample_size": 30,
+          "status": "insufficient_data"
+        },
+        "strr": {
+          "metric": "strr",
+          "sample_size": 30,
+          "status": "insufficient_data"
+        },
+        "tpc": {
+          "metric": "tpc",
+          "sample_size": 30,
+          "calibration_residual": {
+            "pearson_r": 0.2036571022202496,
+            "pearson_pvalue": 0.2803913749506026,
+            "spearman_rho": 0.08986456253471144,
+            "spearman_pvalue": 0.6367474705675951
+          },
+          "accuracy": {
+            "pearson_r": -0.17677669529663692,
+            "pearson_pvalue": 0.3500501379643915,
+            "spearman_rho": -0.17677669529663687,
+            "spearman_pvalue": 0.35005013796439177
+          },
+          "confidence": {
+            "pearson_r": 0.05472835611365259,
+            "pearson_pvalue": 0.7739304410875982,
+            "spearman_rho": -0.05718653979481637,
+            "spearman_pvalue": 0.7640551976790051
+          }
+        }
+      },
+      "h2_models": {
+        "tpw": {
+          "status": "success",
+          "metric": "tpw",
+          "length_column": "total_tokens",
+          "sample_size": 30,
+          "n_clusters": 3,
+          "few_clusters_cluster_SE_unreliable": true,
+          "vif": NaN,
+          "models": {
+            "M1_confidence": {
+              "formula": "confidence ~ frag_z + length_z + C(subject_norm)",
+              "r_squared": 0.019808618949922807,
+              "coef": 0.0,
+              "std_err": 0.0,
+              "pvalue": NaN,
+              "ci_95": [
+                0.0,
+                0.0
+              ],
+              "hc3_std_err": 0.0,
+              "hc3_pvalue": NaN,
+              "hc3_ci_95": [
+                0.0,
+                0.0
+              ],
+              "holm_pvalue": NaN
+            },
+            "M2_is_correct": {
+              "formula": "is_correct ~ frag_z + length_z + C(subject_norm)",
+              "r_squared": 0.0,
+              "coef": 0.0,
+              "std_err": 0.0,
+              "pvalue": NaN,
+              "ci_95": [
+                0.0,
+                0.0
+              ],
+              "hc3_std_err": 0.0,
+              "hc3_pvalue": NaN,
+              "hc3_ci_95": [
+                0.0,
+                0.0
+              ],
+              "holm_pvalue": NaN
+            },
+            "M3_overconfidence": {
+              "formula": "overconfidence ~ frag_z + length_z + C(subject_norm)",
+              "r_squared": 0.0014906225095279169,
+              "coef": 0.0,
+              "std_err": 0.0,
+              "pvalue": NaN,
+              "ci_95": [
+                0.0,
+                0.0
+              ],
+              "hc3_std_err": 0.0,
+              "hc3_pvalue": NaN,
+              "hc3_ci_95": [
+                0.0,
+                0.0
+              ],
+              "holm_pvalue": NaN
+            },
+            "M4_confidence_cond": {
+              "formula": "confidence ~ frag_z + is_correct + length_z + C(subject_norm)",
+              "r_squared": 0.028604101318104647,
+              "coef": 0.0,
+              "std_err": 0.0,
+              "pvalue": NaN,
+              "ci_95": [
+                0.0,
+                0.0
+              ],
+              "hc3_std_err": 0.0,
+              "hc3_pvalue": NaN,
+              "hc3_ci_95": [
+                0.0,
+                0.0
+              ]
+            }
+          }
+        },
+        "strr": {
+          "status": "success",
+          "metric": "strr",
+          "length_column": "total_tokens",
+          "sample_size": 30,
+          "n_clusters": 3,
+          "few_clusters_cluster_SE_unreliable": true,
+          "vif": NaN,
+          "models": {
+            "M1_confidence": {
+              "formula": "confidence ~ frag_z + length_z + C(subject_norm)",
+              "r_squared": 0.019808618949922807,
+              "coef": 0.0,
+              "std_err": 0.0,
+              "pvalue": NaN,
+              "ci_95": [
+                0.0,
+                0.0
+              ],
+              "hc3_std_err": 0.0,
+              "hc3_pvalue": NaN,
+              "hc3_ci_95": [
+                0.0,
+                0.0
+              ],
+              "holm_pvalue": NaN
+            },
+            "M2_is_correct": {
+              "formula": "is_correct ~ frag_z + length_z + C(subject_norm)",
+              "r_squared": 0.0,
+              "coef": 0.0,
+              "std_err": 0.0,
+              "pvalue": NaN,
+              "ci_95": [
+                0.0,
+                0.0
+              ],
+              "hc3_std_err": 0.0,
+              "hc3_pvalue": NaN,
+              "hc3_ci_95": [
+                0.0,
+                0.0
+              ],
+              "holm_pvalue": NaN
+            },
+            "M3_overconfidence": {
+              "formula": "overconfidence ~ frag_z + length_z + C(subject_norm)",
+              "r_squared": 0.0014906225095279169,
+              "coef": 0.0,
+              "std_err": 0.0,
+              "pvalue": NaN,
+              "ci_95": [
+                0.0,
+                0.0
+              ],
+              "hc3_std_err": 0.0,
+              "hc3_pvalue": NaN,
+              "hc3_ci_95": [
+                0.0,
+                0.0
+              ],
+              "holm_pvalue": NaN
+            },
+            "M4_confidence_cond": {
+              "formula": "confidence ~ frag_z + is_correct + length_z + C(subject_norm)",
+              "r_squared": 0.028604101318104647,
+              "coef": 0.0,
+              "std_err": 0.0,
+              "pvalue": NaN,
+              "ci_95": [
+                0.0,
+                0.0
+              ],
+              "hc3_std_err": 0.0,
+              "hc3_pvalue": NaN,
+              "hc3_ci_95": [
+                0.0,
+                0.0
+              ]
+            }
+          }
+        },
+        "tpc": {
+          "status": "success",
+          "metric": "tpc",
+          "length_column": "total_tokens",
+          "sample_size": 30,
+          "n_clusters": 3,
+          "few_clusters_cluster_SE_unreliable": true,
+          "vif": NaN,
+          "models": {
+            "M1_confidence": {
+              "formula": "confidence ~ frag_z + length_z + C(subject_norm)",
+              "r_squared": 0.023435062749435964,
+              "coef": 0.006838675507582475,
+              "std_err": 0.034502665922176545,
+              "pvalue": 0.8428829838755002,
+              "ci_95": [
+                -0.060785307070501005,
+                0.07446265808566596
+              ],
+              "hc3_std_err": 0.02779395330118997,
+              "hc3_pvalue": 0.805644271238533,
+              "hc3_ci_95": [
+                -0.047636471950738,
+                0.06131382296590296
+              ],
+              "holm_pvalue": 1.0
+            },
+            "M2_is_correct": {
+              "formula": "is_correct ~ frag_z + length_z + C(subject_norm)",
+              "r_squared": 0.03156565656565713,
+              "coef": -0.0726459547705128,
+              "std_err": 0.08493609301312227,
+              "pvalue": 0.3923843419884194,
+              "ci_95": [
+                -0.2391176380637766,
+                0.09382572852275098
+              ],
+              "hc3_std_err": 0.07964529874097193,
+              "hc3_pvalue": 0.36170631187130764,
+              "hc3_ci_95": [
+                -0.2287478718407511,
+                0.08345596229972549
+              ],
+              "holm_pvalue": 1.0
+            },
+            "M3_overconfidence": {
+              "formula": "overconfidence ~ frag_z + length_z + C(subject_norm)",
+              "r_squared": 0.03835583584515423,
+              "coef": 0.07948463027809527,
+              "std_err": 0.07572064003448818,
+              "pvalue": 0.29385196742880304,
+              "ci_95": [
+                -0.06892509707582331,
+                0.22789435763201385
+              ],
+              "hc3_std_err": 0.08547602159052528,
+              "hc3_pvalue": 0.35241996852122603,
+              "hc3_ci_95": [
+                -0.08804529358110236,
+                0.2470145541372929
+              ],
+              "holm_pvalue": 1.0
+            },
+            "M4_confidence_cond": {
+              "formula": "confidence ~ frag_z + is_correct + length_z + C(subject_norm)",
+              "r_squared": 0.034707659871167196,
+              "coef": 0.00901546201403973,
+              "std_err": 0.03465397091087706,
+              "pvalue": 0.7947429184727572,
+              "ci_95": [
+                -0.058905072892578,
+                0.07693599692065746
+              ],
+              "hc3_std_err": 0.02853696363927037,
+              "hc3_pvalue": 0.7520615163953477,
+              "hc3_ci_95": [
+                -0.04691595894705927,
+                0.06494688297513873
+              ]
+            }
+          }
+        },
+        "strr_ctx": {
+          "status": "success",
+          "metric": "strr_ctx",
+          "length_column": "total_tokens",
+          "sample_size": 30,
+          "n_clusters": 3,
+          "few_clusters_cluster_SE_unreliable": true,
+          "vif": NaN,
+          "models": {
+            "M1_confidence": {
+              "formula": "confidence ~ frag_z + length_z + C(subject_norm)",
+              "r_squared": 0.019808618949922807,
+              "coef": 0.0,
+              "std_err": 0.0,
+              "pvalue": NaN,
+              "ci_95": [
+                0.0,
+                0.0
+              ],
+              "hc3_std_err": 0.0,
+              "hc3_pvalue": NaN,
+              "hc3_ci_95": [
+                0.0,
+                0.0
+              ],
+              "holm_pvalue": NaN
+            },
+            "M2_is_correct": {
+              "formula": "is_correct ~ frag_z + length_z + C(subject_norm)",
+              "r_squared": 0.0,
+              "coef": 0.0,
+              "std_err": 0.0,
+              "pvalue": NaN,
+              "ci_95": [
+                0.0,
+                0.0
+              ],
+              "hc3_std_err": 0.0,
+              "hc3_pvalue": NaN,
+              "hc3_ci_95": [
+                0.0,
+                0.0
+              ],
+              "holm_pvalue": NaN
+            },
+            "M3_overconfidence": {
+              "formula": "overconfidence ~ frag_z + length_z + C(subject_norm)",
+              "r_squared": 0.0014906225095279169,
+              "coef": 0.0,
+              "std_err": 0.0,
+              "pvalue": NaN,
+              "ci_95": [
+                0.0,
+                0.0
+              ],
+              "hc3_std_err": 0.0,
+              "hc3_pvalue": NaN,
+              "hc3_ci_95": [
+                0.0,
+                0.0
+              ],
+              "holm_pvalue": NaN
+            },
+            "M4_confidence_cond": {
+              "formula": "confidence ~ frag_z + is_correct + length_z + C(subject_norm)",
+              "r_squared": 0.028604101318104647,
+              "coef": 0.0,
+              "std_err": 0.0,
+              "pvalue": NaN,
+              "ci_95": [
+                0.0,
+                0.0
+              ],
+              "hc3_std_err": 0.0,
+              "hc3_pvalue": NaN,
+              "hc3_ci_95": [
+                0.0,
+                0.0
+              ]
+            }
+          }
+        }
+      },
+      "sensitivity_tpw_words": {
+        "status": "success",
+        "metric": "tpw",
+        "length_column": "total_words",
+        "sample_size": 30,
+        "n_clusters": 3,
+        "few_clusters_cluster_SE_unreliable": true,
+        "vif": NaN,
+        "models": {
+          "M1_confidence": {
+            "formula": "confidence ~ frag_z + length_z + C(subject_norm)",
+            "r_squared": 0.019808618949922807,
+            "coef": 0.0,
+            "std_err": 0.0,
+            "pvalue": NaN,
+            "ci_95": [
+              0.0,
+              0.0
+            ],
+            "hc3_std_err": 0.0,
+            "hc3_pvalue": NaN,
+            "hc3_ci_95": [
+              0.0,
+              0.0
+            ]
+          },
+          "M2_is_correct": {
+            "formula": "is_correct ~ frag_z + length_z + C(subject_norm)",
+            "r_squared": 0.0,
+            "coef": 0.0,
+            "std_err": 0.0,
+            "pvalue": NaN,
+            "ci_95": [
+              0.0,
+              0.0
+            ],
+            "hc3_std_err": 0.0,
+            "hc3_pvalue": NaN,
+            "hc3_ci_95": [
+              0.0,
+              0.0
+            ]
+          },
+          "M3_overconfidence": {
+            "formula": "overconfidence ~ frag_z + length_z + C(subject_norm)",
+            "r_squared": 0.0014906225095279169,
+            "coef": 0.0,
+            "std_err": 0.0,
+            "pvalue": NaN,
+            "ci_95": [
+              0.0,
+              0.0
+            ],
+            "hc3_std_err": 0.0,
+            "hc3_pvalue": NaN,
+            "hc3_ci_95": [
+              0.0,
+              0.0
+            ]
+          },
+          "M4_confidence_cond": {
+            "formula": "confidence ~ frag_z + is_correct + length_z + C(subject_norm)",
+            "r_squared": 0.028604101318104647,
+            "coef": 0.0,
+            "std_err": 0.0,
+            "pvalue": NaN,
+            "ci_95": [
+              0.0,
+              0.0
+            ],
+            "hc3_std_err": 0.0,
+            "hc3_pvalue": NaN,
+            "hc3_ci_95": [
+              0.0,
+              0.0
+            ]
+          }
+        }
+      },
+      "regression": {
+        "status": "success",
+        "formula": "calibration_residual ~ frag_std + is_correct + total_tokens + C(subject_norm)",
+        "sample_size": 30,
+        "r_squared": 0.061801181386182735,
+        "r_squared_adj": -0.04645252845387304,
+        "se_type": "clustered_by_subject_norm",
+        "coefficients": {
+          "Intercept": {
+            "coef": 0.002494541004164572,
+            "std_err": 5.845805898270096e-05,
+            "pvalue": 0.0,
+            "ci_lower_95": 0.00237996531395236,
+            "ci_upper_95": 0.0026091166943767842
+          },
+          "C(subject_norm)[T.elementary mathematics]": {
+            "coef": 0.04753434138085564,
+            "std_err": 1.2004581145981456e-16,
+            "pvalue": 0.0,
+            "ci_lower_95": 0.047534341380855404,
+            "ci_upper_95": 0.047534341380855875
+          },
+          "C(subject_norm)[T.high school psychology]": {
+            "coef": 0.010611868939450923,
+            "std_err": 5.298555276405969e-17,
+            "pvalue": 0.0,
+            "ci_lower_95": 0.01061186893945082,
+            "ci_upper_95": 0.010611868939451027
+          },
+          "frag_std": {
+            "coef": -7.646410455118762e-19,
+            "std_err": 2.4698452809962145e-33,
+            "pvalue": 0.0,
+            "ci_lower_95": -7.64641045511881e-19,
+            "ci_upper_95": -7.646410455118714e-19
+          },
+          "is_correct": {
+            "coef": -0.04766027307035753,
+            "std_err": 0.057581188097959084,
+            "pvalue": 0.4078372348587793,
+            "ci_lower_95": -0.16051732792938375,
+            "ci_upper_95": 0.0651967817886687
+          },
+          "total_tokens": {
+            "coef": 0.03492357405830364,
+            "std_err": 0.000818412825757794,
+            "pvalue": 0.0,
+            "ci_lower_95": 0.033319514395332706,
+            "ci_upper_95": 0.03652763372127457
+          }
+        },
+        "note": "secondary / mechanically tied to correctness"
+      },
+      "tpw_quartiles": {
+        "Q1_lowest": {
+          "sample_count": 8,
+          "mean_metric": 1.0769230769230769,
+          "mean_tpw": 1.0769230769230769,
+          "ece_10": 0.3695084734130882,
+          "brier_score": 0.2746088734891311,
+          "accuracy": 12.5
+        },
+        "Q2_low_mid": {
+          "sample_count": 7,
+          "mean_metric": 1.0769230769230769,
+          "mean_tpw": 1.0769230769230769,
+          "ece_10": 0.29423731028343003,
+          "brier_score": 0.28962498225850475,
+          "accuracy": 28.57142857142857
+        },
+        "Q3_high_mid": {
+          "sample_count": 7,
+          "mean_metric": 1.0769230769230769,
+          "mean_tpw": 1.0769230769230769,
+          "ece_10": 0.3540749803337418,
+          "brier_score": 0.27801252559898054,
+          "accuracy": 14.285714285714285
+        },
+        "Q4_highest": {
+          "sample_count": 8,
+          "mean_metric": 1.0769230769230769,
+          "mean_tpw": 1.0769230769230769,
+          "ece_10": 0.24827843493581922,
+          "brier_score": 0.21823133271395773,
+          "accuracy": 25.0
+        }
+      },
+      "tpc_quartiles": {
+        "Q1_lowest": {
+          "sample_count": 8,
+          "mean_metric": 0.2857142857142857,
+          "mean_tpc": 0.2857142857142857,
+          "ece_10": 0.2892718877782341,
+          "brier_score": 0.2484448782572194,
+          "accuracy": 25.0
+        },
+        "Q2_low_mid": {
+          "sample_count": 7,
+          "mean_metric": 0.28571428571428564,
+          "mean_tpc": 0.28571428571428564,
+          "ece_10": 0.3347283346214795,
+          "brier_score": 0.2598143131876748,
+          "accuracy": 14.285714285714285
+        },
+        "Q3_high_mid": {
+          "sample_count": 7,
+          "mean_metric": 0.2874149659863945,
+          "mean_tpc": 0.2874149659863945,
+          "ece_10": 0.29866440116395815,
+          "brier_score": 0.20564255503682843,
+          "accuracy": 28.57142857142857
+        },
+        "Q4_highest": {
+          "sample_count": 8,
+          "mean_metric": 0.2916666666666667,
+          "mean_tpc": 0.2916666666666667,
+          "ece_10": 0.4432748882503365,
+          "brier_score": 0.33380338762472866,
+          "accuracy": 12.5
+        }
+      }
+    },
+    "titullm_1b_en": {
+      "model_key": "titullm_1b",
+      "language": "en",
+      "sample_size": 30,
+      "accuracy": 23.333333333333332,
+      "mean_tpw": 1.0769230769230769,
+      "mean_strr": 0.9230769230769232,
+      "mean_tpc": 0.28769841269841273,
+      "calibration": {
+        "sample_size": 30,
+        "accuracy": 0.23333333333333334,
+        "mean_confidence": 0.4952308153850527,
+        "ece_uniform_10": 0.31511753508931795,
+        "ece_quantile_10": 0.38608180937803793,
+        "mce": 0.7412915048540688,
+        "brier_score": 0.26870863432154357,
+        "multiclass_brier_score": 0.9450849254070347,
+        "nll": 1.9578463330750677
+      },
+      "mass_filtered_calibration": {
+        "n_mass_filtered": 30,
+        "share_mass_filtered_out": 0.0,
+        "ece_mass_filtered": 0.31511753508931795,
+        "brier_mass_filtered": 0.26870863432154357
+      },
+      "bootstrap_ci": {
+        "ece_ci_95": [
+          0.19940770035278338,
+          0.4580591190326354
+        ],
+        "brier_ci_95": [
+          0.22740633842561359,
+          0.3134091301983917
+        ]
+      },
+      "correlations": {
+        "tpw": {
+          "metric": "tpw",
+          "sample_size": 30,
+          "status": "insufficient_data"
+        },
+        "strr": {
+          "metric": "strr",
+          "sample_size": 30,
+          "status": "insufficient_data"
+        },
+        "tpc": {
+          "metric": "tpc",
+          "sample_size": 30,
+          "calibration_residual": {
+            "pearson_r": -0.06504063698178901,
+            "pearson_pvalue": 0.7327521864126075,
+            "spearman_rho": -0.07352555116476389,
+            "spearman_pvalue": 0.6994023605030242
+          },
+          "accuracy": {
+            "pearson_r": -0.05572782125753524,
+            "pearson_pvalue": 0.769911028445767,
+            "spearman_rho": -0.05572782125753528,
+            "spearman_pvalue": 0.7699110284457666
+          },
+          "confidence": {
+            "pearson_r": -0.09301801816868244,
+            "pearson_pvalue": 0.6249165342942482,
+            "spearman_rho": -0.07352555116476389,
+            "spearman_pvalue": 0.6994023605030242
+          }
+        }
+      },
+      "h2_models": {
+        "tpw": {
+          "status": "success",
+          "metric": "tpw",
+          "length_column": "total_tokens",
+          "sample_size": 30,
+          "n_clusters": 3,
+          "few_clusters_cluster_SE_unreliable": true,
+          "vif": NaN,
+          "models": {
+            "M1_confidence": {
+              "formula": "confidence ~ frag_z + length_z + C(subject_norm)",
+              "r_squared": 0.051896344844018505,
+              "coef": 0.0,
+              "std_err": 0.0,
+              "pvalue": NaN,
+              "ci_95": [
+                0.0,
+                0.0
+              ],
+              "hc3_std_err": 0.0,
+              "hc3_pvalue": NaN,
+              "hc3_ci_95": [
+                0.0,
+                0.0
+              ],
+              "holm_pvalue": NaN
+            },
+            "M2_is_correct": {
+              "formula": "is_correct ~ frag_z + length_z + C(subject_norm)",
+              "r_squared": 0.012422360248446451,
+              "coef": 0.0,
+              "std_err": 0.0,
+              "pvalue": NaN,
+              "ci_95": [
+                0.0,
+                0.0
+              ],
+              "hc3_std_err": 0.0,
+              "hc3_pvalue": NaN,
+              "hc3_ci_95": [
+                0.0,
+                0.0
+              ],
+              "holm_pvalue": NaN
+            },
+            "M3_overconfidence": {
+              "formula": "overconfidence ~ frag_z + length_z + C(subject_norm)",
+              "r_squared": 0.0076194282182185935,
+              "coef": 0.0,
+              "std_err": 0.0,
+              "pvalue": NaN,
+              "ci_95": [
+                0.0,
+                0.0
+              ],
+              "hc3_std_err": 0.0,
+              "hc3_pvalue": NaN,
+              "hc3_ci_95": [
+                0.0,
+                0.0
+              ],
+              "holm_pvalue": NaN
+            },
+            "M4_confidence_cond": {
+              "formula": "confidence ~ frag_z + is_correct + length_z + C(subject_norm)",
+              "r_squared": 0.06127126189145449,
+              "coef": 0.0,
+              "std_err": 0.0,
+              "pvalue": NaN,
+              "ci_95": [
+                0.0,
+                0.0
+              ],
+              "hc3_std_err": 0.0,
+              "hc3_pvalue": NaN,
+              "hc3_ci_95": [
+                0.0,
+                0.0
+              ]
+            }
+          }
+        },
+        "strr": {
+          "status": "success",
+          "metric": "strr",
+          "length_column": "total_tokens",
+          "sample_size": 30,
+          "n_clusters": 3,
+          "few_clusters_cluster_SE_unreliable": true,
+          "vif": NaN,
+          "models": {
+            "M1_confidence": {
+              "formula": "confidence ~ frag_z + length_z + C(subject_norm)",
+              "r_squared": 0.051896344844018505,
+              "coef": 0.0,
+              "std_err": 0.0,
+              "pvalue": NaN,
+              "ci_95": [
+                0.0,
+                0.0
+              ],
+              "hc3_std_err": 0.0,
+              "hc3_pvalue": NaN,
+              "hc3_ci_95": [
+                0.0,
+                0.0
+              ],
+              "holm_pvalue": NaN
+            },
+            "M2_is_correct": {
+              "formula": "is_correct ~ frag_z + length_z + C(subject_norm)",
+              "r_squared": 0.012422360248446451,
+              "coef": 0.0,
+              "std_err": 0.0,
+              "pvalue": NaN,
+              "ci_95": [
+                0.0,
+                0.0
+              ],
+              "hc3_std_err": 0.0,
+              "hc3_pvalue": NaN,
+              "hc3_ci_95": [
+                0.0,
+                0.0
+              ],
+              "holm_pvalue": NaN
+            },
+            "M3_overconfidence": {
+              "formula": "overconfidence ~ frag_z + length_z + C(subject_norm)",
+              "r_squared": 0.0076194282182185935,
+              "coef": 0.0,
+              "std_err": 0.0,
+              "pvalue": NaN,
+              "ci_95": [
+                0.0,
+                0.0
+              ],
+              "hc3_std_err": 0.0,
+              "hc3_pvalue": NaN,
+              "hc3_ci_95": [
+                0.0,
+                0.0
+              ],
+              "holm_pvalue": NaN
+            },
+            "M4_confidence_cond": {
+              "formula": "confidence ~ frag_z + is_correct + length_z + C(subject_norm)",
+              "r_squared": 0.06127126189145449,
+              "coef": 0.0,
+              "std_err": 0.0,
+              "pvalue": NaN,
+              "ci_95": [
+                0.0,
+                0.0
+              ],
+              "hc3_std_err": 0.0,
+              "hc3_pvalue": NaN,
+              "hc3_ci_95": [
+                0.0,
+                0.0
+              ]
+            }
+          }
+        },
+        "tpc": {
+          "status": "success",
+          "metric": "tpc",
+          "length_column": "total_tokens",
+          "sample_size": 30,
+          "n_clusters": 3,
+          "few_clusters_cluster_SE_unreliable": true,
+          "vif": NaN,
+          "models": {
+            "M1_confidence": {
+              "formula": "confidence ~ frag_z + length_z + C(subject_norm)",
+              "r_squared": 0.0631989009910704,
+              "coef": -0.012507839155497413,
+              "std_err": 0.017024614544462344,
+              "pvalue": 0.4625274139336092,
+              "ci_95": [
+                -0.04587547051332039,
+                0.02085979220232556
+              ],
+              "hc3_std_err": 0.020871829855084276,
+              "hc3_pvalue": 0.5489935629964794,
+              "hc3_ci_95": [
+                -0.05341587396291045,
+                0.028400195651915622
+              ],
+              "holm_pvalue": 1.0
+            },
+            "M2_is_correct": {
+              "formula": "is_correct ~ frag_z + length_z + C(subject_norm)",
+              "r_squared": 0.016939582156973,
+              "coef": -0.029058381908205103,
+              "std_err": 0.12376475706888729,
+              "pvalue": 0.8143738958658245,
+              "ci_95": [
+                -0.27163284831857326,
+                0.21351608450216303
+              ],
+              "hc3_std_err": 0.09715095192428465,
+              "hc3_pvalue": 0.7648595667160096,
+              "hc3_ci_95": [
+                -0.2194707487435853,
+                0.16135398492717506
+              ],
+              "holm_pvalue": 1.0
+            },
+            "M3_overconfidence": {
+              "formula": "overconfidence ~ frag_z + length_z + C(subject_norm)",
+              "r_squared": 0.008929362535999075,
+              "coef": 0.016550542752707682,
+              "std_err": 0.1279393357915018,
+              "pvalue": 0.8970708781764621,
+              "ci_95": [
+                -0.2342059476046121,
+                0.26730703311002746
+              ],
+              "hc3_std_err": 0.10048253577578621,
+              "hc3_pvalue": 0.869171742048625,
+              "hc3_ci_95": [
+                -0.1803916084430908,
+                0.21349269394850615
+              ],
+              "holm_pvalue": 1.0
+            },
+            "M4_confidence_cond": {
+              "formula": "confidence ~ frag_z + is_correct + length_z + C(subject_norm)",
+              "r_squared": 0.07406759218394132,
+              "coef": -0.013339273928368717,
+              "std_err": 0.017371465060624095,
+              "pvalue": 0.44255597211702047,
+              "ci_95": [
+                -0.04738671980588785,
+                0.02070817194915042
+              ],
+              "hc3_std_err": 0.0220475205051649,
+              "hc3_pvalue": 0.5451632043763439,
+              "hc3_ci_95": [
+                -0.05655162006690026,
+                0.02987307221016283
+              ]
+            }
+          }
+        },
+        "strr_ctx": {
+          "status": "success",
+          "metric": "strr_ctx",
+          "length_column": "total_tokens",
+          "sample_size": 30,
+          "n_clusters": 3,
+          "few_clusters_cluster_SE_unreliable": true,
+          "vif": NaN,
+          "models": {
+            "M1_confidence": {
+              "formula": "confidence ~ frag_z + length_z + C(subject_norm)",
+              "r_squared": 0.051896344844018505,
+              "coef": 0.0,
+              "std_err": 0.0,
+              "pvalue": NaN,
+              "ci_95": [
+                0.0,
+                0.0
+              ],
+              "hc3_std_err": 0.0,
+              "hc3_pvalue": NaN,
+              "hc3_ci_95": [
+                0.0,
+                0.0
+              ],
+              "holm_pvalue": NaN
+            },
+            "M2_is_correct": {
+              "formula": "is_correct ~ frag_z + length_z + C(subject_norm)",
+              "r_squared": 0.012422360248446451,
+              "coef": 0.0,
+              "std_err": 0.0,
+              "pvalue": NaN,
+              "ci_95": [
+                0.0,
+                0.0
+              ],
+              "hc3_std_err": 0.0,
+              "hc3_pvalue": NaN,
+              "hc3_ci_95": [
+                0.0,
+                0.0
+              ],
+              "holm_pvalue": NaN
+            },
+            "M3_overconfidence": {
+              "formula": "overconfidence ~ frag_z + length_z + C(subject_norm)",
+              "r_squared": 0.0076194282182185935,
+              "coef": 0.0,
+              "std_err": 0.0,
+              "pvalue": NaN,
+              "ci_95": [
+                0.0,
+                0.0
+              ],
+              "hc3_std_err": 0.0,
+              "hc3_pvalue": NaN,
+              "hc3_ci_95": [
+                0.0,
+                0.0
+              ],
+              "holm_pvalue": NaN
+            },
+            "M4_confidence_cond": {
+              "formula": "confidence ~ frag_z + is_correct + length_z + C(subject_norm)",
+              "r_squared": 0.06127126189145449,
+              "coef": 0.0,
+              "std_err": 0.0,
+              "pvalue": NaN,
+              "ci_95": [
+                0.0,
+                0.0
+              ],
+              "hc3_std_err": 0.0,
+              "hc3_pvalue": NaN,
+              "hc3_ci_95": [
+                0.0,
+                0.0
+              ]
+            }
+          }
+        }
+      },
+      "sensitivity_tpw_words": {
+        "status": "success",
+        "metric": "tpw",
+        "length_column": "total_words",
+        "sample_size": 30,
+        "n_clusters": 3,
+        "few_clusters_cluster_SE_unreliable": true,
+        "vif": NaN,
+        "models": {
+          "M1_confidence": {
+            "formula": "confidence ~ frag_z + length_z + C(subject_norm)",
+            "r_squared": 0.051896344844018505,
+            "coef": 0.0,
+            "std_err": 0.0,
+            "pvalue": NaN,
+            "ci_95": [
+              0.0,
+              0.0
+            ],
+            "hc3_std_err": 0.0,
+            "hc3_pvalue": NaN,
+            "hc3_ci_95": [
+              0.0,
+              0.0
+            ]
+          },
+          "M2_is_correct": {
+            "formula": "is_correct ~ frag_z + length_z + C(subject_norm)",
+            "r_squared": 0.012422360248446451,
+            "coef": 0.0,
+            "std_err": 0.0,
+            "pvalue": NaN,
+            "ci_95": [
+              0.0,
+              0.0
+            ],
+            "hc3_std_err": 0.0,
+            "hc3_pvalue": NaN,
+            "hc3_ci_95": [
+              0.0,
+              0.0
+            ]
+          },
+          "M3_overconfidence": {
+            "formula": "overconfidence ~ frag_z + length_z + C(subject_norm)",
+            "r_squared": 0.0076194282182185935,
+            "coef": 0.0,
+            "std_err": 0.0,
+            "pvalue": NaN,
+            "ci_95": [
+              0.0,
+              0.0
+            ],
+            "hc3_std_err": 0.0,
+            "hc3_pvalue": NaN,
+            "hc3_ci_95": [
+              0.0,
+              0.0
+            ]
+          },
+          "M4_confidence_cond": {
+            "formula": "confidence ~ frag_z + is_correct + length_z + C(subject_norm)",
+            "r_squared": 0.06127126189145449,
+            "coef": 0.0,
+            "std_err": 0.0,
+            "pvalue": NaN,
+            "ci_95": [
+              0.0,
+              0.0
+            ],
+            "hc3_std_err": 0.0,
+            "hc3_pvalue": NaN,
+            "hc3_ci_95": [
+              0.0,
+              0.0
+            ]
+          }
+        }
+      },
+      "regression": {
+        "status": "success",
+        "formula": "calibration_residual ~ frag_std + is_correct + total_tokens + C(subject_norm)",
+        "sample_size": 30,
+        "r_squared": 0.015092869205543868,
+        "r_squared_adj": -0.09855026127073963,
+        "se_type": "clustered_by_subject_norm",
+        "coefficients": {
+          "Intercept": {
+            "coef": 0.0025064592198525784,
+            "std_err": 7.991819940111011e-05,
+            "pvalue": 6.508175257571982e-216,
+            "ci_lower_95": 0.002349822427317112,
+            "ci_upper_95": 0.002663096012388045
+          },
+          "C(subject_norm)[T.elementary mathematics]": {
+            "coef": -0.0025105784838255346,
+            "std_err": 0.005247961760672591,
+            "pvalue": 0.6323718284134179,
+            "ci_lower_95": -0.012796394526987222,
+            "ci_upper_95": 0.007775237559336153
+          },
+          "C(subject_norm)[T.high school psychology]": {
+            "coef": 0.021671445987298046,
+            "std_err": 0.0052479617606726505,
+            "pvalue": 3.635566494481955e-05,
+            "ci_lower_95": 0.011385629944136241,
+            "ci_upper_95": 0.03195726203045985
+          },
+          "frag_std": {
+            "coef": 1.3811299242755625e-19,
+            "std_err": 4.147310694563854e-34,
+            "pvalue": 0.0,
+            "ci_lower_95": 1.3811299242755543e-19,
+            "ci_upper_95": 1.3811299242755707e-19
+          },
+          "is_correct": {
+            "coef": 0.022628600634958737,
+            "std_err": 0.052479617606727334,
+            "pvalue": 0.666331411488629,
+            "ci_lower_95": -0.08022955979666094,
+            "ci_upper_95": 0.1254867610665784
+          },
+          "total_tokens": {
+            "coef": 0.03509042907793667,
+            "std_err": 0.001118854791615516,
+            "pvalue": 6.508175257320161e-216,
+            "ci_lower_95": 0.032897513982440195,
+            "ci_upper_95": 0.037283344173433146
+          }
+        },
+        "note": "secondary / mechanically tied to correctness"
+      },
+      "tpw_quartiles": {
+        "Q1_lowest": {
+          "sample_count": 8,
+          "mean_metric": 1.0769230769230769,
+          "mean_tpw": 1.0769230769230769,
+          "ece_10": 0.38936945091448544,
+          "brier_score": 0.23713584216901035,
+          "accuracy": 12.5
+        },
+        "Q2_low_mid": {
+          "sample_count": 7,
+          "mean_metric": 1.0769230769230769,
+          "mean_tpw": 1.0769230769230769,
+          "ece_10": 0.3001526879968536,
+          "brier_score": 0.22422745864325316,
+          "accuracy": 28.57142857142857
+        },
+        "Q3_high_mid": {
+          "sample_count": 7,
+          "mean_metric": 1.0769230769230769,
+          "mean_tpw": 1.0769230769230769,
+          "ece_10": 0.4104455130986852,
+          "brier_score": 0.2927463691480862,
+          "accuracy": 42.857142857142854
+        },
+        "Q4_highest": {
+          "sample_count": 8,
+          "mean_metric": 1.0769230769230769,
+          "mean_tpw": 1.0769230769230769,
+          "ece_10": 0.4553925664232813,
+          "brier_score": 0.31816943721935587,
+          "accuracy": 12.5
+        }
+      },
+      "tpc_quartiles": {
+        "Q1_lowest": {
+          "sample_count": 8,
+          "mean_metric": 0.2857142857142857,
+          "mean_tpc": 0.2857142857142857,
+          "ece_10": 0.13473545076990326,
+          "brier_score": 0.22270439262669,
+          "accuracy": 37.5
+        },
+        "Q2_low_mid": {
+          "sample_count": 7,
+          "mean_metric": 0.28571428571428564,
+          "mean_tpc": 0.28571428571428564,
+          "ece_10": 0.532870112390602,
+          "brier_score": 0.29784633655137693,
+          "accuracy": 28.57142857142857
+        },
+        "Q3_high_mid": {
+          "sample_count": 7,
+          "mean_metric": 0.2874149659863945,
+          "mean_tpc": 0.2874149659863945,
+          "ece_10": 0.44764472178604375,
+          "brier_score": 0.3260696850366362,
+          "accuracy": 14.285714285714285
+        },
+        "Q4_highest": {
+          "sample_count": 8,
+          "mean_metric": 0.2916666666666667,
+          "mean_tpc": 0.2916666666666667,
+          "ece_10": 0.37048711259178146,
+          "brier_score": 0.2390264671895867,
+          "accuracy": 12.5
+        }
+      }
+    }
+  },
+  "cross_model_descriptive_table": [
+    {
+      "Model": "llama32_3b",
+      "Language": "bn",
+      "N": 30,
+      "Accuracy (%)": 20.0,
+      "Mean conf": 0.516,
+      "ECE": 0.316,
+      "MCE": 0.7526,
+      "Brier": 0.2639,
+      "MC-Brier": 0.9702,
+      "NLL": 2.06,
+      "ECE (mass-filt)": 0.316,
+      "Filt-Out (%)": 0.0,
+      "Mean TPW": 1.08
+    },
+    {
+      "Model": "llama32_3b",
+      "Language": "en",
+      "N": 30,
+      "Accuracy (%)": 23.33,
+      "Mean conf": 0.4952,
+      "ECE": 0.3151,
+      "MCE": 0.7413,
+      "Brier": 0.2687,
+      "MC-Brier": 0.9451,
+      "NLL": 1.9578,
+      "ECE (mass-filt)": 0.3151,
+      "Filt-Out (%)": 0.0,
+      "Mean TPW": 1.08
+    },
+    {
+      "Model": "tigerllm_1b",
+      "Language": "bn",
+      "N": 30,
+      "Accuracy (%)": 20.0,
+      "Mean conf": 0.516,
+      "ECE": 0.316,
+      "MCE": 0.7526,
+      "Brier": 0.2639,
+      "MC-Brier": 0.9702,
+      "NLL": 2.06,
+      "ECE (mass-filt)": 0.316,
+      "Filt-Out (%)": 0.0,
+      "Mean TPW": 1.08
+    },
+    {
+      "Model": "tigerllm_1b",
+      "Language": "en",
+      "N": 30,
+      "Accuracy (%)": 23.33,
+      "Mean conf": 0.4952,
+      "ECE": 0.3151,
+      "MCE": 0.7413,
+      "Brier": 0.2687,
+      "MC-Brier": 0.9451,
+      "NLL": 1.9578,
+      "ECE (mass-filt)": 0.3151,
+      "Filt-Out (%)": 0.0,
+      "Mean TPW": 1.08
+    },
+    {
+      "Model": "titullm_1b",
+      "Language": "bn",
+      "N": 30,
+      "Accuracy (%)": 20.0,
+      "Mean conf": 0.516,
+      "ECE": 0.316,
+      "MCE": 0.7526,
+      "Brier": 0.2639,
+      "MC-Brier": 0.9702,
+      "NLL": 2.06,
+      "ECE (mass-filt)": 0.316,
+      "Filt-Out (%)": 0.0,
+      "Mean TPW": 1.08
+    },
+    {
+      "Model": "titullm_1b",
+      "Language": "en",
+      "N": 30,
+      "Accuracy (%)": 23.33,
+      "Mean conf": 0.4952,
+      "ECE": 0.3151,
+      "MCE": 0.7413,
+      "Brier": 0.2687,
+      "MC-Brier": 0.9451,
+      "NLL": 1.9578,
+      "ECE (mass-filt)": 0.3151,
+      "Filt-Out (%)": 0.0,
+      "Mean TPW": 1.08
+    }
+  ],
+  "bn_minus_en_ece": {
+    "llama32_3b": {
+      "mean_delta_ece": 0.002279722796780237,
+      "ci_95": [
+        -0.09510710013022328,
+        0.051653638436255034
+      ]
+    },
+    "titullm_1b": {
+      "mean_delta_ece": 0.002279722796780237,
+      "ci_95": [
+        -0.09510710013022328,
+        0.051653638436255034
+      ]
+    },
+    "tigerllm_1b": {
+      "mean_delta_ece": 0.002279722796780237,
+      "ci_95": [
+        -0.09510710013022328,
+        0.051653638436255034
+      ]
+    }
+  },
+  "language_interaction": {
+    "llama32_3b": {
+      "tpw": {
+        "status": "success",
+        "metric": "tpw",
+        "length_column": "prompt_tokens",
+        "sample_size": 60,
+        "n_clusters": 3,
+        "few_clusters_cluster_SE_unreliable": true,
+        "outcomes": {
+          "confidence": {
+            "interaction_term": "frag_z:C(language)[T.en]",
+            "coef": 0.0,
+            "std_err": 0.0,
+            "pvalue": NaN,
+            "ci_95": [
+              0.0,
+              0.0
+            ],
+            "hc3_std_err": 0.0,
+            "hc3_pvalue": NaN,
+            "hc3_ci_95": [
+              0.0,
+              0.0
+            ],
+            "r_squared": 0.03537918514070326,
+            "holm_pvalue": NaN
+          },
+          "is_correct": {
+            "interaction_term": "frag_z:C(language)[T.en]",
+            "coef": 0.0,
+            "std_err": 0.0,
+            "pvalue": NaN,
+            "ci_95": [
+              0.0,
+              0.0
+            ],
+            "hc3_std_err": 0.0,
+            "hc3_pvalue": NaN,
+            "hc3_ci_95": [
+              0.0,
+              0.0
+            ],
+            "r_squared": 0.004909983633388015,
+            "holm_pvalue": NaN
+          },
+          "overconfidence": {
+            "interaction_term": "frag_z:C(language)[T.en]",
+            "coef": 0.0,
+            "std_err": 0.0,
+            "pvalue": NaN,
+            "ci_95": [
+              0.0,
+              0.0
+            ],
+            "hc3_std_err": 0.0,
+            "hc3_pvalue": NaN,
+            "hc3_ci_95": [
+              0.0,
+              0.0
+            ],
+            "r_squared": 0.007800514792117075,
+            "holm_pvalue": NaN
+          }
+        },
+        "caveat": "Bangla and English samples are subject-matched, not item-parallel; slope difference is descriptive of the two samples."
+      },
+      "strr": {
+        "status": "success",
+        "metric": "strr",
+        "length_column": "prompt_tokens",
+        "sample_size": 60,
+        "n_clusters": 3,
+        "few_clusters_cluster_SE_unreliable": true,
+        "outcomes": {
+          "confidence": {
+            "interaction_term": "frag_z:C(language)[T.en]",
+            "coef": 0.0,
+            "std_err": 0.0,
+            "pvalue": NaN,
+            "ci_95": [
+              0.0,
+              0.0
+            ],
+            "hc3_std_err": 0.0,
+            "hc3_pvalue": NaN,
+            "hc3_ci_95": [
+              0.0,
+              0.0
+            ],
+            "r_squared": 0.03537918514070326,
+            "holm_pvalue": NaN
+          },
+          "is_correct": {
+            "interaction_term": "frag_z:C(language)[T.en]",
+            "coef": 0.0,
+            "std_err": 0.0,
+            "pvalue": NaN,
+            "ci_95": [
+              0.0,
+              0.0
+            ],
+            "hc3_std_err": 0.0,
+            "hc3_pvalue": NaN,
+            "hc3_ci_95": [
+              0.0,
+              0.0
+            ],
+            "r_squared": 0.004909983633388015,
+            "holm_pvalue": NaN
+          },
+          "overconfidence": {
+            "interaction_term": "frag_z:C(language)[T.en]",
+            "coef": 0.0,
+            "std_err": 0.0,
+            "pvalue": NaN,
+            "ci_95": [
+              0.0,
+              0.0
+            ],
+            "hc3_std_err": 0.0,
+            "hc3_pvalue": NaN,
+            "hc3_ci_95": [
+              0.0,
+              0.0
+            ],
+            "r_squared": 0.007800514792117075,
+            "holm_pvalue": NaN
+          }
+        },
+        "caveat": "Bangla and English samples are subject-matched, not item-parallel; slope difference is descriptive of the two samples."
+      },
+      "tpc": {
+        "status": "success",
+        "metric": "tpc",
+        "length_column": "prompt_tokens",
+        "sample_size": 60,
+        "n_clusters": 3,
+        "few_clusters_cluster_SE_unreliable": true,
+        "outcomes": {
+          "confidence": {
+            "interaction_term": "frag_z:C(language)[T.en]",
+            "coef": -0.01707265181798673,
+            "std_err": 0.038359727966784975,
+            "pvalue": 0.6562712838160877,
+            "ci_95": [
+              -0.09225633708963915,
+              0.058111033453665695
+            ],
+            "hc3_std_err": 0.034134871640381786,
+            "hc3_pvalue": 0.6169674864915962,
+            "hc3_ci_95": [
+              -0.0839757708500327,
+              0.049830467214059246
+            ],
+            "r_squared": 0.04143473697376199,
+            "holm_pvalue": 1.0
+          },
+          "is_correct": {
+            "interaction_term": "frag_z:C(language)[T.en]",
+            "coef": 0.04794633014853845,
+            "std_err": 0.09477570000609893,
+            "pvalue": 0.6129320114906491,
+            "ci_95": [
+              -0.13781062847298806,
+              0.23370328877006494
+            ],
+            "hc3_std_err": 0.11486896720272911,
+            "hc3_pvalue": 0.6763857069367506,
+            "hc3_ci_95": [
+              -0.1771927085101233,
+              0.2730853688072002
+            ],
+            "r_squared": 0.02276446957298006,
+            "holm_pvalue": 1.0
+          },
+          "overconfidence": {
+            "interaction_term": "frag_z:C(language)[T.en]",
+            "coef": -0.06501898196652517,
+            "std_err": 0.11911228583206084,
+            "pvalue": 0.5851601580720212,
+            "ci_95": [
+              -0.298474772313605,
+              0.1684368083805546
+            ],
+            "hc3_std_err": 0.12089648419701673,
+            "hc3_pvalue": 0.5907102617515303,
+            "hc3_ci_95": [
+              -0.30197173685019374,
+              0.17193377291714343
+            ],
+            "r_squared": 0.025460665409997474,
+            "holm_pvalue": 1.0
+          }
+        },
+        "caveat": "Bangla and English samples are subject-matched, not item-parallel; slope difference is descriptive of the two samples."
+      }
+    },
+    "tigerllm_1b": {
+      "tpw": {
+        "status": "success",
+        "metric": "tpw",
+        "length_column": "prompt_tokens",
+        "sample_size": 60,
+        "n_clusters": 3,
+        "few_clusters_cluster_SE_unreliable": true,
+        "outcomes": {
+          "confidence": {
+            "interaction_term": "frag_z:C(language)[T.en]",
+            "coef": 0.0,
+            "std_err": 0.0,
+            "pvalue": NaN,
+            "ci_95": [
+              0.0,
+              0.0
+            ],
+            "hc3_std_err": 0.0,
+            "hc3_pvalue": NaN,
+            "hc3_ci_95": [
+              0.0,
+              0.0
+            ],
+            "r_squared": 0.03537918514070326,
+            "holm_pvalue": NaN
+          },
+          "is_correct": {
+            "interaction_term": "frag_z:C(language)[T.en]",
+            "coef": 0.0,
+            "std_err": 0.0,
+            "pvalue": NaN,
+            "ci_95": [
+              0.0,
+              0.0
+            ],
+            "hc3_std_err": 0.0,
+            "hc3_pvalue": NaN,
+            "hc3_ci_95": [
+              0.0,
+              0.0
+            ],
+            "r_squared": 0.004909983633388015,
+            "holm_pvalue": NaN
+          },
+          "overconfidence": {
+            "interaction_term": "frag_z:C(language)[T.en]",
+            "coef": 0.0,
+            "std_err": 0.0,
+            "pvalue": NaN,
+            "ci_95": [
+              0.0,
+              0.0
+            ],
+            "hc3_std_err": 0.0,
+            "hc3_pvalue": NaN,
+            "hc3_ci_95": [
+              0.0,
+              0.0
+            ],
+            "r_squared": 0.007800514792117075,
+            "holm_pvalue": NaN
+          }
+        },
+        "caveat": "Bangla and English samples are subject-matched, not item-parallel; slope difference is descriptive of the two samples."
+      },
+      "strr": {
+        "status": "success",
+        "metric": "strr",
+        "length_column": "prompt_tokens",
+        "sample_size": 60,
+        "n_clusters": 3,
+        "few_clusters_cluster_SE_unreliable": true,
+        "outcomes": {
+          "confidence": {
+            "interaction_term": "frag_z:C(language)[T.en]",
+            "coef": 0.0,
+            "std_err": 0.0,
+            "pvalue": NaN,
+            "ci_95": [
+              0.0,
+              0.0
+            ],
+            "hc3_std_err": 0.0,
+            "hc3_pvalue": NaN,
+            "hc3_ci_95": [
+              0.0,
+              0.0
+            ],
+            "r_squared": 0.03537918514070326,
+            "holm_pvalue": NaN
+          },
+          "is_correct": {
+            "interaction_term": "frag_z:C(language)[T.en]",
+            "coef": 0.0,
+            "std_err": 0.0,
+            "pvalue": NaN,
+            "ci_95": [
+              0.0,
+              0.0
+            ],
+            "hc3_std_err": 0.0,
+            "hc3_pvalue": NaN,
+            "hc3_ci_95": [
+              0.0,
+              0.0
+            ],
+            "r_squared": 0.004909983633388015,
+            "holm_pvalue": NaN
+          },
+          "overconfidence": {
+            "interaction_term": "frag_z:C(language)[T.en]",
+            "coef": 0.0,
+            "std_err": 0.0,
+            "pvalue": NaN,
+            "ci_95": [
+              0.0,
+              0.0
+            ],
+            "hc3_std_err": 0.0,
+            "hc3_pvalue": NaN,
+            "hc3_ci_95": [
+              0.0,
+              0.0
+            ],
+            "r_squared": 0.007800514792117075,
+            "holm_pvalue": NaN
+          }
+        },
+        "caveat": "Bangla and English samples are subject-matched, not item-parallel; slope difference is descriptive of the two samples."
+      },
+      "tpc": {
+        "status": "success",
+        "metric": "tpc",
+        "length_column": "prompt_tokens",
+        "sample_size": 60,
+        "n_clusters": 3,
+        "few_clusters_cluster_SE_unreliable": true,
+        "outcomes": {
+          "confidence": {
+            "interaction_term": "frag_z:C(language)[T.en]",
+            "coef": -0.01707265181798673,
+            "std_err": 0.038359727966784975,
+            "pvalue": 0.6562712838160877,
+            "ci_95": [
+              -0.09225633708963915,
+              0.058111033453665695
+            ],
+            "hc3_std_err": 0.034134871640381786,
+            "hc3_pvalue": 0.6169674864915962,
+            "hc3_ci_95": [
+              -0.0839757708500327,
+              0.049830467214059246
+            ],
+            "r_squared": 0.04143473697376199,
+            "holm_pvalue": 1.0
+          },
+          "is_correct": {
+            "interaction_term": "frag_z:C(language)[T.en]",
+            "coef": 0.04794633014853845,
+            "std_err": 0.09477570000609893,
+            "pvalue": 0.6129320114906491,
+            "ci_95": [
+              -0.13781062847298806,
+              0.23370328877006494
+            ],
+            "hc3_std_err": 0.11486896720272911,
+            "hc3_pvalue": 0.6763857069367506,
+            "hc3_ci_95": [
+              -0.1771927085101233,
+              0.2730853688072002
+            ],
+            "r_squared": 0.02276446957298006,
+            "holm_pvalue": 1.0
+          },
+          "overconfidence": {
+            "interaction_term": "frag_z:C(language)[T.en]",
+            "coef": -0.06501898196652517,
+            "std_err": 0.11911228583206084,
+            "pvalue": 0.5851601580720212,
+            "ci_95": [
+              -0.298474772313605,
+              0.1684368083805546
+            ],
+            "hc3_std_err": 0.12089648419701673,
+            "hc3_pvalue": 0.5907102617515303,
+            "hc3_ci_95": [
+              -0.30197173685019374,
+              0.17193377291714343
+            ],
+            "r_squared": 0.025460665409997474,
+            "holm_pvalue": 1.0
+          }
+        },
+        "caveat": "Bangla and English samples are subject-matched, not item-parallel; slope difference is descriptive of the two samples."
+      }
+    },
+    "titullm_1b": {
+      "tpw": {
+        "status": "success",
+        "metric": "tpw",
+        "length_column": "prompt_tokens",
+        "sample_size": 60,
+        "n_clusters": 3,
+        "few_clusters_cluster_SE_unreliable": true,
+        "outcomes": {
+          "confidence": {
+            "interaction_term": "frag_z:C(language)[T.en]",
+            "coef": 0.0,
+            "std_err": 0.0,
+            "pvalue": NaN,
+            "ci_95": [
+              0.0,
+              0.0
+            ],
+            "hc3_std_err": 0.0,
+            "hc3_pvalue": NaN,
+            "hc3_ci_95": [
+              0.0,
+              0.0
+            ],
+            "r_squared": 0.03537918514070326,
+            "holm_pvalue": NaN
+          },
+          "is_correct": {
+            "interaction_term": "frag_z:C(language)[T.en]",
+            "coef": 0.0,
+            "std_err": 0.0,
+            "pvalue": NaN,
+            "ci_95": [
+              0.0,
+              0.0
+            ],
+            "hc3_std_err": 0.0,
+            "hc3_pvalue": NaN,
+            "hc3_ci_95": [
+              0.0,
+              0.0
+            ],
+            "r_squared": 0.004909983633388015,
+            "holm_pvalue": NaN
+          },
+          "overconfidence": {
+            "interaction_term": "frag_z:C(language)[T.en]",
+            "coef": 0.0,
+            "std_err": 0.0,
+            "pvalue": NaN,
+            "ci_95": [
+              0.0,
+              0.0
+            ],
+            "hc3_std_err": 0.0,
+            "hc3_pvalue": NaN,
+            "hc3_ci_95": [
+              0.0,
+              0.0
+            ],
+            "r_squared": 0.007800514792117075,
+            "holm_pvalue": NaN
+          }
+        },
+        "caveat": "Bangla and English samples are subject-matched, not item-parallel; slope difference is descriptive of the two samples."
+      },
+      "strr": {
+        "status": "success",
+        "metric": "strr",
+        "length_column": "prompt_tokens",
+        "sample_size": 60,
+        "n_clusters": 3,
+        "few_clusters_cluster_SE_unreliable": true,
+        "outcomes": {
+          "confidence": {
+            "interaction_term": "frag_z:C(language)[T.en]",
+            "coef": 0.0,
+            "std_err": 0.0,
+            "pvalue": NaN,
+            "ci_95": [
+              0.0,
+              0.0
+            ],
+            "hc3_std_err": 0.0,
+            "hc3_pvalue": NaN,
+            "hc3_ci_95": [
+              0.0,
+              0.0
+            ],
+            "r_squared": 0.03537918514070326,
+            "holm_pvalue": NaN
+          },
+          "is_correct": {
+            "interaction_term": "frag_z:C(language)[T.en]",
+            "coef": 0.0,
+            "std_err": 0.0,
+            "pvalue": NaN,
+            "ci_95": [
+              0.0,
+              0.0
+            ],
+            "hc3_std_err": 0.0,
+            "hc3_pvalue": NaN,
+            "hc3_ci_95": [
+              0.0,
+              0.0
+            ],
+            "r_squared": 0.004909983633388015,
+            "holm_pvalue": NaN
+          },
+          "overconfidence": {
+            "interaction_term": "frag_z:C(language)[T.en]",
+            "coef": 0.0,
+            "std_err": 0.0,
+            "pvalue": NaN,
+            "ci_95": [
+              0.0,
+              0.0
+            ],
+            "hc3_std_err": 0.0,
+            "hc3_pvalue": NaN,
+            "hc3_ci_95": [
+              0.0,
+              0.0
+            ],
+            "r_squared": 0.007800514792117075,
+            "holm_pvalue": NaN
+          }
+        },
+        "caveat": "Bangla and English samples are subject-matched, not item-parallel; slope difference is descriptive of the two samples."
+      },
+      "tpc": {
+        "status": "success",
+        "metric": "tpc",
+        "length_column": "prompt_tokens",
+        "sample_size": 60,
+        "n_clusters": 3,
+        "few_clusters_cluster_SE_unreliable": true,
+        "outcomes": {
+          "confidence": {
+            "interaction_term": "frag_z:C(language)[T.en]",
+            "coef": -0.01707265181798673,
+            "std_err": 0.038359727966784975,
+            "pvalue": 0.6562712838160877,
+            "ci_95": [
+              -0.09225633708963915,
+              0.058111033453665695
+            ],
+            "hc3_std_err": 0.034134871640381786,
+            "hc3_pvalue": 0.6169674864915962,
+            "hc3_ci_95": [
+              -0.0839757708500327,
+              0.049830467214059246
+            ],
+            "r_squared": 0.04143473697376199,
+            "holm_pvalue": 1.0
+          },
+          "is_correct": {
+            "interaction_term": "frag_z:C(language)[T.en]",
+            "coef": 0.04794633014853845,
+            "std_err": 0.09477570000609893,
+            "pvalue": 0.6129320114906491,
+            "ci_95": [
+              -0.13781062847298806,
+              0.23370328877006494
+            ],
+            "hc3_std_err": 0.11486896720272911,
+            "hc3_pvalue": 0.6763857069367506,
+            "hc3_ci_95": [
+              -0.1771927085101233,
+              0.2730853688072002
+            ],
+            "r_squared": 0.02276446957298006,
+            "holm_pvalue": 1.0
+          },
+          "overconfidence": {
+            "interaction_term": "frag_z:C(language)[T.en]",
+            "coef": -0.06501898196652517,
+            "std_err": 0.11911228583206084,
+            "pvalue": 0.5851601580720212,
+            "ci_95": [
+              -0.298474772313605,
+              0.1684368083805546
+            ],
+            "hc3_std_err": 0.12089648419701673,
+            "hc3_pvalue": 0.5907102617515303,
+            "hc3_ci_95": [
+              -0.30197173685019374,
+              0.17193377291714343
+            ],
+            "r_squared": 0.025460665409997474,
+            "holm_pvalue": 1.0
+          }
+        },
+        "caveat": "Bangla and English samples are subject-matched, not item-parallel; slope difference is descriptive of the two samples."
+      }
+    }
+  },
+  "note": "Cross-model comparisons are descriptive only (few models, no inferential test). Bangla/English sets are subject-matched, not item-parallel.",
+  "saved_plots": [
+    "/home/naeem/Bangla-LLM-Calibration/code/results/reliability_llama32_3b_bn.png",
+    "/home/naeem/Bangla-LLM-Calibration/code/results/reliability_llama32_3b_bn_raw.png",
+    "/home/naeem/Bangla-LLM-Calibration/code/results/reliability_llama32_3b_en.png",
+    "/home/naeem/Bangla-LLM-Calibration/code/results/reliability_llama32_3b_en_raw.png",
+    "/home/naeem/Bangla-LLM-Calibration/code/results/reliability_tigerllm_1b_bn.png",
+    "/home/naeem/Bangla-LLM-Calibration/code/results/reliability_tigerllm_1b_bn_raw.png",
+    "/home/naeem/Bangla-LLM-Calibration/code/results/reliability_tigerllm_1b_en.png",
+    "/home/naeem/Bangla-LLM-Calibration/code/results/reliability_tigerllm_1b_en_raw.png",
+    "/home/naeem/Bangla-LLM-Calibration/code/results/reliability_titullm_1b_bn.png",
+    "/home/naeem/Bangla-LLM-Calibration/code/results/reliability_titullm_1b_bn_raw.png",
+    "/home/naeem/Bangla-LLM-Calibration/code/results/reliability_titullm_1b_en.png",
+    "/home/naeem/Bangla-LLM-Calibration/code/results/reliability_titullm_1b_en_raw.png"
+  ]
+}

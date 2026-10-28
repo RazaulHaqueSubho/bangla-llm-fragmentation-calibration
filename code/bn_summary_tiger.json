@@ -1,0 +1,406 @@
+{
+  "model_key": "tigerllm_1b",
+  "model_id": "md-nishat-008/TigerLLM-1B-it",
+  "mode": "extended",
+  "benchmark": "BnMMLU",
+  "language": "bn",
+  "total_items": 1500,
+  "accuracy_percent": 34.13333333333333,
+  "validity_flag": "VALID",
+  "validity_reasons": [],
+  "collapse_gate_overridden": false,
+  "inference_signature": "few_shot|shots=4|chat=0|debias=none",
+  "diagnostics": {
+    "prediction_distribution": {
+      "C": 695,
+      "B": 573,
+      "A": 221,
+      "D": 11
+    },
+    "gold_distribution": {
+      "B": 428,
+      "C": 385,
+      "A": 369,
+      "D": 318
+    },
+    "n_nan": 0,
+    "mean_option_mass": 0.9907561453183492,
+    "n_perm_exempt": null
+  },
+  "raw_prediction_distribution": {
+    "C": 695,
+    "B": 573,
+    "A": 221,
+    "D": 11
+  },
+  "calibration_metrics_raw": {
+    "sample_size": 1500,
+    "accuracy": 0.3413333333333333,
+    "mean_confidence": 0.5053488397598267,
+    "ece_uniform_10": 0.16401550642649335,
+    "ece_quantile_10": 0.16401550642649335,
+    "mce": 0.4361867828572051,
+    "brier_score": 0.256218135697002,
+    "multiclass_brier_score": NaN,
+    "nll": NaN,
+    "bins": [
+      {
+        "bin_index": 0,
+        "bin_lower": 0.0,
+        "bin_upper": 0.1,
+        "sample_count": 0,
+        "sample_fraction": 0.0,
+        "mean_confidence": 0.05,
+        "accuracy": 0.0,
+        "calibration_gap": 0.0
+      },
+      {
+        "bin_index": 1,
+        "bin_lower": 0.1,
+        "bin_upper": 0.2,
+        "sample_count": 0,
+        "sample_fraction": 0.0,
+        "mean_confidence": 0.15000000000000002,
+        "accuracy": 0.0,
+        "calibration_gap": 0.0
+      },
+      {
+        "bin_index": 2,
+        "bin_lower": 0.2,
+        "bin_upper": 0.30000000000000004,
+        "sample_count": 7,
+        "sample_fraction": 0.004666666666666667,
+        "mean_confidence": 0.29092531970569063,
+        "accuracy": 0.14285714285714285,
+        "calibration_gap": 0.14806817684854778
+      },
+      {
+        "bin_index": 3,
+        "bin_lower": 0.30000000000000004,
+        "bin_upper": 0.4,
+        "sample_count": 358,
+        "sample_fraction": 0.23866666666666667,
+        "mean_confidence": 0.36540453668746203,
+        "accuracy": 0.30726256983240224,
+        "calibration_gap": 0.05814196685505979
+      },
+      {
+        "bin_index": 4,
+        "bin_lower": 0.4,
+        "bin_upper": 0.5,
+        "sample_count": 510,
+        "sample_fraction": 0.34,
+        "mean_confidence": 0.4464374964143716,
+        "accuracy": 0.3254901960784314,
+        "calibration_gap": 0.1209473003359402
+      },
+      {
+        "bin_index": 5,
+        "bin_lower": 0.5,
+        "bin_upper": 0.6000000000000001,
+        "sample_count": 300,
+        "sample_fraction": 0.2,
+        "mean_confidence": 0.546262012720108,
+        "accuracy": 0.30666666666666664,
+        "calibration_gap": 0.23959534605344135
+      },
+      {
+        "bin_index": 6,
+        "bin_lower": 0.6000000000000001,
+        "bin_upper": 0.7000000000000001,
+        "sample_count": 168,
+        "sample_fraction": 0.112,
+        "mean_confidence": 0.6464806177786419,
+        "accuracy": 0.39880952380952384,
+        "calibration_gap": 0.24767109396911802
+      },
+      {
+        "bin_index": 7,
+        "bin_lower": 0.7000000000000001,
+        "bin_upper": 0.8,
+        "sample_count": 94,
+        "sample_fraction": 0.06266666666666666,
+        "mean_confidence": 0.7509772492215988,
+        "accuracy": 0.4787234042553192,
+        "calibration_gap": 0.27225384496627963
+      },
+      {
+        "bin_index": 8,
+        "bin_lower": 0.8,
+        "bin_upper": 0.9,
+        "sample_count": 47,
+        "sample_fraction": 0.03133333333333333,
+        "mean_confidence": 0.8404421020061412,
+        "accuracy": 0.40425531914893614,
+        "calibration_gap": 0.4361867828572051
+      },
+      {
+        "bin_index": 9,
+        "bin_lower": 0.9,
+        "bin_upper": 1.0,
+        "sample_count": 16,
+        "sample_fraction": 0.010666666666666666,
+        "mean_confidence": 0.9318029545247555,
+        "accuracy": 0.75,
+        "calibration_gap": 0.18180295452475548
+      }
+    ]
+  },
+  "subject_accuracy": {
+    "AI & Data Science Basics": {
+      "count": 50,
+      "accuracy_percent": 44.0
+    },
+    "Algebra & Number Theory": {
+      "count": 50,
+      "accuracy_percent": 36.0
+    },
+    "Behavioral Psychology": {
+      "count": 50,
+      "accuracy_percent": 50.0
+    },
+    "Business Strategy & Management": {
+      "count": 50,
+      "accuracy_percent": 36.0
+    },
+    "Calculus & Analysis": {
+      "count": 50,
+      "accuracy_percent": 30.0
+    },
+    "Cell Biology & Genetics": {
+      "count": 50,
+      "accuracy_percent": 44.0
+    },
+    "Civics & Governance": {
+      "count": 50,
+      "accuracy_percent": 30.0
+    },
+    "Cognitive Psychology": {
+      "count": 50,
+      "accuracy_percent": 36.0
+    },
+    "Comparative Religion": {
+      "count": 50,
+      "accuracy_percent": 38.0
+    },
+    "Conceptual Physics (basic laws)": {
+      "count": 50,
+      "accuracy_percent": 32.0
+    },
+    "Corporate Finance": {
+      "count": 50,
+      "accuracy_percent": 44.0
+    },
+    "Critical Thinking": {
+      "count": 50,
+      "accuracy_percent": 30.0
+    },
+    "Ecology & Environmental Biology": {
+      "count": 50,
+      "accuracy_percent": 30.0
+    },
+    "Economics": {
+      "count": 50,
+      "accuracy_percent": 40.0
+    },
+    "Elementary Mathematics": {
+      "count": 50,
+      "accuracy_percent": 24.0
+    },
+    "Financial Accounting": {
+      "count": 50,
+      "accuracy_percent": 44.0
+    },
+    "Formal Logic": {
+      "count": 50,
+      "accuracy_percent": 28.000000000000004
+    },
+    "Geography": {
+      "count": 50,
+      "accuracy_percent": 40.0
+    },
+    "Human Biology & Anatomy": {
+      "count": 50,
+      "accuracy_percent": 34.0
+    },
+    "Inorganic Chemistry": {
+      "count": 50,
+      "accuracy_percent": 28.000000000000004
+    },
+    "Mechanics": {
+      "count": 50,
+      "accuracy_percent": 26.0
+    },
+    "Moral & Ethical Studies": {
+      "count": 50,
+      "accuracy_percent": 34.0
+    },
+    "Networking & Security": {
+      "count": 50,
+      "accuracy_percent": 42.0
+    },
+    "Organic Chemistry": {
+      "count": 50,
+      "accuracy_percent": 30.0
+    },
+    "Physical & Analytical Chemistry": {
+      "count": 50,
+      "accuracy_percent": 22.0
+    },
+    "Programming & Algorithms": {
+      "count": 50,
+      "accuracy_percent": 34.0
+    },
+    "Relativity & Modern Physics": {
+      "count": 50,
+      "accuracy_percent": 18.0
+    },
+    "Social Work & Welfare": {
+      "count": 50,
+      "accuracy_percent": 46.0
+    },
+    "Statistics: Probability & Inference": {
+      "count": 50,
+      "accuracy_percent": 22.0
+    },
+    "Thermodynamics & Electromagnetism": {
+      "count": 50,
+      "accuracy_percent": 32.0
+    }
+  },
+  "calibration_metrics": {
+    "sample_size": 1500,
+    "accuracy": 0.3413333333333333,
+    "mean_confidence": 0.5053488397598267,
+    "ece_uniform_10": 0.16401550642649335,
+    "ece_quantile_10": 0.16401550642649335,
+    "mce": 0.4361867828572051,
+    "brier_score": 0.256218135697002,
+    "multiclass_brier_score": 0.7895182367388957,
+    "nll": 1.4843451074410592,
+    "bins": [
+      {
+        "bin_index": 0,
+        "bin_lower": 0.0,
+        "bin_upper": 0.1,
+        "sample_count": 0,
+        "sample_fraction": 0.0,
+        "mean_confidence": 0.05,
+        "accuracy": 0.0,
+        "calibration_gap": 0.0
+      },
+      {
+        "bin_index": 1,
+        "bin_lower": 0.1,
+        "bin_upper": 0.2,
+        "sample_count": 0,
+        "sample_fraction": 0.0,
+        "mean_confidence": 0.15000000000000002,
+        "accuracy": 0.0,
+        "calibration_gap": 0.0
+      },
+      {
+        "bin_index": 2,
+        "bin_lower": 0.2,
+        "bin_upper": 0.30000000000000004,
+        "sample_count": 7,
+        "sample_fraction": 0.004666666666666667,
+        "mean_confidence": 0.29092531970569063,
+        "accuracy": 0.14285714285714285,
+        "calibration_gap": 0.14806817684854778
+      },
+      {
+        "bin_index": 3,
+        "bin_lower": 0.30000000000000004,
+        "bin_upper": 0.4,
+        "sample_count": 358,
+        "sample_fraction": 0.23866666666666667,
+        "mean_confidence": 0.36540453668746203,
+        "accuracy": 0.30726256983240224,
+        "calibration_gap": 0.05814196685505979
+      },
+      {
+        "bin_index": 4,
+        "bin_lower": 0.4,
+        "bin_upper": 0.5,
+        "sample_count": 510,
+        "sample_fraction": 0.34,
+        "mean_confidence": 0.4464374964143716,
+        "accuracy": 0.3254901960784314,
+        "calibration_gap": 0.1209473003359402
+      },
+      {
+        "bin_index": 5,
+        "bin_lower": 0.5,
+        "bin_upper": 0.6000000000000001,
+        "sample_count": 300,
+        "sample_fraction": 0.2,
+        "mean_confidence": 0.546262012720108,
+        "accuracy": 0.30666666666666664,
+        "calibration_gap": 0.23959534605344135
+      },
+      {
+        "bin_index": 6,
+        "bin_lower": 0.6000000000000001,
+        "bin_upper": 0.7000000000000001,
+        "sample_count": 168,
+        "sample_fraction": 0.112,
+        "mean_confidence": 0.6464806177786419,
+        "accuracy": 0.39880952380952384,
+        "calibration_gap": 0.24767109396911802
+      },
+      {
+        "bin_index": 7,
+        "bin_lower": 0.7000000000000001,
+        "bin_upper": 0.8,
+        "sample_count": 94,
+        "sample_fraction": 0.06266666666666666,
+        "mean_confidence": 0.7509772492215988,
+        "accuracy": 0.4787234042553192,
+        "calibration_gap": 0.27225384496627963
+      },
+      {
+        "bin_index": 8,
+        "bin_lower": 0.8,
+        "bin_upper": 0.9,
+        "sample_count": 47,
+        "sample_fraction": 0.03133333333333333,
+        "mean_confidence": 0.8404421020061412,
+        "accuracy": 0.40425531914893614,
+        "calibration_gap": 0.4361867828572051
+      },
+      {
+        "bin_index": 9,
+        "bin_lower": 0.9,
+        "bin_upper": 1.0,
+        "sample_count": 16,
+        "sample_fraction": 0.010666666666666666,
+        "mean_confidence": 0.9318029545247555,
+        "accuracy": 0.75,
+        "calibration_gap": 0.18180295452475548
+      }
+    ]
+  },
+  "fragmentation_stats": {
+    "overall_tpw": {
+      "mean": 1.999724411621607,
+      "std": 0.543282918820572,
+      "median": 1.8888888888888888
+    },
+    "overall_strr": {
+      "mean": 0.2535593970734543,
+      "std": 0.16749025284543317,
+      "median": 0.2307692307692307
+    },
+    "overall_strr_in_context": {
+      "mean": 0.4743486270763721,
+      "std": 0.19265950763953188,
+      "median": 0.4761904761904761
+    },
+    "overall_tpc": {
+      "mean": 0.38144093405810486,
+      "std": 0.13459912334905988,
+      "median": 0.3478260869565217
+    }
+  }
+}

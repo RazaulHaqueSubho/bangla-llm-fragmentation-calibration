@@ -1,0 +1,31 @@
+question_id,subject,subject_group,question,options,correct_answer,answer_idx,language,benchmark,has_markup,raw_index
+bn_0,biology,biology,Sample question 0 in bn?,"[""Option A"", ""Option B"", ""Option C"", ""Option D""]",A,0,bn,BnMMLU,False,0
+bn_1,elementary mathematics,elementary mathematics,Sample question 1 in bn?,"[""Option A"", ""Option B"", ""Option C"", ""Option D""]",B,1,bn,BnMMLU,False,1
+bn_2,high school psychology,high school psychology,Sample question 2 in bn?,"[""Option A"", ""Option B"", ""Option C"", ""Option D""]",C,2,bn,BnMMLU,False,2
+bn_3,biology,biology,Sample question 3 in bn?,"[""Option A"", ""Option B"", ""Option C"", ""Option D""]",D,3,bn,BnMMLU,False,3
+bn_4,elementary mathematics,elementary mathematics,Sample question 4 in bn?,"[""Option A"", ""Option B"", ""Option C"", ""Option D""]",A,0,bn,BnMMLU,False,4
+bn_5,high school psychology,high school psychology,Sample question 5 in bn?,"[""Option A"", ""Option B"", ""Option C"", ""Option D""]",B,1,bn,BnMMLU,False,5
+bn_6,biology,biology,Sample question 6 in bn?,"[""Option A"", ""Option B"", ""Option C"", ""Option D""]",C,2,bn,BnMMLU,False,6
+bn_7,elementary mathematics,elementary mathematics,Sample question 7 in bn?,"[""Option A"", ""Option B"", ""Option C"", ""Option D""]",D,3,bn,BnMMLU,False,7
+bn_8,high school psychology,high school psychology,Sample question 8 in bn?,"[""Option A"", ""Option B"", ""Option C"", ""Option D""]",A,0,bn,BnMMLU,False,8
+bn_9,biology,biology,Sample question 9 in bn?,"[""Option A"", ""Option B"", ""Option C"", ""Option D""]",B,1,bn,BnMMLU,False,9
+bn_10,elementary mathematics,elementary mathematics,Sample question 10 in bn?,"[""Option A"", ""Option B"", ""Option C"", ""Option D""]",C,2,bn,BnMMLU,False,10
+bn_11,high school psychology,high school psychology,Sample question 11 in bn?,"[""Option A"", ""Option B"", ""Option C"", ""Option D""]",D,3,bn,BnMMLU,False,11
+bn_12,biology,biology,Sample question 12 in bn?,"[""Option A"", ""Option B"", ""Option C"", ""Option D""]",A,0,bn,BnMMLU,False,12
+bn_13,elementary mathematics,elementary mathematics,Sample question 13 in bn?,"[""Option A"", ""Option B"", ""Option C"", ""Option D""]",B,1,bn,BnMMLU,False,13
+bn_14,high school psychology,high school psychology,Sample question 14 in bn?,"[""Option A"", ""Option B"", ""Option C"", ""Option D""]",C,2,bn,BnMMLU,False,14
+bn_15,biology,biology,Sample question 15 in bn?,"[""Option A"", ""Option B"", ""Option C"", ""Option D""]",D,3,bn,BnMMLU,False,15
+bn_16,elementary mathematics,elementary mathematics,Sample question 16 in bn?,"[""Option A"", ""Option B"", ""Option C"", ""Option D""]",A,0,bn,BnMMLU,False,16
+bn_17,high school psychology,high school psychology,Sample question 17 in bn?,"[""Option A"", ""Option B"", ""Option C"", ""Option D""]",B,1,bn,BnMMLU,False,17
+bn_18,biology,biology,Sample question 18 in bn?,"[""Option A"", ""Option B"", ""Option C"", ""Option D""]",C,2,bn,BnMMLU,False,18
+bn_19,elementary mathematics,elementary mathematics,Sample question 19 in bn?,"[""Option A"", ""Option B"", ""Option C"", ""Option D""]",D,3,bn,BnMMLU,False,19
+bn_20,high school psychology,high school psychology,Sample question 20 in bn?,"[""Option A"", ""Option B"", ""Option C"", ""Option D""]",A,0,bn,BnMMLU,False,20
+bn_21,biology,biology,Sample question 21 in bn?,"[""Option A"", ""Option B"", ""Option C"", ""Option D""]",B,1,bn,BnMMLU,False,21
+bn_22,elementary mathematics,elementary mathematics,Sample question 22 in bn?,"[""Option A"", ""Option B"", ""Option C"", ""Option D""]",C,2,bn,BnMMLU,False,22
+bn_23,high school psychology,high school psychology,Sample question 23 in bn?,"[""Option A"", ""Option B"", ""Option C"", ""Option D""]",D,3,bn,BnMMLU,False,23
+bn_24,biology,biology,Sample question 24 in bn?,"[""Option A"", ""Option B"", ""Option C"", ""Option D""]",A,0,bn,BnMMLU,False,24
+bn_25,elementary mathematics,elementary mathematics,Sample question 25 in bn?,"[""Option A"", ""Option B"", ""Option C"", ""Option D""]",B,1,bn,BnMMLU,False,25
+bn_26,high school psychology,high school psychology,Sample question 26 in bn?,"[""Option A"", ""Option B"", ""Option C"", ""Option D""]",C,2,bn,BnMMLU,False,26
+bn_27,biology,biology,Sample question 27 in bn?,"[""Option A"", ""Option B"", ""Option C"", ""Option D""]",D,3,bn,BnMMLU,False,27
+bn_28,elementary mathematics,elementary mathematics,Sample question 28 in bn?,"[""Option A"", ""Option B"", ""Option C"", ""Option D""]",A,0,bn,BnMMLU,False,28
+bn_29,high school psychology,high school psychology,Sample question 29 in bn?,"[""Option A"", ""Option B"", ""Option C"", ""Option D""]",B,1,bn,BnMMLU,False,29
