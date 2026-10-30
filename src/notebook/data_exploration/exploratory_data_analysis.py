@@ -35,20 +35,32 @@ def _():
 
 @app.cell
 def _(pd):
-    bnmmlu_full_failed = pd.read_csv("/home/abdullah_al_azmi/bangla-llm-fragmentation-calibration/src/data/full/bnmmlu_full_failed.csv")
+    bnmmlu_full_failed = pd.read_csv("src/data/full/bnmmlu_full_failed.csv")
     return (bnmmlu_full_failed,)
 
 
 @app.cell
 def _(pd):
-    bnmmlu_translated_to_en_from_0k_to_70k_dataset = pd.read_csv("/home/abdullah_al_azmi/bangla-llm-fragmentation-calibration/src/data/full/bnmmlu_translated_to_en_from_0k_to_70k_dataset.csv")
+    bnmmlu_translated_to_en_from_0k_to_70k_dataset = pd.read_csv("src/data/full/bnmmlu_translated_to_en_from_0k_to_70k_dataset.csv")
     return (bnmmlu_translated_to_en_from_0k_to_70k_dataset,)
 
 
 @app.cell
 def _(pd):
-    bnmmlu_translated_to_en_from_70k_to_134k_dataset= pd.read_csv("/home/abdullah_al_azmi/bangla-llm-fragmentation-calibration/src/data/full/bnmmlu_translated_to_en_from_70k_to_134k_dataset.csv")
+    bnmmlu_translated_to_en_from_70k_to_134k_dataset= pd.read_csv("src/data/full/bnmmlu_translated_to_en_from_70k_to_134k_dataset.csv")
     return (bnmmlu_translated_to_en_from_70k_to_134k_dataset,)
+
+
+@app.cell
+def _(pd):
+    bnmmlu_hard_failed = pd.read_csv("src/data/hard/bnmmlu_hard_failed.csv")
+    return (bnmmlu_hard_failed,)
+
+
+@app.cell
+def _(pd):
+    bnmmlu_hard_translated_en_from_bn_from_0k_to_15k = pd.read_csv("src/data/hard/bnmmlu_hard_translated_en_from_bn_from_0k_to_15k.csv")
+    return (bnmmlu_hard_translated_en_from_bn_from_0k_to_15k,)
 
 
 @app.cell
@@ -66,6 +78,18 @@ def _(bnmmlu_translated_to_en_from_0k_to_70k_dataset):
 @app.cell
 def _(bnmmlu_translated_to_en_from_70k_to_134k_dataset):
     bnmmlu_translated_to_en_from_70k_to_134k_dataset
+    return
+
+
+@app.cell
+def _(bnmmlu_hard_failed):
+    bnmmlu_hard_failed
+    return
+
+
+@app.cell
+def _(bnmmlu_hard_translated_en_from_bn_from_0k_to_15k):
+    bnmmlu_hard_translated_en_from_bn_from_0k_to_15k
     return
 
 
