@@ -1,6 +1,6 @@
 # BnMMLU Dataset Translation: From Bengali to English
 
-This codebase, specifically branch `data/4-question-pairs` contains the source code and the translated dataset. The source code is located on the `notebook/dataset_translation` folder where one Python and one Jupyter Notebook is present. The Python script is mainly a marimo notebook which is alternative to Jupyter Notebook, addressing the hidden state problem of Jupyter Notebook.
+This codebase, specifically branch `data/4-question-pairs` contains the source code and the translated dataset of the original dataset named [BnMMLU](https://huggingface.co/datasets/samanjoy2/BnMMLU). The source code is located on the `notebook/dataset_translation` folder where one Python and one Jupyter Notebook is present. The Python script is mainly a marimo notebook which is alternative to Jupyter Notebook, addressing the hidden state problem of Jupyter Notebook.
 
 ## Repository Layout
 
