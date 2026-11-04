@@ -30,3 +30,10 @@ This codebase, specifically branch `data/4-question-pairs` contains the source c
             ├── bangla_to_english_translation.ipynb                         # an exported copy of marimo notebook in jupyter notebook
             └── bangla_to_english_translation.py                            # marimo notebook that enables this translation or source pipeline
 ```
+
+## References
+
+- [molab](https://molab.marimo.io)
+- [marimo](https://marimo.io)
+- [BnMMLU](https://huggingface.co/datasets/bangla-ai/bnmmlu)
+- [https://huggingface.co/google/gemma-4-31B-it](https://huggingface.co/google/gemma-4-31B-it)

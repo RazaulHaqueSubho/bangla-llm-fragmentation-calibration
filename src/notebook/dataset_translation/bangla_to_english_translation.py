@@ -19,19 +19,20 @@ app = marimo.App(width="medium", auto_download=["html"])
 @app.cell(hide_code=True)
 def _(mo):
     mo.md(r"""
-    This notebook translates the Bengali BnMMLU multiple choice benchmark into English with a Gemma model and saves the results to CSV files. 
+    This notebook translates the Bengali BnMMLU multiple choice benchmark into English with a Gemma model and saves the results to CSV files.
     """)
     return
 
 
 @app.cell
 def _():
-    import os
-    import re
     import csv
     import json
-    import marimo as mo
+    import os
+    import re
     from pathlib import Path
+
+    import marimo as mo
     from datasets import load_dataset
     from huggingface_hub import login
     from transformers import AutoModelForMultimodalLM, AutoProcessor
@@ -94,10 +95,12 @@ def _(json, system_prompt):
         translated_system_prompt = system_prompt.replace(
             "SUBJECT", dataset_row["subject_name"]
         ).replace("NUM", str(len(dataset_row["options"])))
+
         user_payload = json.dumps(
             {"question": dataset_row["question"], "options": dataset_row["options"]},
             ensure_ascii=False,
         )
+
         return [
             {"role": "system", "content": translated_system_prompt},
             {"role": "user", "content": user_payload},
@@ -110,7 +113,9 @@ def _(json, system_prompt):
 def _(json, re):
     def parse_reply(model_reply, expected_option_count):
         reply_text = re.sub(r"^```(?:json)?|```$", "", model_reply.strip()).strip()
+
         parsed_reply = json.loads(reply_text)
+
         if not isinstance(parsed_reply, dict) or set(parsed_reply) != {
             "question",
             "options",
@@ -121,7 +126,9 @@ def _(json, re):
             or not parsed_reply["question"].strip()
         ):
             raise ValueError("question must be a non-empty string")
+
         translated_options = parsed_reply["options"]
+
         if not (
             isinstance(translated_options, list)
             and len(translated_options) == expected_option_count
@@ -144,7 +151,11 @@ def _(Path, build_messages, csv, parse_reply):
         dataset_config, dataset_rows, generate_translation, output_path
     ):
         csv_output_path = Path(output_path)
-        checkpoint_path = csv_output_path.with_name(csv_output_path.stem + ".checkpoint")
+
+        checkpoint_path = csv_output_path.with_name(
+            csv_output_path.stem + ".checkpoint"
+        )
+
         failed_csv_path = csv_output_path.with_name(
             csv_output_path.stem.replace("_en", "") + "_failed.csv"
         )
@@ -175,7 +186,9 @@ def _(Path, build_messages, csv, parse_reply):
             "option_d_bn",
         ]
 
-        pad_options = lambda option_list: list(option_list) + [""] * (4 - len(option_list))
+        pad_options = lambda option_list: (
+            list(option_list) + [""] * (4 - len(option_list))
+        )
 
         # --- Determine start index ---
         start_index = 0
@@ -184,16 +197,22 @@ def _(Path, build_messages, csv, parse_reply):
             # Fast path: checkpoint written after every row, so just read it
             try:
                 start_index = int(checkpoint_path.read_text().strip()) + 1
-                print(f"[{dataset_config}] Resuming from dataset index {start_index} (checkpoint)")
+                print(
+                    f"[{dataset_config}] Resuming from dataset index {start_index} (checkpoint)"
+                )
             except ValueError:
                 pass
 
         elif csv_output_path.exists():
             # One-time migration from old format: scan output CSV once, find resume
             # point, and capture any previously-failed rows into the failed CSV.
-            print(f"[{dataset_config}] No checkpoint found; scanning output CSV to find resume point...")
+            print(
+                f"[{dataset_config}] No checkpoint found; scanning output CSV to find resume point..."
+            )
             completed_serials = set()
+
             last_serial = None
+
             with csv_output_path.open(encoding="utf-8-sig", newline="") as fh:
                 for existing_row in csv.DictReader(fh):
                     completed_serials.add(str(existing_row["Unique_Serial"]))
@@ -216,18 +235,24 @@ def _(Path, build_messages, csv, parse_reply):
                     if str(dataset_rows[i]["Unique_Serial"]) not in completed_serials
                 ]
                 if missed and not failed_csv_path.exists():
-                    with failed_csv_path.open("w", encoding="utf-8-sig", newline="") as fh:
+                    with failed_csv_path.open(
+                        "w", encoding="utf-8-sig", newline=""
+                    ) as fh:
                         w = csv.writer(fh)
                         w.writerow(failed_header)
                         for row in missed:
-                            w.writerow([
-                                row["Unique_Serial"],
-                                row["subject_name"],
-                                row["correct_answer"],
-                                row["question"],
-                                *pad_options(row["options"]),
-                            ])
-                    print(f"[{dataset_config}] Captured {len(missed)} previously-failed rows → {failed_csv_path.name}")
+                            w.writerow(
+                                [
+                                    row["Unique_Serial"],
+                                    row["subject_name"],
+                                    row["correct_answer"],
+                                    row["question"],
+                                    *pad_options(row["options"]),
+                                ]
+                            )
+                    print(
+                        f"[{dataset_config}] Captured {len(missed)} previously-failed rows → {failed_csv_path.name}"
+                    )
 
                 print(f"[{dataset_config}] Resuming from dataset index {start_index}")
 
@@ -236,8 +261,12 @@ def _(Path, build_messages, csv, parse_reply):
         failed_is_new = not failed_csv_path.exists()
 
         with (
-            csv_output_path.open("a", encoding="utf-8-sig" if output_is_new else "utf-8", newline="") as out_fh,
-            failed_csv_path.open("a", encoding="utf-8-sig" if failed_is_new else "utf-8", newline="") as fail_fh,
+            csv_output_path.open(
+                "a", encoding="utf-8-sig" if output_is_new else "utf-8", newline=""
+            ) as out_fh,
+            failed_csv_path.open(
+                "a", encoding="utf-8-sig" if failed_is_new else "utf-8", newline=""
+            ) as fail_fh,
         ):
             writer = csv.writer(out_fh)
             fail_writer = csv.writer(fail_fh)
@@ -255,27 +284,35 @@ def _(Path, build_messages, csv, parse_reply):
                     translated_question, translated_options = parse_reply(
                         raw_translation, len(dataset_row["options"])
                     )
-                    writer.writerow([
-                        serial,
-                        dataset_row["subject_name"],
-                        dataset_row["correct_answer"],
-                        translated_question,
-                        *pad_options(translated_options),
-                        dataset_row["question"],
-                        *pad_options(dataset_row["options"]),
-                    ])
+                    writer.writerow(
+                        [
+                            serial,
+                            dataset_row["subject_name"],
+                            dataset_row["correct_answer"],
+                            translated_question,
+                            *pad_options(translated_options),
+                            dataset_row["question"],
+                            *pad_options(dataset_row["options"]),
+                        ]
+                    )
                     out_fh.flush()
-                    print(f"[{dataset_config}] {row_index + 1}/{len(dataset_rows)} serial={serial} ok")
+                    print(
+                        f"[{dataset_config}] {row_index + 1}/{len(dataset_rows)} serial={serial} ok"
+                    )
                 except Exception as translation_error:
-                    fail_writer.writerow([
-                        serial,
-                        dataset_row["subject_name"],
-                        dataset_row["correct_answer"],
-                        dataset_row["question"],
-                        *pad_options(dataset_row["options"]),
-                    ])
+                    fail_writer.writerow(
+                        [
+                            serial,
+                            dataset_row["subject_name"],
+                            dataset_row["correct_answer"],
+                            dataset_row["question"],
+                            *pad_options(dataset_row["options"]),
+                        ]
+                    )
                     fail_fh.flush()
-                    print(f"[{dataset_config}] {row_index + 1}/{len(dataset_rows)} serial={serial} FAILED: {translation_error}")
+                    print(
+                        f"[{dataset_config}] {row_index + 1}/{len(dataset_rows)} serial={serial} FAILED: {translation_error}"
+                    )
 
                 # Advance checkpoint after every row (success or failure)
                 checkpoint_path.write_text(str(row_index))
@@ -299,7 +336,12 @@ def _(Path, build_messages, csv, parse_reply):
                 serial = failed_row["Unique_Serial"]
                 options_bn = [
                     failed_row[k]
-                    for k in ("option_a_bn", "option_b_bn", "option_c_bn", "option_d_bn")
+                    for k in (
+                        "option_a_bn",
+                        "option_b_bn",
+                        "option_c_bn",
+                        "option_d_bn",
+                    )
                     if failed_row.get(k)
                 ]
                 retry_dataset_row = {
@@ -311,24 +353,30 @@ def _(Path, build_messages, csv, parse_reply):
                 }
                 raw_translation = ""
                 try:
-                    raw_translation = generate_translation(build_messages(retry_dataset_row))
+                    raw_translation = generate_translation(
+                        build_messages(retry_dataset_row)
+                    )
                     translated_question, translated_options = parse_reply(
                         raw_translation, len(options_bn)
                     )
-                    writer.writerow([
-                        serial,
-                        retry_dataset_row["subject_name"],
-                        retry_dataset_row["correct_answer"],
-                        translated_question,
-                        *pad_options(translated_options),
-                        retry_dataset_row["question"],
-                        *pad_options(options_bn),
-                    ])
+                    writer.writerow(
+                        [
+                            serial,
+                            retry_dataset_row["subject_name"],
+                            retry_dataset_row["correct_answer"],
+                            translated_question,
+                            *pad_options(translated_options),
+                            retry_dataset_row["question"],
+                            *pad_options(options_bn),
+                        ]
+                    )
                     out_fh.flush()
                     print(f"[{dataset_config}] retry serial={serial} ok")
                 except Exception as retry_error:
                     still_failed.append(failed_row)
-                    print(f"[{dataset_config}] retry serial={serial} FAILED again: {retry_error}")
+                    print(
+                        f"[{dataset_config}] retry serial={serial} FAILED again: {retry_error}"
+                    )
 
         # Rewrite the failed CSV with only rows that still couldn't be translated
         with failed_csv_path.open("w", encoding="utf-8-sig", newline="") as fh:
@@ -341,7 +389,9 @@ def _(Path, build_messages, csv, parse_reply):
             failed_csv_path.unlink()
             print(f"[{dataset_config}] All failed rows retried successfully!")
         else:
-            print(f"[{dataset_config}] {len(still_failed)} rows still failed after retry.")
+            print(
+                f"[{dataset_config}] {len(still_failed)} rows still failed after retry."
+            )
 
     return (run_translation,)
 
@@ -349,6 +399,7 @@ def _(Path, build_messages, csv, parse_reply):
 @app.cell
 def _(AutoModelForMultimodalLM, AutoProcessor):
     processor = AutoProcessor.from_pretrained("google/gemma-4-31B-it")
+
     model = AutoModelForMultimodalLM.from_pretrained(
         "google/gemma-4-31B-it", dtype="auto", device_map="auto"
     )
@@ -362,10 +413,13 @@ def _(AutoModelForMultimodalLM, AutoProcessor):
             add_generation_prompt=True,
             enable_thinking=False,
         ).to(model.device)
+
         input_token_count = model_inputs["input_ids"].shape[-1]
+
         generated_tokens = model.generate(
             **model_inputs, max_new_tokens=1024, do_sample=False
         )
+
         return processor.decode(
             generated_tokens[0][input_token_count:], skip_special_tokens=True
         )

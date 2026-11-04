@@ -7,7 +7,15 @@ authors = [
     { name = "iam-abdullah-al-azmi", email = "azmi@iut-dhaka.edu" }
 ]
 requires-python = ">=3.12"
-dependencies = ["numpy", "marimo", "pandas", "matplotlib"]
+dependencies = [
+    "numpy",
+    "pandas",
+    "marimo",
+    "datasets",
+    "matplotlib",
+    "transformers",
+    "huggingface_hub",
+]
 
 [build-system]
 requires = ["uv_build>=0.13.4,<0.14.0"]
