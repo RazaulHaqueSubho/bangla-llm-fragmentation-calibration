@@ -9,8 +9,6 @@ The active writing team currently consists of:
 - **Iqramul Hasan Naeem** 
 - **Abdullah al Azmi** 
 
-Do not add Ayetullah or any other person to the author list unless the team confirms authorship and contribution. Confirm author order, affiliations, emails, and ORCIDs together before submission.
-
 ## Files
 
 - `main.tex`: detailed Springer LNCS manuscript structure with section/subsection prompts, equations, and a figure/table plan.
