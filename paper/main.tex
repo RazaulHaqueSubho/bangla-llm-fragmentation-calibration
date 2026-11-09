@@ -1,0 +1,223 @@
+% Springer Lecture Notes in Computer Science (LNCS) manuscript skeleton
+% Project: Does Tokenization Fragmentation Predict Miscalibration in Bangla LLMs?
+% Compile with the Springer LNCS class file (llncs.cls) and BibTeX.
+% Keep this as the single main .tex manuscript; place figures beside this file.
+
+\documentclass[runningheads]{llncs}
+
+\usepackage[T1]{fontenc}
+\usepackage{amsmath,amssymb}
+\usepackage{graphicx}
+\usepackage{booktabs}
+\usepackage{multirow}
+\usepackage{url}
+\usepackage{hyperref}
+\usepackage{xurl}
+\hypersetup{
+  colorlinks=true,
+  linkcolor=black,
+  citecolor=black,
+  urlcolor=blue
+}
+\urlstyle{rm}
+
+\begin{document}
+
+\title{Does Tokenization Fragmentation Predict Miscalibration in Bangla LLMs? A Cross-Lingual Study}
+\titlerunning{Tokenization Fragmentation and LLM Calibration}
+
+% Author order follows the project README / team plan.
+% TODO: Confirm spelling, author order, affiliations, email addresses, and ORCIDs with all authors.
+\author{Ayetullah Khomane
+  \and Md. Razaul Haque Subho
+  \and Dipto Karmakar
+  \and Naeem Hossain
+  \and Abdullah al Azmi}
+\authorrunning{Khomane et al.}
+
+% TODO: Replace this placeholder with the correct institutional affiliations.
+% Use \and between distinct affiliations and add \email{} where appropriate.
+\institute{Affiliations and corresponding-author details to be confirmed.}
+
+\maketitle
+
+\begin{abstract}
+% TODO: Write a 150--250 word abstract after the methodology and results are frozen.
+% Include: motivation, research question, datasets/languages, model panel,
+% fragmentation metrics, calibration metrics, main empirical findings, and contribution.
+% Do not report preliminary branch results as final findings.
+\end{abstract}
+
+\keywords{Large language models \and Bangla \and Tokenization \and
+Tokenization fragmentation \and Confidence calibration \and Cross-lingual evaluation}
+
+\section{Introduction}
+% Suggested content:
+% 1. Background: LLM use in Bangla and other lower-resource languages.
+% 2. Why tokenization fragmentation may matter for language representation.
+% 3. Why confidence calibration matters in addition to accuracy.
+% 4. Research problem, contributions, and paper structure.
+% Keep the framing associational; do not imply causality.
+
+\section{Background and Related Work}
+\subsection{Tokenization and Fragmentation}
+% Review tokenizer families, subword segmentation, language coverage,
+% and prior fragmentation measures. Cite primary sources.
+
+\subsection{Confidence Calibration in Large Language Models}
+% Review confidence extraction, calibration evaluation, and limitations
+% of ECE, Brier score, and other selected measures.
+
+\subsection{Bangla Language Models and Cross-Lingual Evaluation}
+% Cover relevant Bangla LLMs, BnMMLU, English comparison data,
+% and the distinction between translated matched items and independent MMLU items.
+
+\section{Research Questions}
+% Confirm the final wording with the team before submission.
+\begin{itemize}
+  \item \textbf{RQ1:} How does tokenization fragmentation differ between Bangla and English for the selected LLM tokenizers?
+  \item \textbf{RQ2:} Is tokenization fragmentation associated with confidence-calibration errors in Bangla LLM evaluations?
+  \item \textbf{RQ3:} Does the observed association vary across models, subjects, or language conditions?
+\end{itemize}
+
+% TODO: Add hypotheses only if they are specified and justified in the study protocol.
+
+\section{Models and Datasets}
+\subsection{Datasets and Language Conditions}
+% Document the exact dataset repository, configuration, split, version/revision,
+% row filtering, duplicate handling, translation provenance, and item matching.
+% Distinguish:
+% (a) original Bangla BnMMLU items,
+% (b) English translations of the same BnMMLU items,
+% (c) independent English MMLU items, if used.
+% Do not describe independent MMLU questions as matched translations.
+
+\subsection{Model Selection and Identity}
+% Insert the final frozen model panel. Record exact Hugging Face repository IDs,
+% immutable revisions, tokenizer class, vocabulary size/hash, precision,
+% context limit, and access date.
+% The current branches contain different panels/model versions; reconcile before
+% reporting a single definitive panel.
+
+\subsection{Data Quality and Preprocessing}
+% Explain schema validation, invalid rows, repeated questions, conflicting labels,
+% Unicode normalization, whitespace handling, and any exclusions.
+% Report counts from the exact dataset snapshot used in the final analysis.
+
+\section{Tokenization Fragmentation Measurement}
+\subsection{Tokenizer-Level Measurement}
+% State whether the question alone or the full question-plus-options text is measured.
+% Record tokenizer repository and revision. Do not load model weights for tokenizer-only
+% audits unless the protocol explicitly requires model inference.
+
+\subsection{Tokens per Word}
+% Proposed primary measure; confirm the exact word-counting and normalization rules.
+\begin{equation}
+  \mathrm{TPW}(x) =
+  \frac{N_{\mathrm{tokens}}(x)}
+       {N_{\mathrm{words}}(x)}.
+  \label{eq:tpw}
+\end{equation}
+% TODO: Define N_tokens, N_words, punctuation treatment, whitespace/token edge cases,
+% special-token handling, empty strings, and Unicode normalization.
+
+\subsection{Subword Token Retention Ratio}
+% TODO: Include STRR only after its source definition and implementation are verified.
+% State numerator, denominator, treatment of whole-word tokens, and interpretation.
+% Do not invent or assume a definition from the acronym alone.
+
+\subsection{Worked Tokenization Examples}
+% Insert the team's checked Bangla-English examples.
+% For each pair, report pair ID, exact text, tokenizer/model revision,
+% token sequence or decoded pieces, token count, word count, and metric values.
+% Keep model inference separate: tokenizer examples do not require inference.
+
+\section{Confidence and Calibration Methodology}
+\subsection{Answer Probability and Prediction}
+% Specify how scores for options A--D are obtained, normalized, and converted
+% into the predicted answer and confidence. Document prompt format, chat template,
+% label-token handling, and any option-order rotation.
+
+\subsection{Accuracy and Brier Score}
+% Define multiclass accuracy and the exact Brier-score convention used.
+\begin{equation}
+  \mathrm{Brier} =
+  \frac{1}{N}\sum_{i=1}^{N}\sum_{k=1}^{K}
+  (p_{ik}-y_{ik})^2,
+  \label{eq:brier}
+\end{equation}
+where $p_{ik}$ is the predicted probability for class $k$ on item $i$,
+and $y_{ik}$ is the corresponding one-hot target.
+
+\subsection{Expected Calibration Error}
+% Freeze the number of bins, interval boundaries, endpoint convention,
+% confidence definition, and empty-bin handling before final evaluation.
+\begin{equation}
+  \mathrm{ECE} =
+  \sum_{b=1}^{B}\frac{|I_b|}{N}
+  \left|\mathrm{acc}(I_b)-\mathrm{conf}(I_b)\right|.
+  \label{eq:ece}
+\end{equation}
+% TODO: State whether raw or temperature-scaled probabilities are primary.
+% If temperature scaling is used, document the fitting protocol and data separation.
+
+\subsection{Reliability Analysis}
+% Include reliability diagrams and any additional calibration diagnostics.
+% Avoid asserting a universal ECE threshold for miscalibration.
+
+\section{Experimental Setup}
+\subsection{Evaluation Protocol}
+% Record hardware, software/package versions, precision, batch size, random seed,
+% prompt templates, checkpoint/resume behaviour, and model revision.
+% Separate measured settings from estimates.
+
+\subsection{Statistical Analysis}
+% Specify the unit of analysis, model/subject controls, association tests or regression,
+% confidence intervals, clustering, multiple-comparison correction, and missing-data rules.
+% Account for repeated or duplicated question content where appropriate.
+% Treat findings as observational associations, not causal effects.
+
+\section{Results}
+\subsection{Dataset and Model Coverage}
+% TODO: Add final sample counts and model coverage table.
+
+\subsection{Bangla-English Fragmentation Comparison}
+% TODO: Add TPW/verified STRR summaries and paired comparisons.
+
+\subsection{Accuracy and Calibration Results}
+% TODO: Add accuracy, Brier, ECE, and reliability results from the frozen protocol.
+
+\subsection{Fragmentation and Calibration Association}
+% TODO: Report effect sizes, uncertainty intervals, and sensitivity analyses.
+% Do not interpret descriptive trends as evidence of causation.
+
+\section{Discussion}
+% Interpret the findings against the research questions and related work.
+% Discuss model-specific and language-specific patterns, alternative explanations,
+% and the distinction between accuracy and calibration.
+
+\section{Limitations}
+% Discuss dataset translation quality, language coverage, model panel differences,
+% prompt dependence, tokenizer comparability, sample dependence, and statistical power.
+% Include any unresolved limitations supported by the final experiment.
+
+\section{Conclusion and Future Work}
+% Summarize what the study establishes, what remains uncertain,
+% and the most useful next steps.
+
+\begin{credits}
+\subsubsection{\ackname}
+% TODO: Add funding and acknowledgements, or remove this paragraph if not applicable.
+
+\subsubsection{\discintname}
+The authors declare that they have no competing interests relevant to this work.
+% TODO: Confirm this statement with every author before submission.
+\end{credits}
+
+% Optional: Add a data/code availability statement if required by the venue.
+% TODO: Provide stable repository release/commit and dataset access details.
+
+\bibliographystyle{splncs04}
+\bibliography{references}
+
+\end{document}
