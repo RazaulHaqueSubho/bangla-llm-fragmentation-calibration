@@ -1,7 +1,6 @@
-% Springer Lecture Notes in Computer Science (LNCS) manuscript skeleton
-% Project: Does Tokenization Fragmentation Predict Miscalibration in Bangla LLMs?
-% Compile with the Springer LNCS class file (llncs.cls) and BibTeX.
-% Keep this as the single main .tex manuscript; place figures beside this file.
+% Springer LNCS manuscript skeleton for the Bangla LLM fragmentation/calibration study.
+% All TODOs must be resolved from the final frozen experiment. Do not invent results.
+% Compile with the official Springer LNCS llncs.cls and splncs04.bst.
 
 \documentclass[runningheads]{llncs}
 
@@ -13,12 +12,8 @@
 \usepackage{url}
 \usepackage{hyperref}
 \usepackage{xurl}
-\hypersetup{
-  colorlinks=true,
-  linkcolor=black,
-  citecolor=black,
-  urlcolor=blue
-}
+\usepackage{microtype}
+\hypersetup{colorlinks=true,linkcolor=black,citecolor=black,urlcolor=blue}
 \urlstyle{rm}
 
 \begin{document}
@@ -26,198 +21,325 @@
 \title{Does Tokenization Fragmentation Predict Miscalibration in Bangla LLMs? A Cross-Lingual Study}
 \titlerunning{Tokenization Fragmentation and LLM Calibration}
 
-% Author order follows the project README / team plan.
-% TODO: Confirm spelling, author order, affiliations, email addresses, and ORCIDs with all authors.
-\author{Ayetullah Khomane
-  \and Md. Razaul Haque Subho
-  \and Dipto Karmakar
-  \and Naeem Hossain
-  \and Abdullah al Azmi}
-\authorrunning{Khomane et al.}
-
-% TODO: Replace this placeholder with the correct institutional affiliations.
-% Use \and between distinct affiliations and add \email{} where appropriate.
-\institute{Affiliations and corresponding-author details to be confirmed.}
+% Current working team: Subho, Naeem, and Abdullah.
+% Confirm exact full names, author order, affiliations, emails, and ORCIDs with all three authors.
+\author{Md. Razaul Haque Subho \and Naeem [Full Name to Confirm] \and Abdullah [Full Name to Confirm]}
+\authorrunning{Subho et al.}
+\institute{Affiliations to be confirmed by the authors.}
 
 \maketitle
 
 \begin{abstract}
-% TODO: Write a 150--250 word abstract after the methodology and results are frozen.
-% Include: motivation, research question, datasets/languages, model panel,
-% fragmentation metrics, calibration metrics, main empirical findings, and contribution.
-% Do not report preliminary branch results as final findings.
+% Write this LAST, after results are frozen (approximately 150--250 words).
+% Include: problem, gap, research questions, dataset and model panel, measurement
+% protocol, principal quantitative findings with uncertainty, and contribution.
+% Do not include unverified or preliminary branch results.
 \end{abstract}
 
-\keywords{Large language models \and Bangla \and Tokenization \and
-Tokenization fragmentation \and Confidence calibration \and Cross-lingual evaluation}
+\keywords{Large language models \and Bangla \and Tokenization \and Fragmentation \and
+Confidence calibration \and Cross-lingual evaluation}
 
 \section{Introduction}
-% Suggested content:
-% 1. Background: LLM use in Bangla and other lower-resource languages.
-% 2. Why tokenization fragmentation may matter for language representation.
-% 3. Why confidence calibration matters in addition to accuracy.
-% 4. Research problem, contributions, and paper structure.
-% Keep the framing associational; do not imply causality.
+\subsection{Background and Motivation}
+% Explain the use of LLMs for Bangla and why language representation matters.
+% Introduce subword tokenization and confidence calibration in accessible terms.
 
-\section{Background and Related Work}
-\subsection{Tokenization and Fragmentation}
-% Review tokenizer families, subword segmentation, language coverage,
-% and prior fragmentation measures. Cite primary sources.
+\subsection{Problem Statement}
+% State the problem precisely: whether item-level tokenization fragmentation is
+% associated with model confidence/calibration behaviour on Bangla tasks.
+% Distinguish accuracy (being correct) from calibration (confidence matching accuracy).
 
-\subsection{Confidence Calibration in Large Language Models}
-% Review confidence extraction, calibration evaluation, and limitations
-% of ECE, Brier score, and other selected measures.
+\subsection{Research Gap}
+% Support the gap with the reviewed literature. Do not claim that no prior work exists
+% unless the literature review justifies that statement.
+% State what prior tokenizer studies and Bangla LLM evaluations do not jointly test.
 
-\subsection{Bangla Language Models and Cross-Lingual Evaluation}
-% Cover relevant Bangla LLMs, BnMMLU, English comparison data,
-% and the distinction between translated matched items and independent MMLU items.
-
-\section{Research Questions}
-% Confirm the final wording with the team before submission.
+\subsection{Research Questions and Contributions}
 \begin{itemize}
-  \item \textbf{RQ1:} How does tokenization fragmentation differ between Bangla and English for the selected LLM tokenizers?
-  \item \textbf{RQ2:} Is tokenization fragmentation associated with confidence-calibration errors in Bangla LLM evaluations?
-  \item \textbf{RQ3:} Does the observed association vary across models, subjects, or language conditions?
+  \item \textbf{RQ1:} How does tokenization fragmentation differ between Bangla and English under the selected model tokenizers?
+  \item \textbf{RQ2:} Is item-level tokenization fragmentation associated with confidence and calibration behaviour on Bangla evaluation items?
+  \item \textbf{RQ3:} Does this association vary across models, subjects, or language conditions?
 \end{itemize}
+% List 2--4 concrete contributions only after the protocol and evidence are established.
 
-% TODO: Add hypotheses only if they are specified and justified in the study protocol.
+\subsection{Paper Organization}
+% One short paragraph explaining the remaining sections.
+
+\section{Related Work}
+\subsection{Subword Tokenization and Multilingual Tokenizer Behaviour}
+% Cover BPE, WordPiece, SentencePiece/unigram or relevant families as applicable.
+% Explain vocabulary sharing, language coverage, and fragmentation.
+% Cite primary papers and report their limitations accurately.
+
+\subsection{Measuring Tokenization Fragmentation}
+% Review TPW and other measures used in the literature.
+% Explain what each measure captures and what it misses.
+% STRR must not be included as a settled metric until its exact source definition
+% and implementation have been checked.
+
+\subsection{Bangla LLMs and Bangla Benchmarking}
+% Review the selected Bangla-capable models and BnMMLU.
+% Distinguish original Bangla benchmark items from translated English counterparts.
+
+\subsection{Confidence Estimation and Calibration in LLMs}
+% Review confidence extraction from multiple-choice logits/probabilities,
+% ECE, Brier score, reliability diagrams, and relevant calibration work.
+
+\subsection{Summary of the Gap}
+% End the section by stating the specific gap addressed by this paper.
+
+\section{Study Design and Research Questions}
+\subsection{Study Overview}
+% Describe the unit of comparison: model x item x language condition.
+% Clarify which comparisons are paired (same source question translated)
+% and which are unpaired (independent English benchmark questions).
+
+\subsection{Hypotheses}
+% Add directional hypotheses only if agreed before confirmatory analysis.
+% Otherwise label analyses exploratory and avoid post-hoc hypotheses.
 
 \section{Models and Datasets}
-\subsection{Datasets and Language Conditions}
-% Document the exact dataset repository, configuration, split, version/revision,
-% row filtering, duplicate handling, translation provenance, and item matching.
-% Distinguish:
-% (a) original Bangla BnMMLU items,
-% (b) English translations of the same BnMMLU items,
-% (c) independent English MMLU items, if used.
-% Do not describe independent MMLU questions as matched translations.
+\subsection{Dataset Sources and Versions}
+% Give dataset name, source URL/citation, repository commit/revision, split/configuration,
+% license/access conditions, and date retrieved.
 
-\subsection{Model Selection and Identity}
-% Insert the final frozen model panel. Record exact Hugging Face repository IDs,
-% immutable revisions, tokenizer class, vocabulary size/hash, precision,
-% context limit, and access date.
-% The current branches contain different panels/model versions; reconcile before
-% reporting a single definitive panel.
+\subsection{Bangla and English Evaluation Conditions}
+% Define:
+% (1) original Bangla BnMMLU items;
+% (2) English translations of those same items, if used;
+% (3) independent English MMLU items, if used.
+% Never describe independent English questions as translations or paired examples.
 
-\subsection{Data Quality and Preprocessing}
-% Explain schema validation, invalid rows, repeated questions, conflicting labels,
-% Unicode normalization, whitespace handling, and any exclusions.
-% Report counts from the exact dataset snapshot used in the final analysis.
+\subsection{Question Pairing and Translation Quality}
+% Explain pair IDs, translation procedure, option/answer-label preservation,
+% human review, adjudication, exclusions, and unresolved translation issues.
+% Report how many source items have valid matched translations.
+
+\subsection{Model and Tokenizer Selection}
+% For every model record exact HF repository ID, immutable revision/commit,
+% tokenizer class, vocabulary size, model size, context length, and access date.
+% Reconcile the model panels in the existing branches before choosing the final panel.
+
+\subsection{Data Cleaning and Preprocessing}
+% Document row validation, duplicates, missing text/labels, invalid options,
+% Unicode normalization (e.g., NFC if selected), whitespace, punctuation,
+% and every exclusion rule. Report counts before and after each filter.
+
+% Suggested Table 1: dataset composition and filtering.
+% Columns: Dataset/condition | Language | Original rows | Valid rows | Paired rows | Excluded rows | Reason.
+% Add only counts produced by the final frozen data snapshot.
+
+\subsection{Ethics and Data Handling}
+% State whether the datasets are public, whether personal data is present,
+% and any relevant licensing or responsible-use considerations.
 
 \section{Tokenization Fragmentation Measurement}
-\subsection{Tokenizer-Level Measurement}
-% State whether the question alone or the full question-plus-options text is measured.
-% Record tokenizer repository and revision. Do not load model weights for tokenizer-only
-% audits unless the protocol explicitly requires model inference.
+\subsection{Text Unit Being Tokenized}
+% State exactly whether the tokenizer receives question only, question plus options,
+% or another fixed string. Use the same rule across models and languages.
 
-\subsection{Tokens per Word}
-% Proposed primary measure; confirm the exact word-counting and normalization rules.
+\subsection{Tokenizer Execution and Reproducibility}
+% Tokenizer-only measurement does not require model inference.
+% Record tokenizer repository/revision, library version, special-token settings,
+% add_special_tokens setting, and exact input construction.
+
+\subsection{Word Counting and Normalization}
+% Define word segmentation for Bangla and English, punctuation treatment,
+% whitespace, digits, symbols, Unicode normalization, zero-word strings,
+% and whether special tokens are excluded. These rules must be shared by all authors.
+
+\subsection{Tokens per Word (TPW)}
+% Primary proposed fragmentation measure. Confirm final counting rules before analysis.
 \begin{equation}
   \mathrm{TPW}(x) =
   \frac{N_{\mathrm{tokens}}(x)}
        {N_{\mathrm{words}}(x)}.
   \label{eq:tpw}
 \end{equation}
-% TODO: Define N_tokens, N_words, punctuation treatment, whitespace/token edge cases,
-% special-token handling, empty strings, and Unicode normalization.
+% Explain aggregation: item-level TPW first; then report distributions/summary
+% statistics by model, language, and subject. Do not report only one global mean.
 
-\subsection{Subword Token Retention Ratio}
-% TODO: Include STRR only after its source definition and implementation are verified.
-% State numerator, denominator, treatment of whole-word tokens, and interpretation.
-% Do not invent or assume a definition from the acronym alone.
+\subsection{Subword Token Retention Ratio (STRR)}
+% Include only after Naeem/team verifies the exact definition from its source.
+% State formula, numerator, denominator, token/word alignment method,
+% treatment of whole-word tokens, and implementation tests.
+% If the definition cannot be verified, omit STRR from primary analyses and
+% explain this decision rather than inventing a formula.
 
 \subsection{Worked Tokenization Examples}
-% Insert the team's checked Bangla-English examples.
-% For each pair, report pair ID, exact text, tokenizer/model revision,
-% token sequence or decoded pieces, token count, word count, and metric values.
-% Keep model inference separate: tokenizer examples do not require inference.
+% Present five manually checked Bangla-English pairs.
+% For each: pair ID, exact input text, tokenizer/model revision, token pieces,
+% token count, word count, TPW, and verified STRR (if retained).
+% Do not include model answer/inference output in this tokenizer-only table.
+
+% Suggested Table 2: five worked examples.
+% Columns: Pair ID | Language | Text | Token pieces | #Tokens | #Words | TPW | STRR.
 
 \section{Confidence and Calibration Methodology}
-\subsection{Answer Probability and Prediction}
-% Specify how scores for options A--D are obtained, normalized, and converted
-% into the predicted answer and confidence. Document prompt format, chat template,
-% label-token handling, and any option-order rotation.
+\subsection{Prompt and Multiple-Choice Scoring Protocol}
+% Provide exact prompt template and chat template.
+% Explain how A/B/C/D scores are extracted, normalized, and mapped to a prediction.
+% Specify handling of multi-token answer labels, invalid outputs, ties, and missing scores.
 
-\subsection{Accuracy and Brier Score}
-% Define multiclass accuracy and the exact Brier-score convention used.
+\subsection{Confidence Definition}
+% Define confidence as the probability assigned to the predicted answer, if that
+% is the chosen protocol. State whether scores are logits, normalized probabilities,
+% verbal self-reports, or another quantity. Do not mix these approaches.
+
+\subsection{Accuracy}
+\begin{equation}
+  \mathrm{Accuracy} = \frac{1}{N}\sum_{i=1}^{N}
+  \mathbb{1}(\hat{y}_i=y_i).
+  \label{eq:accuracy}
+\end{equation}
+% Define the evaluation population and treatment of invalid/missing predictions.
+
+\subsection{Brier Score}
 \begin{equation}
   \mathrm{Brier} =
   \frac{1}{N}\sum_{i=1}^{N}\sum_{k=1}^{K}
-  (p_{ik}-y_{ik})^2,
+  (p_{ik}-y_{ik})^2.
   \label{eq:brier}
 \end{equation}
-where $p_{ik}$ is the predicted probability for class $k$ on item $i$,
-and $y_{ik}$ is the corresponding one-hot target.
+% State whether this multiclass convention (sum over classes) is used consistently.
 
-\subsection{Expected Calibration Error}
-% Freeze the number of bins, interval boundaries, endpoint convention,
-% confidence definition, and empty-bin handling before final evaluation.
+\subsection{Expected Calibration Error (ECE)}
 \begin{equation}
   \mathrm{ECE} =
   \sum_{b=1}^{B}\frac{|I_b|}{N}
   \left|\mathrm{acc}(I_b)-\mathrm{conf}(I_b)\right|.
   \label{eq:ece}
 \end{equation}
-% TODO: State whether raw or temperature-scaled probabilities are primary.
-% If temperature scaling is used, document the fitting protocol and data separation.
+% Freeze bin count, bin boundaries, endpoint convention, confidence definition,
+% and empty-bin handling. Report bin count and sample size beside every ECE value.
 
-\subsection{Reliability Analysis}
-% Include reliability diagrams and any additional calibration diagnostics.
-% Avoid asserting a universal ECE threshold for miscalibration.
+\subsection{Reliability Diagrams}
+% Explain binning and plot observed accuracy against mean confidence.
+% Include the diagonal perfect-calibration reference line.
+% Plot Bangla and English separately or clearly distinguish them.
+
+\subsection{Calibration Variants and Data Leakage Prevention}
+% If temperature scaling is used, specify the calibration/validation split,
+% fitting procedure, and test split. Never fit temperature on the test set.
+% Clearly separate raw (uncalibrated) and temperature-scaled results.
 
 \section{Experimental Setup}
-\subsection{Evaluation Protocol}
-% Record hardware, software/package versions, precision, batch size, random seed,
-% prompt templates, checkpoint/resume behaviour, and model revision.
-% Separate measured settings from estimates.
+\subsection{Evaluation Pipeline}
+% Describe code entry points, environment, package versions, hardware,
+% precision, batch size, random seeds, caching, retries, and checkpoint/resume.
+% Link the exact repository commit used for the final run.
 
-\subsection{Statistical Analysis}
-% Specify the unit of analysis, model/subject controls, association tests or regression,
-% confidence intervals, clustering, multiple-comparison correction, and missing-data rules.
-% Account for repeated or duplicated question content where appropriate.
-% Treat findings as observational associations, not causal effects.
+\subsection{Primary and Secondary Outcomes}
+% Name one primary fragmentation metric and one primary calibration outcome.
+% Mark all other metrics and subgroup comparisons as secondary/exploratory.
+
+\subsection{Statistical Analysis Plan}
+% Crucial: the observational unit and dependence structure must be explicit.
+% TPW is available per item and tokenizer; ECE is an aggregate metric, not an
+% independent per-question label. Do not correlate item TPW with one global ECE
+% value as if each question had its own ECE.
+% Define the item-level calibration-error outcome or an appropriate grouped/
+% hierarchical analysis; account for repeated items within models/subjects.
+% Specify effect sizes, confidence intervals, clustering/mixed effects,
+% multiple-comparison correction, missing-data handling, and sensitivity analyses.
+% Avoid treating thousands of repeated questions as independent model-level replicates.
+
+\subsection{Robustness and Sensitivity Checks}
+% Examples if supported by data: question-only vs question-plus-options TPW;
+% alternative word segmentation; paired-only subset; subject-level analysis;
+% raw vs temperature-scaled confidence; alternative ECE bin counts.
+% State which are planned, not all need to be run.
 
 \section{Results}
 \subsection{Dataset and Model Coverage}
-% TODO: Add final sample counts and model coverage table.
+% Report final sample counts, model revisions, paired coverage, and exclusions.
 
-\subsection{Bangla-English Fragmentation Comparison}
-% TODO: Add TPW/verified STRR summaries and paired comparisons.
+\subsection{Tokenization Fragmentation by Language and Model}
+% Report TPW distributions (median, IQR, mean/SD if appropriate) by model/language.
+% Add STRR only if definition and code have been verified.
 
-\subsection{Accuracy and Calibration Results}
-% TODO: Add accuracy, Brier, ECE, and reliability results from the frozen protocol.
+\subsection{Accuracy and Calibration Performance}
+% Report accuracy, Brier score, ECE, sample sizes, and uncertainty where available.
+% Keep raw and temperature-scaled rows separate.
 
-\subsection{Fragmentation and Calibration Association}
-% TODO: Report effect sizes, uncertainty intervals, and sensitivity analyses.
-% Do not interpret descriptive trends as evidence of causation.
+\subsection{Association Between Fragmentation and Calibration}
+% Report the pre-specified association analysis, effect size, confidence interval,
+% p-value where appropriate, and model/subject dependence handling.
+% Distinguish confirmatory from exploratory findings.
+
+\subsection{Robustness Checks}
+% Report only analyses actually performed under the documented protocol.
 
 \section{Discussion}
-% Interpret the findings against the research questions and related work.
-% Discuss model-specific and language-specific patterns, alternative explanations,
-% and the distinction between accuracy and calibration.
+\subsection{Summary of Main Findings}
+% Answer each RQ directly without overstating the evidence.
 
-\section{Limitations}
-% Discuss dataset translation quality, language coverage, model panel differences,
-% prompt dependence, tokenizer comparability, sample dependence, and statistical power.
-% Include any unresolved limitations supported by the final experiment.
+\subsection{Interpretation and Comparison with Prior Work}
+% Explain how findings agree/disagree with reviewed work and why.
+
+\subsection{Implications for Bangla LLM Evaluation}
+% Discuss implications supported by results, not speculation.
+
+\section{Limitations and Threats to Validity}
+\subsection{Construct Validity}
+% TPW/STRR may not capture every aspect of linguistic difficulty or tokenization quality.
+
+\subsection{Internal Validity}
+% Prompting, probability extraction, model versions, decoding, and translation choices.
+
+\subsection{External Validity}
+% Selected models, benchmark domains, Bangla varieties, and generalization to other tasks.
+
+\subsection{Statistical Conclusion Validity}
+% Sample dependence, number of models/clusters, uncertainty, multiple testing,
+% and observational (non-causal) design.
 
 \section{Conclusion and Future Work}
-% Summarize what the study establishes, what remains uncertain,
-% and the most useful next steps.
+% Concisely answer the research question, state the contribution and limits,
+% and identify the next experiment. Do not introduce new results here.
 
 \begin{credits}
 \subsubsection{\ackname}
-% TODO: Add funding and acknowledgements, or remove this paragraph if not applicable.
+% Add funding and acknowledgements only after author confirmation.
 
 \subsubsection{\discintname}
+% TODO: All authors must confirm the competing-interest declaration.
 The authors declare that they have no competing interests relevant to this work.
-% TODO: Confirm this statement with every author before submission.
 \end{credits}
 
-% Optional: Add a data/code availability statement if required by the venue.
-% TODO: Provide stable repository release/commit and dataset access details.
+% TODO: Add a data/code availability statement if required by the target venue.
 
 \bibliographystyle{splncs04}
 \bibliography{references}
 
 \end{document}
+
+% ---------------------------------------------------------------------------
+% FIGURE AND TABLE PLAN (implementation checklist; add actual floats above)
+%
+% Figure 1. Study workflow: dataset -> paired language conditions -> tokenizer
+% fragmentation -> model scoring/confidence -> calibration -> association analysis.
+%
+% Figure 2. Tokenization examples: visual comparison of token pieces for selected
+% Bangla-English matched items (optional; may be replaced by Table 2).
+%
+% Figure 3. TPW distributions: box/violin plots by model and language.
+%
+% Figure 4. Reliability diagrams: confidence vs empirical accuracy for each
+% language/model (avoid overcrowding; use panels if needed).
+%
+% Figure 5. Fragmentation-calibration association: scatter/partial-effect plot
+% using the exact statistical unit and model described in the analysis plan.
+%
+% Table 1. Dataset composition, pairing, filtering, and final sample counts.
+% Table 2. Five worked tokenizer examples with token pieces and metric calculations.
+% Table 3. Model and tokenizer identities with immutable revisions.
+% Table 4. TPW/STRR descriptive statistics by model and language.
+% Table 5. Accuracy, Brier score, and ECE with N and bin count.
+% Table 6. Primary association model: coefficient/effect, CI, p-value, controls.
+% Table 7. Robustness/sensitivity analysis (only if conducted).
+%
+% Figures: export as PDF for vector plots where possible; use legible fonts,
+% axis labels, units, captions, and consistent language/model ordering.
+% Every figure/table must be cited in the text and have a self-contained caption.
+% Never create a plot from placeholder or unverified values.
