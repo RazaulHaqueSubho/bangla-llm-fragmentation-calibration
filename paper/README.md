@@ -6,8 +6,8 @@
 
 The active writing team currently consists of:
 - **Md. Razaul Haque Subho**
-- **Naeem** (confirm full author name)
-- **Abdullah / Abdullah al Azmi** (confirm full author name and preferred spelling)
+- **Iqramul Hasan Naeem** 
+- **Abdullah al Azmi** 
 
 Do not add Ayetullah or any other person to the author list unless the team confirms authorship and contribution. Confirm author order, affiliations, emails, and ORCIDs together before submission.
 
