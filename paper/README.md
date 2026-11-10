@@ -5,9 +5,10 @@
 ## Current writing team
 
 The active writing team currently consists of:
+
 - **Md. Razaul Haque Subho**
-- **Iqramul Hasan Naeem** 
-- **Abdullah al Azmi** 
+- **Iqramul Hasan Naeem**
+- **Abdullah al Azmi**
 
 ## Files
 
@@ -19,6 +20,7 @@ The active writing team currently consists of:
 ### 1. Naeem — measurement and calibration methodology
 
 **Write/prepare:**
+
 1. Exact TPW definition and implementation rules: tokenizer input unit, special tokens, word segmentation, punctuation, whitespace, Unicode normalization, empty strings, and aggregation.
 2. STRR: source citation and exact formula, including numerator, denominator, alignment procedure, and tested implementation. If the definition cannot be verified, recommend excluding STRR rather than guessing.
 3. Confidence extraction protocol: exact prompt, answer-option scoring, probability normalization, answer prediction, invalid output handling, and model chat template.
@@ -28,6 +30,7 @@ The active writing team currently consists of:
 7. Reproducibility: code path, package versions, model/tokenizer revisions, seed, and exact commit.
 
 **Deliverables:**
+
 - Completed methodology subsections in `main.tex` (or a separate Markdown draft for review).
 - One metric-definition/rules table.
 - One model/tokenizer audit table with exact revisions.
@@ -36,9 +39,10 @@ The active writing team currently consists of:
 
 **Important:** ECE is an aggregate/group-level metric. Do not treat one global ECE value as a per-question outcome or correlate it naively with thousands of item-level TPW observations. Propose and justify a statistically valid item-level or grouped/hierarchical analysis.
 
-### 2. Abdullah — dataset, translation, and paired examples
+### 2. Abdullah al Azmi — dataset, translation, and paired examples
 
 **Write/prepare:**
+
 1. Dataset source, exact repository revision, split/configuration, license, and retrieval date.
 2. Bangla source items and their English translations: pairing IDs, translation method, quality review, option order, answer-label preservation, and adjudication.
 3. Dataset filtering: original rows, valid rows, missing values, duplicates, invalid labels, exclusions, and final paired/unpaired counts.
@@ -48,6 +52,7 @@ The active writing team currently consists of:
 7. Provide machine-readable final data and a data dictionary; do not silently edit benchmark answers.
 
 **Deliverables:**
+
 - Completed dataset subsection in `main.tex` (or separate Markdown draft).
 - Dataset composition/filtering table.
 - Five checked example pairs in CSV/JSON.
@@ -57,6 +62,7 @@ The active writing team currently consists of:
 ### 3. Subho — coordination, literature, research framing, integration
 
 **Write/prepare:**
+
 1. Introduction: motivation, problem statement, research gap, research questions, contributions, paper organization.
 2. Related work: tokenizer/fragmentation literature, Bangla LLM and benchmark literature, calibration literature, and synthesis of the gap.
 3. Reconcile the final model panel and evaluation protocol across branches with Naeem and Abdullah.
@@ -65,6 +71,7 @@ The active writing team currently consists of:
 6. Review all figures, tables, equations, and terminology for consistency.
 
 **Deliverables:**
+
 - Introduction and Related Work draft.
 - Research questions and contribution statement.
 - Final integrated manuscript and consistency review.
@@ -133,25 +140,25 @@ The active writing team currently consists of:
 
 ## Planned tables
 
-| No. | Table | Owner / source |
-|---|---|---|
-| 1 | Dataset composition, pairing, filtering, final counts | Abdullah |
-| 2 | Five worked Bangla-English tokenizer examples | Abdullah supplies pairs; Naeem/Subho validate tokenizer outputs |
-| 3 | Model/tokenizer identities and immutable revisions | Naeem + Subho |
-| 4 | TPW/verified STRR descriptive statistics | Naeem |
-| 5 | Accuracy, Brier, ECE, sample size and bin count | Naeem |
-| 6 | Primary fragmentation-calibration association model | Naeem |
-| 7 | Robustness/sensitivity analysis, if conducted | Naeem + Subho |
+| No. | Table                                                 | Owner / source                                                  |
+| --- | ----------------------------------------------------- | --------------------------------------------------------------- |
+| 1   | Dataset composition, pairing, filtering, final counts | Abdullah                                                        |
+| 2   | Five worked Bangla-English tokenizer examples         | Abdullah supplies pairs; Naeem/Subho validate tokenizer outputs |
+| 3   | Model/tokenizer identities and immutable revisions    | Naeem + Subho                                                   |
+| 4   | TPW/verified STRR descriptive statistics              | Naeem                                                           |
+| 5   | Accuracy, Brier, ECE, sample size and bin count       | Naeem                                                           |
+| 6   | Primary fragmentation-calibration association model   | Naeem                                                           |
+| 7   | Robustness/sensitivity analysis, if conducted         | Naeem + Subho                                                   |
 
 ## Planned figures
 
-| No. | Figure | Purpose |
-|---|---|---|
-| 1 | Study workflow diagram | Show data, paired languages, tokenizer, model scoring, calibration, association analysis |
-| 2 | Tokenization example visualization (optional) | Illustrate segmentation of selected matched items |
-| 3 | TPW distribution plot | Compare fragmentation by model and language |
-| 4 | Reliability diagrams | Compare confidence with observed accuracy |
-| 5 | Fragmentation-calibration association plot | Visualize the primary statistical relationship |
+| No. | Figure                                        | Purpose                                                                                  |
+| --- | --------------------------------------------- | ---------------------------------------------------------------------------------------- |
+| 1   | Study workflow diagram                        | Show data, paired languages, tokenizer, model scoring, calibration, association analysis |
+| 2   | Tokenization example visualization (optional) | Illustrate segmentation of selected matched items                                        |
+| 3   | TPW distribution plot                         | Compare fragmentation by model and language                                              |
+| 4   | Reliability diagrams                          | Compare confidence with observed accuracy                                                |
+| 5   | Fragmentation-calibration association plot    | Visualize the primary statistical relationship                                           |
 
 Use vector PDF for plots where possible. Every figure needs a number, caption, readable axis labels, units, legend, and an in-text reference. Every table needs a number, caption, clear column definitions, and an in-text reference. Never plot placeholder or unverified values.
 
