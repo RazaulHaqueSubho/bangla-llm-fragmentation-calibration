@@ -1,0 +1,16 @@
+{
+  "models": {
+    "tigerllm_1b": {
+      "status": "complete"
+    },
+    "llama32_3b": {
+      "status": "complete"
+    },
+    "titullm_1b": {
+      "status": "complete"
+    }
+  },
+  "prompt_variant": "answer_cue",
+  "timestamp": "2026-10-20T21:32:53.333834",
+  "total_records": 180
+}

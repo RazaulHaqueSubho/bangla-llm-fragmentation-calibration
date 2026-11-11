@@ -1,0 +1,217 @@
+{
+  "bn": [
+    {
+      "question_id": "114394",
+      "subject": "Production & Operations",
+      "question": "সর্বনিম্ন কতজনকে নিয়ে অংশীদারি সংগঠন গঠিত?",
+      "options": [
+        "২",
+        "৭",
+        "১০",
+        "৫০"
+      ],
+      "correct_answer": "A",
+      "source": "BnMMLU"
+    },
+    {
+      "question_id": "98667",
+      "subject": "History & Culture (Bangladesh/World basics)",
+      "question": "মুক্তিযুদ্ধে বীরত্বের জন্য কয়জনকে সর্বোচ্চ সম্মান বীরশ্রেষ্ঠ” খেতাব দেয়া হয়?",
+      "options": [
+        "৯  জন",
+        "৭জন",
+        "১০ জন",
+        "৮জন"
+      ],
+      "correct_answer": "B",
+      "source": "BnMMLU"
+    },
+    {
+      "question_id": "18788",
+      "subject": "Agricultural Sciences",
+      "question": "৪৭ হর্সপাওয়ারের একটি ট্রাক্টর দিয়ে দিনে কত বিঘা জমি চাষ করা যায়?",
+      "options": [
+        "১০",
+        "১৫",
+        "২০",
+        "৩০"
+      ],
+      "correct_answer": "C",
+      "source": "BnMMLU"
+    },
+    {
+      "question_id": "134079",
+      "subject": "Statistics: Probability & Inference",
+      "question": "কোন পদ্ধতিতে আনুমানিক তথ্য পাওয়ার সম্ভাবনা বেশি থাকে?",
+      "options": [
+        "প্রত্যক্ষ ব্যক্তিগত অনুসন্ধান",
+        "টেলিফোন সাক্ষাৎকার",
+        "ডাকযোগে প্রশ্নপত্র প্রেরণ",
+        "স্থানীয় প্রতিনিধির মাধ্যমে তথ্য সংগ্রহ"
+      ],
+      "correct_answer": "D",
+      "source": "BnMMLU"
+    },
+    {
+      "question_id": "29199",
+      "subject": "Bengali Language & Syntax",
+      "question": "বাংলা বর্ণমালায় অর্ধমাত্রা বর্ণের সংখ্যা কয়টি?",
+      "options": [
+        "আটটি",
+        "নয়টি",
+        "সাতটি",
+        "দশটি"
+      ],
+      "correct_answer": "A",
+      "source": "BnMMLU"
+    },
+    {
+      "question_id": "65512",
+      "subject": "Physical & Analytical Chemistry",
+      "question": "ভলিউমেট্রিক ফ্লাস্ক এর সঠিক ব্যবহার করা হয় ____ ।",
+      "options": [
+        "তরলের আয়তন পরিমাপে",
+        "একটি নির্দিষ্ট আয়তনের দ্রবণ  তৈরিতে",
+        "অম্ল ও ক্ষারের টাইট্রেশন কাজে",
+        "তরল পদার্থের পাতন কাজে"
+      ],
+      "correct_answer": "B",
+      "source": "BnMMLU"
+    },
+    {
+      "question_id": "51769",
+      "subject": "Entrepreneurship",
+      "question": "ক্ষুদ্র বন্দর বলতে বোঝায়—",
+      "options": [
+        "Porto Grando",
+        "Porto Graham",
+        "Porto Piqueno",
+        "Porto Phonetic"
+      ],
+      "correct_answer": "C",
+      "source": "BnMMLU"
+    },
+    {
+      "question_id": "105895",
+      "subject": "Programming & Algorithms",
+      "question": "Set the Baseline Shift ড্রপডাউনটি টি ইলাস্ট্রেটরে কোন প্যালেটের অন্তর্ভুক্ত?",
+      "options": [
+        "Layer",
+        "Swatches",
+        "Color",
+        "Character"
+      ],
+      "correct_answer": "D",
+      "source": "BnMMLU"
+    }
+  ],
+  "en": [
+    {
+      "question_id": "en_dev_165",
+      "subject": "human_sexuality",
+      "question": "Morning sickness is typically a problem:",
+      "options": [
+        "during the first trimester",
+        "during the second trimester",
+        "during the third trimester",
+        "all through the pregnancy"
+      ],
+      "correct_answer": "A",
+      "source": "MMLU"
+    },
+    {
+      "question_id": "en_dev_57",
+      "subject": "computer_security",
+      "question": "What is ethical hacking?",
+      "options": [
+        "\"Hacking\" ethics so they justify unintended selfish behavior",
+        "Hacking systems (e.g., during penetration testing) to expose vulnerabilities so they can be fixed, rather than exploited",
+        "Hacking into systems run by those whose ethics you disagree with",
+        "A slang term for rapid software development, e.g., as part of hackathons"
+      ],
+      "correct_answer": "B",
+      "source": "MMLU"
+    },
+    {
+      "question_id": "en_dev_24",
+      "subject": "clinical_knowledge",
+      "question": "Glycolysis is the name given to the pathway involving the conversion of:",
+      "options": [
+        "glycogen to glucose-1-phosphate.",
+        "glycogen or glucose to fructose.",
+        "glycogen or glucose to pyruvate or lactate.",
+        "glycogen or glucose to pyruvate or acetyl CoA."
+      ],
+      "correct_answer": "C",
+      "source": "MMLU"
+    },
+    {
+      "question_id": "en_dev_230",
+      "subject": "prehistory",
+      "question": "The great Mayan king Pacal built temples in the city of Palenque in order to:",
+      "options": [
+        "satisfy the powerful Mayan astronomer priests.",
+        "display his generosity to the common people, since they were allowed to live in the temples.",
+        "frighten away enemies, in particular the Spaniards.",
+        "legitimize his kingship, since his father was not royal."
+      ],
+      "correct_answer": "D",
+      "source": "MMLU"
+    },
+    {
+      "question_id": "en_dev_219",
+      "subject": "moral_scenarios",
+      "question": "For which of these two scenarios does the main character (who uses I/me/my) do something clearly morally wrong, according to ordinary moral standards in the US as of 2020? Scenario 1 | I took his wallet after he harassed me at the bar. Scenario 2 | I made love to my newborn baby boy.",
+      "options": [
+        "Wrong, Wrong",
+        "Wrong, Not wrong",
+        "Not wrong, Wrong",
+        "Not wrong, Not wrong"
+      ],
+      "correct_answer": "A",
+      "source": "MMLU"
+    },
+    {
+      "question_id": "en_dev_49",
+      "subject": "college_medicine",
+      "question": "An expected side effect of creatine supplementation is:",
+      "options": [
+        "muscle weakness.",
+        "gain in body mass.",
+        "muscle cramps.",
+        "loss of electrolytes."
+      ],
+      "correct_answer": "B",
+      "source": "MMLU"
+    },
+    {
+      "question_id": "en_dev_31",
+      "subject": "college_chemistry",
+      "question": "A 0.217 g sample of HgO (molar mass = 217 g) reacts with excess iodide ions according to the reaction shown above. Titration of the resulting solution requires how many mL of 0.10 M HCl to reach equivalence point?",
+      "options": [
+        "1.0 mL",
+        "10 mL",
+        "20 mL",
+        "50 mL"
+      ],
+      "correct_answer": "C",
+      "source": "MMLU"
+    },
+    {
+      "question_id": "en_dev_137",
+      "subject": "high_school_physics",
+      "question": "A photocell of work function ϕ = 2eV is connected to a resistor in series. Light of frequency f = 1 × 10^15 Hz hits a metal plate of the photocell. If the power of the light is P = 100 W, what is the current through the resistor?",
+      "options": [
+        "2:00 AM",
+        "6:00 AM",
+        "12:00 AM",
+        "24 A"
+      ],
+      "correct_answer": "D",
+      "source": "MMLU"
+    }
+  ],
+  "version": "v3_1_fewshot_v2",
+  "n_shots_max": 8,
+  "english_exemplar_source": "mmlu_dev"
+}

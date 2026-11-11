@@ -1,0 +1,33 @@
+{
+  "source_dataset": "CohereLabs/Global-MMLU",
+  "source_license": "Apache 2.0",
+  "source_url": "https://huggingface.co/datasets/CohereLabs/Global-MMLU",
+  "configs_used": [
+    "bn",
+    "en"
+  ],
+  "split_used": "test",
+  "dev_split_excluded": true,
+  "dev_items": {
+    "bn": 285,
+    "en": 285
+  },
+  "seed": 42,
+  "target_n_pairs": 1000,
+  "n_pairs": 1000,
+  "n_rows": 2000,
+  "subjects": 57,
+  "languages": [
+    "bn",
+    "en"
+  ],
+  "pair_id_scheme": "Global-MMLU sample_id (bn and en share identical sample_id)",
+  "one_to_one_verified": true,
+  "disjoint_from_dev_verified": true,
+  "model_evaluation": false,
+  "files": {
+    "csv": "/home/naeem/Bangla-LLM-Calibration/code/results/item_parallel/item_parallel_bn_en.csv",
+    "json": "/home/naeem/Bangla-LLM-Calibration/code/results/item_parallel/item_parallel_bn_en.json",
+    "manifest": "/home/naeem/Bangla-LLM-Calibration/code/results/item_parallel/manifest.json"
+  }
+}

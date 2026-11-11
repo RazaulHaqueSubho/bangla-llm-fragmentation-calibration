@@ -1,0 +1,69 @@
+{
+  "timestamp": "2026-10-22T06:43:48.243234",
+  "strict_real_mode": true,
+  "backend": "transformers",
+  "reproducibility_seed": 42,
+  "evaluation_sample_counts": {
+    "per_language_target": 1500,
+    "bn_samples": 4500,
+    "en_samples": 4500
+  },
+  "dataset_ids": {
+    "bn_dataset_id": "samanjoy2/BnMMLU",
+    "bn_hf_config": "full",
+    "en_dataset_id": "cais/mmlu",
+    "en_hf_config": "all",
+    "en_split": "test"
+  },
+  "prompt_variant": "answer_cue",
+  "models": {
+    "llama32_3b": {
+      "hf_id": "meta-llama/Llama-3.2-3B-Instruct",
+      "chat_template_used": false,
+      "prompt_variant": "few_shot",
+      "effective_n_shots": 4,
+      "use_chat_template": false,
+      "debias": "none",
+      "settings_source": "model_settings.json"
+    },
+    "titullm_1b": {
+      "hf_id": "hishab/titulm-llama-3.2-1b-v1.1",
+      "chat_template_used": false,
+      "prompt_variant": "few_shot",
+      "effective_n_shots": 4,
+      "use_chat_template": false,
+      "debias": "none",
+      "settings_source": "model_settings.json"
+    },
+    "tigerllm_1b": {
+      "hf_id": "md-nishat-008/TigerLLM-1B-it",
+      "chat_template_used": false,
+      "prompt_variant": "few_shot",
+      "effective_n_shots": 4,
+      "use_chat_template": false,
+      "debias": "none",
+      "settings_source": "model_settings.json"
+    }
+  },
+  "environment": {
+    "is_kaggle": true,
+    "gpu_available": true,
+    "device_name": "Tesla T4",
+    "python_version": "3.13.15 (main, Aug  6 2026, 11:06:22) [GCC 13.3.0]"
+  },
+  "package_versions": {
+    "numpy": "2.1.3",
+    "pandas": "2.3.3",
+    "scipy": "available",
+    "statsmodels": "0.15.0",
+    "torch": "2.11.0+cu128"
+  },
+  "models_discovered": [
+    "titullm_1b",
+    "tigerllm_1b",
+    "llama32_3b"
+  ],
+  "total_evaluations_combined": 9000,
+  "completion_status": "complete",
+  "combined_csv": "/kaggle/working/results/combined_results.csv"
+}

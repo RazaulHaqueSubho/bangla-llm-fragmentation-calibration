@@ -1,0 +1,216 @@
+{
+  "bn": [
+    {
+      "question_id": "fs_bn_0",
+      "subject": "STEM",
+      "question": "Bn Few-shot question 0?",
+      "options": [
+        "ব১",
+        "ব২",
+        "ব৩",
+        "ব৪"
+      ],
+      "correct_answer": "A",
+      "source": "BnMMLU"
+    },
+    {
+      "question_id": "fs_bn_1",
+      "subject": "STEM",
+      "question": "Bn Few-shot question 1?",
+      "options": [
+        "ব১",
+        "ব২",
+        "ব৩",
+        "ব৪"
+      ],
+      "correct_answer": "B",
+      "source": "BnMMLU"
+    },
+    {
+      "question_id": "fs_bn_2",
+      "subject": "STEM",
+      "question": "Bn Few-shot question 2?",
+      "options": [
+        "ব১",
+        "ব২",
+        "ব৩",
+        "ব৪"
+      ],
+      "correct_answer": "C",
+      "source": "BnMMLU"
+    },
+    {
+      "question_id": "fs_bn_3",
+      "subject": "STEM",
+      "question": "Bn Few-shot question 3?",
+      "options": [
+        "ব১",
+        "ব২",
+        "ব৩",
+        "ব৪"
+      ],
+      "correct_answer": "D",
+      "source": "BnMMLU"
+    },
+    {
+      "question_id": "fs_bn_4",
+      "subject": "STEM",
+      "question": "Bn Few-shot question 4?",
+      "options": [
+        "ব১",
+        "ব২",
+        "ব৩",
+        "ব৪"
+      ],
+      "correct_answer": "A",
+      "source": "BnMMLU"
+    },
+    {
+      "question_id": "fs_bn_5",
+      "subject": "STEM",
+      "question": "Bn Few-shot question 5?",
+      "options": [
+        "ব১",
+        "ব২",
+        "ব৩",
+        "ব৪"
+      ],
+      "correct_answer": "B",
+      "source": "BnMMLU"
+    },
+    {
+      "question_id": "fs_bn_6",
+      "subject": "STEM",
+      "question": "Bn Few-shot question 6?",
+      "options": [
+        "ব১",
+        "ব২",
+        "ব৩",
+        "ব৪"
+      ],
+      "correct_answer": "C",
+      "source": "BnMMLU"
+    },
+    {
+      "question_id": "fs_bn_7",
+      "subject": "STEM",
+      "question": "Bn Few-shot question 7?",
+      "options": [
+        "ব১",
+        "ব২",
+        "ব৩",
+        "ব৪"
+      ],
+      "correct_answer": "D",
+      "source": "BnMMLU"
+    }
+  ],
+  "en": [
+    {
+      "question_id": "fs_en_0",
+      "subject": "STEM",
+      "question": "En Few-shot question 0?",
+      "options": [
+        "Opt A",
+        "Opt B",
+        "Opt C",
+        "Opt D"
+      ],
+      "correct_answer": "A",
+      "source": "MMLU"
+    },
+    {
+      "question_id": "fs_en_1",
+      "subject": "STEM",
+      "question": "En Few-shot question 1?",
+      "options": [
+        "Opt A",
+        "Opt B",
+        "Opt C",
+        "Opt D"
+      ],
+      "correct_answer": "B",
+      "source": "MMLU"
+    },
+    {
+      "question_id": "fs_en_2",
+      "subject": "STEM",
+      "question": "En Few-shot question 2?",
+      "options": [
+        "Opt A",
+        "Opt B",
+        "Opt C",
+        "Opt D"
+      ],
+      "correct_answer": "C",
+      "source": "MMLU"
+    },
+    {
+      "question_id": "fs_en_3",
+      "subject": "STEM",
+      "question": "En Few-shot question 3?",
+      "options": [
+        "Opt A",
+        "Opt B",
+        "Opt C",
+        "Opt D"
+      ],
+      "correct_answer": "D",
+      "source": "MMLU"
+    },
+    {
+      "question_id": "fs_en_4",
+      "subject": "STEM",
+      "question": "En Few-shot question 4?",
+      "options": [
+        "Opt A",
+        "Opt B",
+        "Opt C",
+        "Opt D"
+      ],
+      "correct_answer": "A",
+      "source": "MMLU"
+    },
+    {
+      "question_id": "fs_en_5",
+      "subject": "STEM",
+      "question": "En Few-shot question 5?",
+      "options": [
+        "Opt A",
+        "Opt B",
+        "Opt C",
+        "Opt D"
+      ],
+      "correct_answer": "B",
+      "source": "MMLU"
+    },
+    {
+      "question_id": "fs_en_6",
+      "subject": "STEM",
+      "question": "En Few-shot question 6?",
+      "options": [
+        "Opt A",
+        "Opt B",
+        "Opt C",
+        "Opt D"
+      ],
+      "correct_answer": "C",
+      "source": "MMLU"
+    },
+    {
+      "question_id": "fs_en_7",
+      "subject": "STEM",
+      "question": "En Few-shot question 7?",
+      "options": [
+        "Opt A",
+        "Opt B",
+        "Opt C",
+        "Opt D"
+      ],
+      "correct_answer": "D",
+      "source": "MMLU"
+    }
+  ],
+  "version": "v3c_fewshot_v1",
+  "n_shots_max": 8
+}
