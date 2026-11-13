@@ -32,14 +32,14 @@
 \maketitle
 
 \begin{abstract}
-  % Write this LAST, after results are frozen (approximately 150--250 words).
-  % Include: problem, gap, research questions, dataset and model panel, measurement
-  % protocol, principal quantitative findings with uncertainty, and contribution.
-  % Do not include unverified or preliminary branch results.
+	% Write this LAST, after results are frozen (approximately 150--250 words).
+	% Include: problem, gap, research questions, dataset and model panel, measurement
+	% protocol, principal quantitative findings with uncertainty, and contribution.
+	% Do not include unverified or preliminary branch results.
 \end{abstract}
 
 \keywords{Large language models \and Bangla \and Tokenization \and Fragmentation \and
-  Confidence calibration \and Cross-lingual evaluation}
+	Confidence calibration \and Cross-lingual evaluation}
 
 \section{Introduction}
 \subsection{Background and Motivation}
@@ -58,9 +58,9 @@
 
 \subsection{Research Questions and Contributions}
 \begin{itemize}
-  \item \textbf{RQ1:} How does tokenization fragmentation differ between Bangla and English under the selected model tokenizers?
-  \item \textbf{RQ2:} Is item-level tokenization fragmentation associated with confidence and calibration behaviour on Bangla evaluation items?
-  \item \textbf{RQ3:} Does this association vary across models, subjects, or language conditions?
+	\item \textbf{RQ1:} How does tokenization fragmentation differ between Bangla and English under the selected model tokenizers?
+	\item \textbf{RQ2:} Is item-level tokenization fragmentation associated with confidence and calibration behaviour on Bangla evaluation items?
+	\item \textbf{RQ3:} Does this association vary across models, subjects, or language conditions?
 \end{itemize}
 % List 2--4 concrete contributions only after the protocol and evidence are established.
 
@@ -108,12 +108,19 @@
 % Give dataset name, source URL/citation, repository commit/revision, split/configuration,
 % license/access conditions, and date retrieved.
 
+For our study, we use the BnMMLU: Measuring Massive Multitask Language Understanding in Bengali \cite{joy-shatabda-2026-bnmmlu} dataset. The dataset contains multiple-choice questions across the 23 domains, including science, humanities, mathematics, and general knowledge. It has primarily two categories: full, and hard.
+
+The full category contains dataset which is simpler for large language models to answer, where as the hard contains the dataset which is difficult for the large language model to answer. Also, the hard dataset contains one extra
+
 \subsection{Bangla and English Evaluation Conditions}
+
 % Define:
 % (1) original Bangla BnMMLU items;
 % (2) English translations of those same items, if used;
 % (3) independent English MMLU items, if used.
 % Never describe independent English questions as translations or paired examples.
+
+
 
 \subsection{Question Pairing and Translation Quality}
 % Explain pair IDs, translation procedure, option/answer-label preservation,
@@ -156,10 +163,10 @@
 \subsection{Tokens per Word (TPW)}
 % Primary proposed fragmentation measure. Confirm final counting rules before analysis.
 \begin{equation}
-  \mathrm{TPW}(x) =
-  \frac{N_{\mathrm{tokens}}(x)}
-  {N_{\mathrm{words}}(x)}.
-  \label{eq:tpw}
+	\mathrm{TPW}(x) =
+	\frac{N_{\mathrm{tokens}}(x)}
+	{N_{\mathrm{words}}(x)}.
+	\label{eq:tpw}
 \end{equation}
 % Explain aggregation: item-level TPW first; then report distributions/summary
 % statistics by model, language, and subject. Do not report only one global mean.
@@ -193,27 +200,27 @@
 
 \subsection{Accuracy}
 \begin{equation}
-  \mathrm{Accuracy} = \frac{1}{N}\sum_{i=1}^{N}
-  \mathbb{1}(\hat{y}_i=y_i).
-  \label{eq:accuracy}
+	\mathrm{Accuracy} = \frac{1}{N}\sum_{i=1}^{N}
+	\mathbb{1}(\hat{y}_i=y_i).
+	\label{eq:accuracy}
 \end{equation}
 % Define the evaluation population and treatment of invalid/missing predictions.
 
 \subsection{Brier Score}
 \begin{equation}
-  \mathrm{Brier} =
-  \frac{1}{N}\sum_{i=1}^{N}\sum_{k=1}^{K}
-  (p_{ik}-y_{ik})^2.
-  \label{eq:brier}
+	\mathrm{Brier} =
+	\frac{1}{N}\sum_{i=1}^{N}\sum_{k=1}^{K}
+	(p_{ik}-y_{ik})^2.
+	\label{eq:brier}
 \end{equation}
 % State whether this multiclass convention (sum over classes) is used consistently.
 
 \subsection{Expected Calibration Error (ECE)}
 \begin{equation}
-  \mathrm{ECE} =
-  \sum_{b=1}^{B}\frac{|I_b|}{N}
-  \left|\mathrm{acc}(I_b)-\mathrm{conf}(I_b)\right|.
-  \label{eq:ece}
+	\mathrm{ECE} =
+	\sum_{b=1}^{B}\frac{|I_b|}{N}
+	\left|\mathrm{acc}(I_b)-\mathrm{conf}(I_b)\right|.
+	\label{eq:ece}
 \end{equation}
 % Freeze bin count, bin boundaries, endpoint convention, confidence definition,
 % and empty-bin handling. Report bin count and sample size beside every ECE value.
@@ -304,12 +311,12 @@
 % and identify the next experiment. Do not introduce new results here.
 
 \begin{credits}
-  \subsubsection{\ackname}
-  % Add funding and acknowledgements only after author confirmation.
+	\subsubsection{\ackname}
+	% Add funding and acknowledgements only after author confirmation.
 
-  \subsubsection{\discintname}
-  % TODO: All authors must confirm the competing-interest declaration.
-  The authors declare that they have no competing interests relevant to this work.
+	\subsubsection{\discintname}
+	% TODO: All authors must confirm the competing-interest declaration.
+	The authors declare that they have no competing interests relevant to this work.
 \end{credits}
 
 % TODO: Add a data/code availability statement if required by the target venue.

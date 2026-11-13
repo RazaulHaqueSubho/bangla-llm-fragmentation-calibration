@@ -1,3 +1,113 @@
 % Add verified BibTeX entries here.
 % Use the official metadata from the publisher, DOI record, or author manuscript.
 % Do not add guessed titles, author lists, venues, page ranges, or DOIs.
+
+@inproceedings{alamInclusiveAIBuilding2025,
+  title = {Toward {{Inclusive AI}}: {{Building}} a {{Bangla Chatbot Using GPT-Neo}} and {{Optimized BPE Tokenizer}}},
+  shorttitle = {Toward {{Inclusive AI}}},
+  booktitle = {2025 {{IEEE}} 2nd {{International Conference}} on {{Computing}}, {{Applications}} and {{Systems}} ({{COMPAS}})},
+  author = {Alam, Nafiul and Hasan, K. M. Azharul},
+  year = 2025,
+  month = oct,
+  pages = {1--6},
+  publisher = {IEEE},
+  address = {Kushtia, Bangladesh},
+  doi = {10.1109/COMPAS67506.2025.11381741},
+  urldate = {2026-09-04},
+  abstract = {An advancement in the field of Ai and natural language processing (NLP) is the leveraging the GPT-Neo architecture to develop an interactive chatbot. This study highlights the significance of providing NLP tools for Bangla, spoken by over 230 million people but underrepresented in computational linguistics, using GPT-2 by employing GPT-Neo for its superior language understanding and generation capabilities. The research involves curating a custom dataset from various Bangla sources to reflect the language's complexities, followed by a rigorous pretraining and fine-tuning process with a conversational dataset aimed at enhancing the chatbot's ability to produce contextually coherent and fluent dialogues. A notable contribution is the creation of an advanced Byte Pair Encoding (BPE) tokenizer optimized for Bangla, significantly improving the model's efficiency in language processing. The paper details the methodology for dataset preparation, model training, and tokenizer development, positioning the chatbot as a pivotal tool for Bangla language processing and setting the stage for further efforts to make the AI more inclusive of linguistically diverse communities. Finally it discusses the potential applications, ethical considerations, and directions for future research.},
+  copyright = {https://doi.org/10.15223/policy-029},
+  isbn = {979-8-3315-5525-2},
+  langid = {english},
+}
+
+@article{aliMorphologicalAnalysisBangla2008,
+  title = {Morphological Analysis of {{Bangla}} Words for {{Universal Networking Language}}},
+  author = {Ali, Md Nawab Yousuf and {Al-Mamun}, S. M. Abdullah and Das, Jugal Krishna and Nurannabi, Abu Mohammad},
+  year = 2008,
+  journal = {2008 Third International Conference on Digital Information Management},
+  doi = {10.1109/ICDIM.2008.4746734},
+  urldate = {2026-09-03},
+}
+
+@article{hossainEfficientMonolingualPretraining2026,
+  title = {Efficient {{Monolingual Pretraining}} in {{Low-Resource Settings Through Morphology-Aware Tokenization}}, {{Principled Corpus Denoising}}, and {{Benchmark-Driven Evaluation}}},
+  author = {Hossain, Nahid and Faisal Kabir, {\relax Md}.},
+  year = 2026,
+  journal = {IEEE Access},
+  volume = {14},
+  pages = {91979--92003},
+  issn = {2169-3536},
+  doi = {10.1109/ACCESS.2026.3701520},
+  urldate = {2026-09-04},
+  abstract = {Training effective language models for morphologically complex, low-resource languages in resource-constrained environments is hampered by four compounding bottlenecks: the representational dilution of massively multilingual pretraining, the inadequate subword segmentation of tokenizers not trained on language-specific data, the substantial noise in existing pretraining corpora, and the absence of a standardized evaluation benchmark. We address all four deficiencies in a unified framework, taking Bengali as our target language. First, we introduce B-CORE, a rigorously curated 52GB Bengali corpus of 16.5M documents (4.32B tokens), built via a reproducible pipeline of quality filtering, expert validation, and cross-corpus deduplication that reduces volume by 22.4\% relative to raw data. Second, we design morphology-aware WordPiece tokenizers (30.5K and 120K vocabularies) trained exclusively on Bengali, attaining 96.9\% script coverage versus 56--60\% for multilingual baselines, with 34--51\% fewer tokens per word. Third, we introduce BLUGE, a balanced, expert-validated, contamination-audited benchmark spanning 7 tasks with 536K samples. Fourth, we pretrain BnLM, a suite of three compact Bengali-specific encoder models (66--135M parameters) on the MLM objective in different settings, which establish new state-of-the-art results on BLUGE and four other multilingual and Indic benchmarks, while requiring 44--91\% fewer FLOPs and providing 2\textbackslash times faster inference than larger baselines. A controlled 2\textbackslash times 2 factorial analysis isolates tokenizer specialization as the dominant factor, showing that the bottleneck in low-resource NLP is not model scale but the principled alignment of corpus quality, tokenization, and evaluation with the target language's properties.},
+  keywords = {B-CORE,BLUGE,BnLM,Cleaning,Computational linguistics,Conferences,corpus,evaluation benchmark,Labeling,Modeling,Multilingual,Pipelines,pretrained models,Tokenization,Training,Vocabulary},
+}
+
+@inproceedings{nahinTituLLMsFamilyBangla2025,
+  title = {{{TituLLMs}}: {{A Family}} of {{Bangla LLMs}} with {{Comprehensive Benchmarking}}},
+  shorttitle = {{{TituLLMs}}},
+  booktitle = {Findings of the {{Association}} for {{Computational Linguistics}}: {{ACL}} 2025},
+  author = {Nahin, Shahriar Kabir and Nandi, Rabindra Nath and Sarker, Sagor and Muhtaseem, Quazi Sarwar and Kowsher, Md and Shill, Apu Chandraw and Ibrahim, Md and Menon, Mehadi Hasan and Muntasir, Tareq Al and Alam, Firoj},
+  editor = {Che, Wanxiang and Nabende, Joyce and Shutova, Ekaterina and Pilehvar, Mohammad Taher},
+  year = 2025,
+  month = jul,
+  pages = {24922--24940},
+  publisher = {Association for Computational Linguistics},
+  address = {Vienna, Austria},
+  doi = {10.18653/v1/2025.findings-acl.1279},
+  urldate = {2026-09-04},
+  abstract = {In this paper, we present TituLLMs, the first large pretrained Bangla LLMs, available in 1b and 3b parameter sizes. Due to computational constraints during both training and inference, we focused on smaller models. To train TituLLMs, we collected a pretraining dataset of approximately \textbackslash ensuremath\textbackslash sim 37 billion tokens. We extended the Llama-3.2 tokenizer to incorporate language- and culture-specific knowledge, which also enables faster training and inference. There was a lack of benchmarking datasets to benchmark LLMs for Bangla. To address this gap, we developed five benchmarking datasets. We benchmarked various LLMs, including TituLLMs, and demonstrated that TituLLMs outperforms its initial multilingual versions. However, this is not always the case, highlighting the complexities of language adaptation. Our work lays the groundwork for adapting existing multilingual open models to other low-resource languages. To facilitate broader adoption and further research, we have made the TituLLMs models and benchmarking datasets publicly available.},
+  isbn = {979-8-89176-256-5},
+}
+
+@inproceedings{shahriarImprovingBengaliHindi2024,
+  title = {Improving {{Bengali}} and {{Hindi Large Language Models}}},
+  booktitle = {Proceedings of the 2024 {{Joint International Conference}} on {{Computational Linguistics}}, {{Language Resources}} and {{Evaluation}} ({{LREC-COLING}} 2024)},
+  author = {Shahriar, Arif and Barbosa, Denilson},
+  editor = {Calzolari, Nicoletta and Kan, Min-Yen and Hoste, Veronique and Lenci, Alessandro and Sakti, Sakriani and Xue, Nianwen},
+  year = 2024,
+  month = may,
+  pages = {8719--8731},
+  publisher = {{ELRA and ICCL}},
+  address = {Torino, Italia},
+  urldate = {2026-09-04},
+  abstract = {Despite being widely spoken worldwide, Bengali and Hindi are low-resource languages. The state-of-the-art in modeling such languages uses BERT and the Wordpiece tokenizer. We observed that the Wordpiece tokenizer often breaks words into meaningless tokens, failing to separate roots from affixes. Moreover, Wordpiece does not take into account fine-grained character-level information. We hypothesize that modeling fine-grained character-level information or interactions between roots and affixes helps with modeling highly inflected and morphologically complex languages such as Bengali and Hindi. We used BERT with two different tokenizers - a Unigram tokenizer and a character-level tokenizer and observed better performance. Then, we pretrained four language models accordingly - Bengali Unigram BERT, Hindi Unigram BERT, Bengali Character BERT, and Hindi Character BERT, and evaluated them for masked token detection, both in correct and erroneous settings, across many NLU tasks. We provide experimental evidence that Unigram and character-level tokenizers lead to better pretrained models for Bengali and Hindi, outperforming the previous state-of-the-art and BERT with Wordpiece vocabulary. We conduct the first study investigating the efficacy of different tokenization methods in modeling Bengali and Hindi.},
+}
+
+@misc{trottTokenizationLargeLanguage2024,
+  type = {Substack Newsletter},
+  title = {Tokenization in Large Language Models, Explained},
+  author = {Trott, Sean},
+  year = 2024,
+  month = may,
+  journal = {The Counterfactual},
+  urldate = {2026-09-01},
+  abstract = {Modern language models predict "tokens", not words---but what exactly are tokens?},
+}
+
+@article{zhangUncertaintyCalibrationDeep,
+  title = {Uncertainty {{Calibration}} in {{Deep Learning}}: {{Methods}}, {{Emerging Challenges}}, and {{LLM Frontiers}}},
+  author = {Zhang, Min-Ling and Wang, Deng-Bao},
+  abstract = {Despite the remarkable breakthroughs in deep neural networks (DNNs), the deployment of deep models in high-stakes, safety-critical applications remains a significant challenge. For trustworthy machine learning systems, the ability to provide reliable and well-calibrated uncertainty estimates is fundamental. However, DNNs are notoriously overconfident, often yielding miscalibrated probabilities that hinder their integration into real-world decision-making tasks. This survey provides a comprehensive review of the recent advancements in the field of uncertainty calibration in deep learning. It begins by introducing a range of advanced methods recently proposed for calibrating uncertainty in DNNs. To this end, we organize them into four primary paradigms: traintime regularization, post-hoc adjustments, Bayesian and ensemble neural networks, and hybrid approaches. Then, we transition to emerging research challenges that have gained significant attention in recent years, specifically focusing on calibration challenges in out-of-distribution (OOD) scenarios, uncertainty quantification of generative models, calibration in multimodal learning, and human-AI collaboration setting. Finally, we structure our exploration of uncertainty calibration in large language models (LLMs) around three fundamental research questions: how LLMs express uncertainty, how to evaluate their confidence, and how to effectively calibrate LLMs. By reviewing these diverse perspectives, this paper aims to serve as a holistic roadmap for researchers and practitioners aiming to bridge the gap between predictive performance and model trustworthiness.},
+  langid = {english},
+}
+
+@inproceedings{joy-shatabda-2026-bnmmlu,
+    title = "{B}n{MMLU}: Measuring Massive Multitask Language Understanding in {B}engali",
+    author = "Joy, Saman Sarker  and
+      Shatabda, Swakkhar",
+    editor = "Liakata, Maria  and
+      Moreira, Viviane P.  and
+      Zhang, Jiajun  and
+      Jurgens, David",
+    booktitle = "Findings of the {A}ssociation for {C}omputational {L}inguistics: {ACL} 2026",
+    month = jul,
+    year = "2026",
+    address = "San Diego, California, United States",
+    publisher = "Association for Computational Linguistics",
+    url = "https://aclanthology.org/2026.findings-acl.593/",
+    doi = "10.18653/v1/2026.findings-acl.593",
+    pages = "12211--12230",
+    ISBN = "979-8-89176-395-1",
+    abstract = "Large-scale multitask benchmarks have driven rapid progress in language modeling, yet most emphasize high-resource languages such as English, leaving Bengali underrepresented. We present BnMMLU, a comprehensive benchmark for measuring massive multitask language understanding in Bengali. BnMMLU spans 41 domains across STEM, humanities, social sciences, and general knowledge, and contains 134,375 multiple-choice question{--}option pairs-the most extensive Bengali evaluation suite to date. The dataset preserves mathematical content via MathML, and includes BnMMLU-HARD, a compact subset constructed from questions most frequently missed by top systems to stress difficult cases. We benchmark 24 model variants across 11 LLM families, spanning open-weights general/multilingual, Bengali-centric open-weights, and proprietary models, covering multiple parameter scales and instruction-tuned settings. We evaluate models under standardized protocols covering two prompting styles (Direct vs. Chain-of-Thought) and two context regimes (0-shot vs. 5-shot), reporting accuracy consistently across families. Our analysis highlights persistent gaps in reasoning and application skills and indicates sublinear returns to scale across model sizes. We release the dataset and evaluation templates to support rigorous, reproducible assessment of Bengali language understanding and to catalyze progress in multilingual NLP."
+}
