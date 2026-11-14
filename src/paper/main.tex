@@ -13,6 +13,9 @@
 \usepackage{hyperref}
 \usepackage{xurl}
 \usepackage{microtype}
+\usepackage[utf8]{inputenc}
+
+
 \hypersetup{colorlinks=true,linkcolor=black,citecolor=black,urlcolor=blue}
 \urlstyle{rm}
 
@@ -100,52 +103,41 @@
 % Add directional hypotheses only if agreed before confirmatory analysis.
 % Otherwise label analyses exploratory and avoid post-hoc hypotheses.
 
-% TODO: Have to start the work from here!
-
 \section{Models and Datasets}
-
-\subsection{Dataset Sources and Versions}
-% Give dataset name, source URL/citation, repository commit/revision, split/configuration,
-% license/access conditions, and date retrieved.
-
-For our study, we use the BnMMLU: Measuring Massive Multitask Language Understanding in Bengali \cite{joy-shatabda-2026-bnmmlu} dataset. The dataset contains multiple-choice questions across the 23 domains, including science, humanities, mathematics, and general knowledge. It has primarily two categories: full, and hard.
-
-The full category contains dataset which is simpler for large language models to answer, where as the hard contains the dataset which is difficult for the large language model to answer. Also, the hard dataset contains one extra
-
-\subsection{Bangla and English Evaluation Conditions}
-
-% Define:
-% (1) original Bangla BnMMLU items;
-% (2) English translations of those same items, if used;
-% (3) independent English MMLU items, if used.
-% Never describe independent English questions as translations or paired examples.
-
-
-
-\subsection{Question Pairing and Translation Quality}
-% Explain pair IDs, translation procedure, option/answer-label preservation,
-% human review, adjudication, exclusions, and unresolved translation issues.
-% Report how many source items have valid matched translations.
 
 \subsection{Model and Tokenizer Selection}
 % For every model record exact HF repository ID, immutable revision/commit,
 % tokenizer class, vocabulary size, model size, context length, and access date.
 % Reconcile the model panels in the existing branches before choosing the final panel.
 
-\subsection{Data Cleaning and Preprocessing}
-% Document row validation, duplicates, missing text/labels, invalid options,
-% Unicode normalization (e.g., NFC if selected), whitespace, punctuation,
-% and every exclusion rule. Report counts before and after each filter.
+\subsection{Dataset}
 
-% Suggested Table 1: dataset composition and filtering.
-% Columns: Dataset/condition | Language | Original rows | Valid rows | Paired rows | Excluded rows | Reason.
-% Add only counts produced by the final frozen data snapshot.
+For our study, we use the BnMMLU: Measuring Massive Multitask Language Understanding in Bengali \cite{joy-shatabda-2026-bnmmlu} dataset. The dataset contains multiple-choice questions across the 23 domains, including science, humanities, mathematics, and general knowledge. It has primarily two categories: full, and hard.
 
-\subsection{Ethics and Data Handling}
-% State whether the datasets are public, whether personal data is present,
-% and any relevant licensing or responsible-use considerations.
+The full category contains the samples which is simpler for large language models (LLMs) to answer, where as the hard category contains the samples which is difficult for the large language model to answer. Also, the hard category samples contains one extra feature named failure\_ratio, which highlights the failure on large language model during the study.
+
+Since, our study address the cross-lingual study, that is why we translated the dataset into English. Below, we provide the full character of the dataset and translation procedures.
+
+\subsubsection{Dataset Characteristics}
+
+% Please add the following required packages to your document preamble:
+\begin{table}[]
+	\centering
+	\begin{tabular}{@{}lllllll@{}}
+		\cmidrule(r){1-5}
+		Unique\_Serial & subject\_name            & question                                              & correct\_answer & options & question\_char\_count & faiture\_ratio \\ \cmidrule(r){1-5}
+		1              & Algebra \& Number Theory & (x+a)/(x+1)(x-3) = B/(x+1) + 1/(x-3) হলে, A ও B এর মান- &                 &         &                       &                \\
+		               &                          &                                                       &                 &         &                       &                \\
+		               &                          &                                                       &                 &         &                       &                \\ \cmidrule(r){1-5}
+	\end{tabular}
+	\caption{}
+	\label{tab:my-table}
+\end{table}
+
+\subsubsection{Translation Procedures of the Dataset}
 
 \section{Tokenization Fragmentation Measurement}
+
 \subsection{Text Unit Being Tokenized}
 % State exactly whether the tokenizer receives question only, question plus options,
 % or another fixed string. Use the same rule across models and languages.
