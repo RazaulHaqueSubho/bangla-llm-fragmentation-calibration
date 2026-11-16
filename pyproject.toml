@@ -1,10 +1,10 @@
 [project]
 name = "bangla-llm-fragmentation-calibration"
 version = "0.1.0"
-description = "Add your description here"
+description = "This study aims to investigates the relationship between tokenization fragmentation and confidence calibration in Bangla Large Language Models (LLMs)."
 readme = "README.md"
 authors = [
-    { name = "iam-abdullah-al-azmi", email = "azmi@iut-dhaka.edu" }
+    { name = "We_have_a_trust_issue", email = "" }
 ]
 requires-python = ">=3.12"
 dependencies = [
