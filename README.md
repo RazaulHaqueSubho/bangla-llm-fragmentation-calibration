@@ -1,6 +1,7 @@
 # Bangla LLM Calibration
 
-This study aims to investigates the relationship between tokenization fragmentation and confidence calibration in Bangla Large Language Models (LLMs).
+This study aims to investigates the relationship between tokenization
+fragmentation and confidence calibration in Bangla Large Language Models (LLMs).
 
 ## Research Objectives
 
@@ -26,8 +27,10 @@ This study aims to investigates the relationship between tokenization fragmentat
 
 ## Workflow
 
-Tasks are tracked through GitHub Issues. Changes are submitted through feature branches and Pull Requests.
+Tasks are tracked through GitHub Issues. Changes are submitted through feature
+branches and Pull Requests.
 
 ## Status
 
-Literature review, metric definition, dataset preparation, and evaluation pipeline validation are in progress.
+Literature review, metric definition, dataset preparation, and evaluation pipeline
+validation are in progress.
