@@ -1,0 +1,26 @@
+
+\subsection{Dataset}
+
+For our study, we use the BnMMLU: Measuring Massive Multitask Language Understanding in Bengali \cite{joy-shatabda-2026-bnmmlu} dataset. The dataset contains multiple-choice questions across the 23 domains, including science, humanities, mathematics, and general knowledge. It has primarily two categories: full, and hard.
+
+The full category contains the samples which is simpler for large language models (LLMs) to answer, where as the hard category contains the samples which is difficult for the large language model to answer. Also, the hard category samples contains one extra feature named failure\_ratio, which highlights the failure on large language model during the study.
+
+Since, our study address the cross-lingual study, that is why we translated the dataset into English. Below, we provide the full character of the dataset and translation procedures.
+
+\subsubsection{Dataset Characteristics}
+
+% Please add the following required packages to your document preamble:
+\begin{table}[]
+	\centering
+	\begin{tabular}{@{}lllllll@{}}
+		\cmidrule(r){1-5}
+		Unique\_Serial & subject\_name            & question                                              & correct\_answer & options & question\_char\_count & faiture\_ratio \\ \cmidrule(r){1-5}
+		1              & Algebra \& Number Theory & (x+a)/(x+1)(x-3) = B/(x+1) + 1/(x-3) হলে, A ও B এর মান- &                 &         &                       &                \\
+		               &                          &                                                       &                 &         &                       &                \\
+		               &                          &                                                       &                 &         &                       &                \\ \cmidrule(r){1-5}
+	\end{tabular}
+	\caption{}
+	\label{tab:my-table}
+\end{table}
+
+\subsubsection{Translation Procedures of the Dataset}
