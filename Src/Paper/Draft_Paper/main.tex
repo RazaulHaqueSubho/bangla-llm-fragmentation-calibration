@@ -1,40 +1,56 @@
-% Springer LNCS manuscript skeleton for the Bangla LLM fragmentation/calibration study.
-% All TODOs must be resolved from the final frozen experiment. Do not invent results.
-% Compile with the official Springer LNCS llncs.cls and splncs04.bst.
+\documentclass{article}
 
-\documentclass[runningheads]{llncs}
-\usepackage[T1]{fontenc}
-\usepackage{amsmath,amssymb}
+\usepackage{float}
+\usepackage{xcolor}
+\usepackage{authblk}
+\usepackage{comment}
+\usepackage{parskip}
+\usepackage{geometry}
+\usepackage{setspace}
 \usepackage{graphicx}
-\usepackage{booktabs}
-\usepackage{multirow}
-\usepackage{url}
 \usepackage{hyperref}
-\usepackage{xurl}
 \usepackage{microtype}
-\usepackage{fontspec}
-\setmainfont{[kalpurush.ttf]}
-\newfontface{\en}{[Chapaza Italic.ttf]}
+\usepackage[T1]{fontenc}
 \usepackage[utf8]{inputenc}
+\usepackage{amsmath, amssymb, amsfonts}
 
+\setstretch{1.5}
+\geometry{paper=a4paper, layout=a4paper, margin=0.5in}
 
-\hypersetup{colorlinks=true,linkcolor=black,citecolor=black,urlcolor=blue}
-\urlstyle{rm}
+\begin{comment}
+
+Package Description
+
+float       ->      Improves control over the placement of figures and tables.
+xcolor      ->      Adds support for colored text, backgrounds, and page elements.
+fontenc     ->      Selects font encodings for better character output and hyphenation.
+amsmath     ->      Provides enhanced environments and commands for mathematical typesetting.
+comment     ->      Allows block of text to be excluded from the document.
+parskip     ->      Adjusts paragraph spacing and indentation.
+amssymb     ->      Provides additional mathematical symbols.
+inputenc    ->      Specifies the input text encoding, such as UTF-8.
+graphicx    ->      Enables including and scaling images.
+setspace    ->      Controls line spacing, such as single or double spacing.
+amsfonts    ->      Provides additional mathematical fonts, including \mathbb.
+microtype   ->      Improves typography through subtle spacing and character adjustments.
+
+\end{comment}
 
 \begin{document}
 
-\input{Draft_Paper/Authors_and_Title/authors-and-title.tex}
-\input{Draft_Paper/Abstract/abstract.tex}
-\input{Draft_Paper/Introduction/introduction.tex}
-\input{Draft_Paper/Related_Work/related-work.tex}
-\input{Draft_Paper/Methodology/methodology.tex}
-\input{Draft_Paper/Results/results.tex}
-\input{Draft_Paper/Discussion/discussion.tex}
-\input{Draft_Paper/Conclusion/conclusion.tex}
-\input{Draft_Paper/Contributions/contributions.tex}
-\input{Draft_Paper/Data_and_Code_Availability/data-and-code-availability.tex}
-\input{Draft_Paper/References/references.tex}
-\input{Draft_Paper/Appendix/appendix.tex}
+
+\input{Sections/Authors_and_Title/authors_and_title.tex}
+\input{Sections/Abstract/abstract.tex}
+\input{Sections/Introduction/introduction.tex}
+\input{Sections/Related_Work/related_work.tex}
+\input{Sections/Methodology/methodology.tex}
+\input{Sections/Results/results.tex}
+\input{Sections/Discussion/discussion.tex}
+\input{Sections/Conclusion/conclusion.tex}
+\input{Sections/Contribution/contribution.tex}
+\input{Sections/Data_and_Code_Availability/data_and_code_availability.tex}
+\input{Sections/References/references.tex}
+\input{Sections/Appendices/appendices.tex}
 
 \end{document}
 
