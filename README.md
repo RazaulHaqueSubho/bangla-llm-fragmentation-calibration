@@ -1,4 +1,4 @@
-# Bangla LLM Calibration
+# Bangla LLMs Fragmentation Calibration
 
 This study aims to investigates the relationship between tokenization
 fragmentation and confidence calibration in Bangla Large Language Models (LLMs).
