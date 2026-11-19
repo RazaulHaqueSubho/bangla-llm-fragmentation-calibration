@@ -4,13 +4,27 @@
 
 **Write/prepare:**
 
-1. Exact TPW definition and implementation rules: tokenizer input unit, special tokens, word segmentation, punctuation, whitespace, Unicode normalization, empty strings, and aggregation.
-2. STRR: source citation and exact formula, including numerator, denominator, alignment procedure, and tested implementation. If the definition cannot be verified, recommend excluding STRR rather than guessing.
-3. Confidence extraction protocol: exact prompt, answer-option scoring, probability normalization, answer prediction, invalid output handling, and model chat template.
-4. Calibration metrics: accuracy, multiclass Brier score, ECE. Specify ECE bin count, bin edges, endpoint convention, empty-bin handling, and sample size.
-5. Temperature scaling, if used: fitting split, validation procedure, and protection against test leakage.
-6. Statistical analysis plan: define the observational unit and primary outcome. Explain how item-level TPW will be related to calibration behaviour while accounting for repeated questions, models, and subjects. State effect sizes, confidence intervals, clustering/mixed effects, multiple-testing correction, and sensitivity checks.
-7. Reproducibility: code path, package versions, model/tokenizer revisions, seed, and exact commit.
+1. Exact TPW definition and implementation rules: tokenizer input unit, special
+   tokens, word segmentation, punctuation, whitespace, Unicode normalization,
+   empty strings, and aggregation.
+2. STRR: source citation and exact formula, including numerator, denominator,
+   alignment procedure, and tested implementation. If the definition cannot be
+   verified, recommend excluding STRR rather than guessing.
+3. Confidence extraction protocol: exact prompt, answer-option scoring,
+   probability normalization, answer prediction, invalid output handling, and
+   model chat template.
+4. Calibration metrics: accuracy, multiclass Brier score, ECE. Specify ECE
+   bin count, bin edges, endpoint convention, empty-bin handling, and sample
+   size.
+5. Temperature scaling, if used: fitting split, validation procedure, and
+   protection against test leakage.
+6. Statistical analysis plan: define the observational unit and primary outcome.
+   Explain how item-level TPW will be related to calibration behaviour while
+   accounting for repeated questions, models, and subjects. State effect sizes,
+   confidence intervals, clustering/mixed effects, multiple-testing correction,
+   and sensitivity checks.
+7. Reproducibility: code path, package versions, model/tokenizer revisions,
+   seed, and exact commit.
 
 **Deliverables:**
 

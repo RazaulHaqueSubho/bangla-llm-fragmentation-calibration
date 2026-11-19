@@ -1,21 +1,25 @@
 \documentclass{article}
 
+\usepackage{array}
 \usepackage{float}
 \usepackage{xcolor}
 \usepackage{authblk}
 \usepackage{comment}
 \usepackage{parskip}
+\usepackage{tabularx}
 \usepackage{geometry}
 \usepackage{setspace}
 \usepackage{graphicx}
 \usepackage{hyperref}
 \usepackage{microtype}
 \usepackage[T1]{fontenc}
-\usepackage[utf8]{inputenc}
+\usepackage[english]{babel}
+\babelfont[bangla]{rm}{FreeSerif}
 \usepackage{amsmath, amssymb, amsfonts}
+\babelprovide[import, onchar=fonts ids]{bangla}
 
 \setstretch{1.5}
-\geometry{paper=a4paper, layout=a4paper, margin=0.5in}
+\geometry{paper=letterpaper, layout=letterpaper}
 
 \begin{comment}
 
@@ -23,11 +27,13 @@ Package Description
 
 float       ->      Improves control over the placement of figures and tables.
 xcolor      ->      Adds support for colored text, backgrounds, and page elements.
+authblk     ->      Provides support for author blocks and affiliations.
 fontenc     ->      Selects font encodings for better character output and hyphenation.
 amsmath     ->      Provides enhanced environments and commands for mathematical typesetting.
 comment     ->      Allows block of text to be excluded from the document.
 parskip     ->      Adjusts paragraph spacing and indentation.
 amssymb     ->      Provides additional mathematical symbols.
+geometry    ->      Sets the paper size and layout, including margins.
 inputenc    ->      Specifies the input text encoding, such as UTF-8.
 graphicx    ->      Enables including and scaling images.
 setspace    ->      Controls line spacing, such as single or double spacing.
@@ -37,7 +43,6 @@ microtype   ->      Improves typography through subtle spacing and character adj
 \end{comment}
 
 \begin{document}
-
 
 \input{Sections/Authors_and_Title/authors_and_title.tex}
 \input{Sections/Abstract/abstract.tex}
@@ -53,38 +58,3 @@ microtype   ->      Improves typography through subtle spacing and character adj
 \input{Sections/Appendices/appendices.tex}
 
 \end{document}
-
-% Instructions for generating tables and figures
-%
-% Figures: export as PDF for vector plots where possible; use legible fonts,
-% axis labels, units, captions, and consistent language/model ordering.
-% Every figure/table must be cited in the text and have a self-contained caption.
-% Never create a plot from placeholder or unverified values.
-%
-%
-% Figure 1. Study workflow: dataset -> paired language conditions -> tokenizer
-% fragmentation -> model scoring/confidence -> calibration -> association analysis.
-%
-%
-% Figure 2. Tokenization examples: visual comparison of token pieces for selected
-% Bangla-English matched items (optional; may be replaced by Table 2).
-%
-%
-% Figure 3. TPW distributions: box/violin plots by model and language.
-%
-%
-% Figure 4. Reliability diagrams: confidence vs empirical accuracy for each
-% language/model (avoid overcrowding; use panels if needed).
-%
-%
-% Figure 5. Fragmentation-calibration association: scatter/partial-effect plot
-% using the exact statistical unit and model described in the analysis plan.
-%
-%
-% Table 01. Dataset composition, pairing, filtering, and final sample counts.
-% Table 02. Five worked tokenizer examples with token pieces and metric calculations.
-% Table 03. Model and tokenizer identities with immutable revisions.
-% Table 04. TPW/STRR descriptive statistics by model and language.
-% Table 05. Accuracy, Brier score, and ECE with N and bin count.
-% Table 06. Primary association model: coefficient/effect, CI, p-value, controls.
-% Table 07. Robustness/sensitivity analysis (only if conducted).

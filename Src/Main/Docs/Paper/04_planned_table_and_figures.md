@@ -22,4 +22,7 @@
 | 4   | Reliability diagrams                          | Compare confidence with observed accuracy                                                |
 | 5   | Fragmentation-calibration association plot    | Visualize the primary statistical relationship                                           |
 
-Use vector PDF for plots where possible. Every figure needs a number, caption, readable axis labels, units, legend, and an in-text reference. Every table needs a number, caption, clear column definitions, and an in-text reference. Never plot placeholder or unverified values.
+Use vector PDF for plots where possible. Every figure needs a number, caption,
+readable axis labels, units, legend, and an in-text reference. Every table needs
+a number, caption, clear column definitions, and an in-text reference. Never
+plot placeholder or unverified values.
