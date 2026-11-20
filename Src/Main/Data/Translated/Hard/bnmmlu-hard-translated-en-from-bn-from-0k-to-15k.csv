@@ -9995,7 +9995,15 @@ x - 2y = 2","(x, y) = (6, 2) সমাধানটি নিচের কোন 
 10007,Human Biology & Anatomy,d,Which animal's red blood cells lack a nucleus?,Fish,Frog,Lizard,Human,কোন প্রাণির লোহিত  কণিকায় নিউক্লিয়াস নেই?,মাছ,ব্যাঙ্গ,টিকটিকি,মানুষ
 10008,Human Biology & Anatomy,c,Sacral is a part of?,Skull,Tailbone,Vertebral column,Rib cage,স্যাক্রাল কার অংশ ?,করোটি,লেজ,শ্রেণী,কক্ষ পিঞ্জর
 10009,Human Biology & Anatomy,b,Which valve of the heart does not have three cusps?,Right atrioventricular valve,Left atrioventricular valve,Aortic valve,Pulmonary valve,হ্রতপিন্ডের কোন কপাটিকায় তিনটি কাস্প (cusp) থাকে না ?,ডান আট্রিওভেন্ট্রিকুলার কপাটিকা,বাম আট্রিওভেন্ট্রিকুলার কপাটিকা,আওর্টিক কপাটিকা,পালমোনারি কপাটিকা
-10010,Human Biology & Anatomy,d,The correct sequence of the earthworm's alimentary canal from mouth to anus is,"Gizzard $ightarrow$ Esophagus $ightarrow$ Typhlosole region $ightarrow$ Intestinal caeca","Buccal cavity $ightarrow$ Gizzard $ightarrow$ Intestinal caeca $ightarrow$ Pre-typhlosole region","Intestinal caeca $ightarrow$ Pre-typhlosole region $ightarrow$ Typhlosole region",None of these,কেঁচোর পৌষ্টিকনালি মুখ থেকে পায়ু পর্যন্ত সঠিক বিন্যাস,গিজার্ড<mo>→</mo>অন্ননালি<mo>→</mo>টিফরোসোল অঞ্চল<mo>→</mo>আন্ত্রিক সিকা,গলবিল<mo>→</mo>গিজার্ড<mo>→</mo>আন্ত্রিক সিকা<mo>→</mo> প্রাক-টিফলোসোল অঞ্চল,আন্ত্রিক সিকা<mo>→</mo>প্রাক টিফলোসোল অঞ্চল <mo>→</mo> টিফলোসোল অঞ্চল,কোনোটিই নয়
+10010,Human Biology & Anatomy,d,The correct sequence of the earthworm's alimentary canal from mouth to anus is,"Gizzard $
+ightarrow$ Esophagus $
+ightarrow$ Typhlosole region $
+ightarrow$ Intestinal caeca","Buccal cavity $
+ightarrow$ Gizzard $
+ightarrow$ Intestinal caeca $
+ightarrow$ Pre-typhlosole region","Intestinal caeca $
+ightarrow$ Pre-typhlosole region $
+ightarrow$ Typhlosole region",None of these,কেঁচোর পৌষ্টিকনালি মুখ থেকে পায়ু পর্যন্ত সঠিক বিন্যাস,গিজার্ড<mo>→</mo>অন্ননালি<mo>→</mo>টিফরোসোল অঞ্চল<mo>→</mo>আন্ত্রিক সিকা,গলবিল<mo>→</mo>গিজার্ড<mo>→</mo>আন্ত্রিক সিকা<mo>→</mo> প্রাক-টিফলোসোল অঞ্চল,আন্ত্রিক সিকা<mo>→</mo>প্রাক টিফলোসোল অঞ্চল <mo>→</mo> টিফলোসোল অঞ্চল,কোনোটিই নয়
 10011,Human Biology & Anatomy,c,The blood group without antibodies is—,A,B,AB,O,এন্টিবডিবিহীন রক্তগ্রুপ হচ্ছে—,A,B,AB,O
 10012,Human Biology & Anatomy,c,The type of egg in mammals is -,Eutherian,Macrolecithal,Alecithal,Telolecithal,স্তন্যপায়ী প্রাণীর ডিমের ধরন -,ইউথিরিয়ান,ম্যাক্রোলেসিথাল,অ্যালেসিথাল,টেলোলেসিথাল
 10013,Human Biology & Anatomy,a,Which of the following is not a characteristic of cockroach blood?,"Two types of hemocytes are seen, namely prohemocytes and transitional hemocytes",Cockroach blood is colorless,The specific gravity of the blood is 7.5-8.0,Blood primarily functions to transport nutrients and waste materials,কোনটি আরশোর রক্তের বৈশিষ্ট্য নয়?,দুই ধরনের হিমোসাইট দেখা যায়। যথা -প্রোহিমোসাইট ও ট্রানজিশনাল হিমোসাইট,আরশোলার রক্ত বর্ণহীন,রক্তের আপেক্সিক গুরুত্ব 7.5-8.0,রক্ত প্রধানত কাদ্যসার ও বর্জ্য পদার্থ  সংবহনের কাজ করে
@@ -11794,7 +11802,7 @@ i. NAND
 ii. NOR
 iii. X-NOR
 
-Which of the following is correct?",i and ii,i and iii,ii and iii,"i, ii and iii","কোন গেইটের সকল ইনপুট ০ হলে আউটপুট ১ হবে? 
+Which of the following is correct?",i and ii,i and iii,ii and iii,"i, ii and iii","কোন গেইটের সকল ইনপুট ০ হলে আউটপুট ১ হবে?
 i. NAND
 ii. NOR
 iii. X-NOR
@@ -13442,13 +13450,13 @@ f.","<ol type = ""a"" start = '4'> এর আউটপুট কেমন হব
 13442,Programming & Algorithms,d,"The number of outputs of a decoder with inputs A, B, C, D is-",2,4,8,16,"A,B,C,D ইনপুটবিশিষ্ট ডিকোডারের আউটপুট সংখ্যা হল-",২,৪,৮,১৬
 13443,Programming & Algorithms,c,"Which of the following are attributes: i. a, ii. src, iii. href?",i and ii,i and iii,ii and iii,"i, ii and iii",Attribute হচ্ছে-i. a ii. srciii. href নিচের কোনটি সঠিক?,i ও ii,i ও iii,ii ও iii,"i, ii ও iii"
 13444,Programming & Algorithms,c,"Attribute is-
-i. a 
-ii. src 
+i. a
+ii. src
 iii. href
 
 Which of the following is correct?",i and ii,i and iii,ii and iii,"i, ii and iii","Attribute হচ্ছে-
-i. a 
-ii..src 
+i. a
+ii..src
 iii. href
 
 নিচের কোনটি সঠিক?",i ও ii,i ও iii,ii ও iii,"i, ii ও iii"
