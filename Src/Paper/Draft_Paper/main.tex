@@ -1,0 +1,60 @@
+\documentclass{article}
+
+\usepackage{array}
+\usepackage{float}
+\usepackage{xcolor}
+\usepackage{authblk}
+\usepackage{comment}
+\usepackage{parskip}
+\usepackage{tabularx}
+\usepackage{geometry}
+\usepackage{setspace}
+\usepackage{graphicx}
+\usepackage{hyperref}
+\usepackage{microtype}
+\usepackage[T1]{fontenc}
+\usepackage[english]{babel}
+\babelfont[bangla]{rm}{FreeSerif}
+\usepackage{amsmath, amssymb, amsfonts}
+\babelprovide[import, onchar=fonts ids]{bangla}
+
+\setstretch{1.5}
+\geometry{paper=letterpaper, layout=letterpaper}
+
+\begin{comment}
+
+Package Description
+
+float       ->      Improves control over the placement of figures and tables.
+xcolor      ->      Adds support for colored text, backgrounds, and page elements.
+authblk     ->      Provides support for author blocks and affiliations.
+fontenc     ->      Selects font encodings for better character output and hyphenation.
+amsmath     ->      Provides enhanced environments and commands for mathematical typesetting.
+comment     ->      Allows block of text to be excluded from the document.
+parskip     ->      Adjusts paragraph spacing and indentation.
+amssymb     ->      Provides additional mathematical symbols.
+geometry    ->      Sets the paper size and layout, including margins.
+inputenc    ->      Specifies the input text encoding, such as UTF-8.
+graphicx    ->      Enables including and scaling images.
+setspace    ->      Controls line spacing, such as single or double spacing.
+amsfonts    ->      Provides additional mathematical fonts, including \mathbb.
+microtype   ->      Improves typography through subtle spacing and character adjustments.
+
+\end{comment}
+
+\begin{document}
+
+\input{Sections/Authors_and_Title/authors_and_title.tex}
+\input{Sections/Abstract/abstract.tex}
+\input{Sections/Introduction/introduction.tex}
+\input{Sections/Related_Work/related_work.tex}
+\input{Sections/Methodology/methodology.tex}
+\input{Sections/Results/results.tex}
+\input{Sections/Discussion/discussion.tex}
+\input{Sections/Conclusion/conclusion.tex}
+\input{Sections/Contribution/contribution.tex}
+\input{Sections/Data_and_Code_Availability/data_and_code_availability.tex}
+\input{Sections/References/references.tex}
+\input{Sections/Appendices/appendices.tex}
+
+\end{document}

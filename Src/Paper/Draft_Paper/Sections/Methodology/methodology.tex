@@ -1,0 +1,165 @@
+\section{Methodology}
+
+\subsection{Models and Datasets}
+
+For our study, we use the BnMMLU: Measuring Massive Multitask Language Understanding in Bengali  dataset. The dataset contains multiple-choice questions across the 23 domains, including science, humanities, mathematics, and general knowledge. It has primarily two categories: full, and hard.
+
+The full category contains the samples which is simpler for large language models (LLMs) to answer, where as the hard category contains the samples which is difficult for the large language model to answer. Also, the hard category samples contains one extra feature named failure\_ratio, which highlights the failure on large language model during the study.
+
+Since, our study address the cross-lingual study, that is why we translated the dataset into English. Below, we provide the full character of the dataset and translation procedures.
+
+\newpage
+
+\subsubsection{Dataset Characteristics}
+
+\subsubsubsection{Category: Full}
+
+\begin{tabularx}{\textwidth}{
+		| >{\hsize=0.5\hsize\raggedright\arraybackslash}X   % Unique_Serial (narrow)
+		| >{\hsize=1.1\hsize\raggedright\arraybackslash}X   % subject_name
+		| >{\hsize=2.2\hsize\raggedright\arraybackslash}X   % question (extra wide)
+		| >{\hsize=0.8\hsize\raggedright\arraybackslash}X   % correct_answer
+		| >{\hsize=1.2\hsize\raggedright\arraybackslash}X   % options
+		| >{\hsize=0.6\hsize\raggedright\arraybackslash}X   % question_char_count (narrow)
+		| >{\hsize=0.6\hsize\raggedright\arraybackslash}X | % faiture_ratio (narrow)
+	}
+	\hline
+	Unique\_Serial & subject\_name & question & correct\_answer & options & question\_en & option\_a\_en & option\_b\_en & option\_c\_en & option\_d\_en & question\_bn & option\_a\_bn & option\_b\_bn & option\_c\_bn & option\_d\_bn
+\end{tabularx}
+
+\subsubsubsection{Category: Hard}
+
+\begin{tabularx}{\textwidth}{
+		| >{\hsize=0.5\hsize\raggedright\arraybackslash}X   % Unique_Serial (narrow)
+		| >{\hsize=1.1\hsize\raggedright\arraybackslash}X   % subject_name
+		| >{\hsize=2.2\hsize\raggedright\arraybackslash}X   % question (extra wide)
+		| >{\hsize=0.8\hsize\raggedright\arraybackslash}X   % correct_answer
+		| >{\hsize=1.2\hsize\raggedright\arraybackslash}X   % options
+		| >{\hsize=0.6\hsize\raggedright\arraybackslash}X   % question_char_count (narrow)
+		| >{\hsize=0.6\hsize\raggedright\arraybackslash}X | % faiture_ratio (narrow)
+	}
+	\hline
+	Unique\_Serial & subject\_name            & question                                              & correct\_answer & options & question\_char\_count & faiture\_ratio \\
+	\hline
+	1              & Algebra \& Number Theory & (x+a)/(x+1)(x-3) = B/(x+1) + 1/(x-3) হলে, A ও B এর মান- &                 &         &                       &                \\
+	\hline
+\end{tabularx}
+
+% \section{Tokenization Fragmentation Measurement}
+
+% \subsection{Text Unit Being Tokenized}
+% % State exactly whether the tokenizer receives question only, question plus options,
+% % or another fixed string. Use the same rule across models and languages.
+
+% \subsection{Tokenizer Execution and Reproducibility}
+% % Tokenizer-only measurement does not require model inference.
+% % Record tokenizer repository/revision, library version, special-token settings,
+% % add_special_tokens setting, and exact input construction.
+
+% \subsection{Word Counting and Normalization}
+% % Define word segmentation for Bangla and English, punctuation treatment,
+% % whitespace, digits, symbols, Unicode normalization, zero-word strings,
+% % and whether special tokens are excluded. These rules must be shared by all authors.
+
+% \subsection{Tokens per Word (TPW)}
+% % Primary proposed fragmentation measure. Confirm final counting rules before analysis.
+% \begin{equation}
+% 	\mathrm{TPW}(x) =
+% 	\frac{N_{\mathrm{tokens}}(x)}
+% 	{N_{\mathrm{words}}(x)}.
+% 	\label{eq:tpw}
+% \end{equation}
+% % Explain aggregation: item-level TPW first; then report distributions/summary
+% % statistics by model, language, and subject. Do not report only one global mean.
+
+% \subsection{Subword Token Retention Ratio (STRR)}
+% % Include only after Naeem/team verifies the exact definition from its source.
+% % State formula, numerator, denominator, token/word alignment method,
+% % treatment of whole-word tokens, and implementation tests.
+% % If the definition cannot be verified, omit STRR from primary analyses and
+% % explain this decision rather than inventing a formula.
+
+% \subsection{Worked Tokenization Examples}
+% % Present five manually checked Bangla-English pairs.
+% % For each: pair ID, exact input text, tokenizer/model revision, token pieces,
+% % token count, word count, TPW, and verified STRR (if retained).
+% % Do not include model answer/inference output in this tokenizer-only table.
+
+% % Suggested Table 2: five worked examples.
+% % Columns: Pair ID | Language | Text | Token pieces | #Tokens | #Words | TPW | STRR.
+
+% \section{Confidence and Calibration Methodology}
+
+% \subsection{Prompt and Multiple-Choice Scoring Protocol}
+% % Provide exact prompt template and chat template.
+% % Explain how A/B/C/D scores are extracted, normalized, and mapped to a prediction.
+% % Specify handling of multi-token answer labels, invalid outputs, ties, and missing scores.
+
+% \subsection{Confidence Definition}
+% % Define confidence as the probability assigned to the predicted answer, if that
+% % is the chosen protocol. State whether scores are logits, normalized probabilities,
+% % verbal self-reports, or another quantity. Do not mix these approaches.
+
+% \subsection{Accuracy}
+% \begin{equation}
+% 	\mathrm{Accuracy} = \frac{1}{N}\sum_{i=1}^{N}
+% 	\mathbb{1}(\hat{y}_i=y_i).
+% 	\label{eq:accuracy}
+% \end{equation}
+% % Define the evaluation population and treatment of invalid/missing predictions.
+
+% \subsection{Brier Score}
+% \begin{equation}
+% 	\mathrm{Brier} =
+% 	\frac{1}{N}\sum_{i=1}^{N}\sum_{k=1}^{K}
+% 	(p_{ik}-y_{ik})^2.
+% 	\label{eq:brier}
+% \end{equation}
+% % State whether this multiclass convention (sum over classes) is used consistently.
+
+% \subsection{Expected Calibration Error (ECE)}
+% \begin{equation}
+% 	\mathrm{ECE} =
+% 	\sum_{b=1}^{B}\frac{|I_b|}{N}
+% 	\left|\mathrm{acc}(I_b)-\mathrm{conf}(I_b)\right|.
+% 	\label{eq:ece}
+% \end{equation}
+% % Freeze bin count, bin boundaries, endpoint convention, confidence definition,
+% % and empty-bin handling. Report bin count and sample size beside every ECE value.
+
+% \subsection{Reliability Diagrams}
+% % Explain binning and plot observed accuracy against mean confidence.
+% % Include the diagonal perfect-calibration reference line.
+% % Plot Bangla and English separately or clearly distinguish them.
+
+% \subsection{Calibration Variants and Data Leakage Prevention}
+% % If temperature scaling is used, specify the calibration/validation split,
+% % fitting procedure, and test split. Never fit temperature on the test set.
+% % Clearly separate raw (uncalibrated) and temperature-scaled results.
+
+% \section{Experimental Setup}
+% \subsection{Evaluation Pipeline}
+% % Describe code entry points, environment, package versions, hardware,
+% % precision, batch size, random seeds, caching, retries, and checkpoint/resume.
+% % Link the exact repository commit used for the final run.
+
+% \subsection{Primary and Secondary Outcomes}
+% % Name one primary fragmentation metric and one primary calibration outcome.
+% % Mark all other metrics and subgroup comparisons as secondary/exploratory.
+
+% \subsection{Statistical Analysis Plan}
+% % Crucial: the observational unit and dependence structure must be explicit.
+% % TPW is available per item and tokenizer; ECE is an aggregate metric, not an
+% % independent per-question label. Do not correlate item TPW with one global ECE
+% % value as if each question had its own ECE.
+% % Define the item-level calibration-error outcome or an appropriate grouped/
+% % hierarchical analysis; account for repeated items within models/subjects.
+% % Specify effect sizes, confidence intervals, clustering/mixed effects,
+% % multiple-comparison correction, missing-data handling, and sensitivity analyses.
+% % Avoid treating thousands of repeated questions as independent model-level replicates.
+
+% \subsection{Robustness and Sensitivity Checks}
+% % Examples if supported by data: question-only vs question-plus-options TPW;
+% % alternative word segmentation; paired-only subset; subject-level analysis;
+% % raw vs temperature-scaled confidence; alternative ECE bin counts.
+% % State which are planned, not all need to be run.
