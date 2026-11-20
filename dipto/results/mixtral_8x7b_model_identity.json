@@ -1,0 +1,45 @@
+{
+  "repo": "mistralai/Mixtral-8x7B-Instruct-v0.1",
+  "revision": "eba92302a2861cdc0098cc54bc9f17cb2c47eb61",
+  "precision": "nf4",
+  "config_hash": "e69bf6d7abfea6cb3c2134d69a1cff21712b0f9e77a50589f36fea2198ddb3a5",
+  "tokenizer_class": "LlamaTokenizerFast",
+  "vocabulary_hash": "7df3009bf769b7f15cf336b5bd05474db0a05eb48b710626f2ae36bafc3d6b8e",
+  "backend_hash": "9ffb7f6c5e469980fa7fa4244bc8483a1a97dffc9f05944c96ae502a56801519",
+  "label_ids": [
+    [
+      330
+    ],
+    [
+      365
+    ],
+    [
+      334
+    ],
+    [
+      384
+    ]
+  ],
+  "context_limit": 32768,
+  "weights": {
+    "model-00001-of-00019.safetensors": 4892809584,
+    "model-00002-of-00019.safetensors": 4983004016,
+    "model-00003-of-00019.safetensors": 4983004016,
+    "model-00004-of-00019.safetensors": 4899035200,
+    "model-00005-of-00019.safetensors": 4983004016,
+    "model-00006-of-00019.safetensors": 4983004016,
+    "model-00007-of-00019.safetensors": 4899035248,
+    "model-00008-of-00019.safetensors": 4983004072,
+    "model-00009-of-00019.safetensors": 4983004072,
+    "model-00010-of-00019.safetensors": 4899035248,
+    "model-00011-of-00019.safetensors": 4983004072,
+    "model-00012-of-00019.safetensors": 4983004072,
+    "model-00013-of-00019.safetensors": 4983004072,
+    "model-00014-of-00019.safetensors": 4899035248,
+    "model-00015-of-00019.safetensors": 4983004072,
+    "model-00016-of-00019.safetensors": 4983004072,
+    "model-00017-of-00019.safetensors": 4899035248,
+    "model-00018-of-00019.safetensors": 4983004072,
+    "model-00019-of-00019.safetensors": 4221679088
+  }
+}

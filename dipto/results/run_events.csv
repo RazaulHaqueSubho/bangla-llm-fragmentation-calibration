@@ -1,0 +1,16 @@
+timestamp,model,event,detail
+2026-09-21T05:26:13.756561+00:00,Qwen/Qwen2.5-1.5B-Instruct,running,"{""gpus"": [""Tesla T4"", ""Tesla T4""], ""cuda"": ""12.8"", ""revision"": ""989aa7980e4cf806f80c7fef2b1adb7bc71aa306"", ""precision"": ""fp16""}"
+2026-09-21T07:24:31.931003+00:00,Qwen/Qwen2.5-1.5B-Instruct,processed,All pending rows attempted; check per-row coverage and errors.
+2026-09-21T07:25:26.650464+00:00,HuggingFaceTB/SmolLM2-1.7B-Instruct,running,"{""gpus"": [""Tesla T4"", ""Tesla T4""], ""cuda"": ""12.8"", ""revision"": ""31b70e2e869a7173562077fd711b654946d38674"", ""precision"": ""fp16""}"
+2026-09-21T09:43:30.261466+00:00,HuggingFaceTB/SmolLM2-1.7B-Instruct,processed,All pending rows attempted; check per-row coverage and errors.
+2026-09-21T09:45:00.639291+00:00,hishab/titulm-llama-3.2-3b-v2.0,running,"{""gpus"": [""Tesla T4"", ""Tesla T4""], ""cuda"": ""12.8"", ""revision"": ""ce14af760eff9f6eeed2c44d35266e2e038b688a"", ""precision"": ""fp16""}"
+2026-09-21T12:15:56.640463+00:00,hishab/titulm-llama-3.2-3b-v2.0,processed,All pending rows attempted; check per-row coverage and errors.
+2026-09-21T12:16:25.449925+00:00,md-nishat-008/TigerLLM-1B-it,running,"{""gpus"": [""Tesla T4"", ""Tesla T4""], ""cuda"": ""12.8"", ""revision"": ""49c2001b637a84d997dbe34302fe527d70782097"", ""precision"": ""fp32""}"
+2026-09-21T14:25:53.473578+00:00,md-nishat-008/TigerLLM-1B-it,time_budget,Paused between rows; resume to continue.
+2026-09-21T14:25:57.071136+00:00,meta-llama/Llama-3.2-3B-Instruct,time_budget,Deferred before loading; resume this checkpoint.
+2026-09-21T14:25:57.092191+00:00,mistralai/Mixtral-8x7B-Instruct-v0.1,time_budget,Deferred before loading; resume this checkpoint.
+2026-09-21T15:35:26.415195+00:00,meta-llama/Llama-3.2-3B-Instruct,running,"{""gpus"": [""Tesla T4"", ""Tesla T4""], ""cuda"": ""12.8"", ""revision"": ""0cb88a4f764b7a12671c53f0838cd831a0843b95"", ""precision"": ""fp16""}"
+2026-09-21T19:28:31.601964+00:00,meta-llama/Llama-3.2-3B-Instruct,processed,All pending rows attempted; check per-row coverage and errors.
+2026-09-21T19:29:24.264800+00:00,md-nishat-008/TigerLLM-1B-it,running,"{""gpus"": [""Tesla T4"", ""Tesla T4""], ""cuda"": ""12.8"", ""revision"": ""49c2001b637a84d997dbe34302fe527d70782097"", ""precision"": ""fp32""}"
+2026-09-21T20:05:03.157835+00:00,md-nishat-008/TigerLLM-1B-it,processed,All pending rows attempted; check per-row coverage and errors.
+2026-09-21T20:05:10.408103+00:00,mistralai/Mixtral-8x7B-Instruct-v0.1,resource_blocked,ResourceBlocked: mixtral_8x7b: need at least 26 GiB free GPU memory; available=19.2 GiB. Mixtral requires multiple sufficiently large GPUs.

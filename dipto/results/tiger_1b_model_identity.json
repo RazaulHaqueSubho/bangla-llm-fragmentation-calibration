@@ -1,0 +1,27 @@
+{
+  "repo": "md-nishat-008/TigerLLM-1B-it",
+  "revision": "49c2001b637a84d997dbe34302fe527d70782097",
+  "precision": "fp32",
+  "config_hash": "e27fbf9c3cedd9eea9a1ae9c0bd54eec8215f06c5dde2f9e74fc49e3c7f1307e",
+  "tokenizer_class": "GemmaTokenizerFast",
+  "vocabulary_hash": "4dc04d7dcf1fc4650e6a3a184b6666ea8ddc142c7d823669ce2378d01f11efca",
+  "backend_hash": "64e0009d2b9d57c3ed0aefa793c2354854c2c918805786a16cd3f5a7b6306cac",
+  "label_ids": [
+    [
+      562
+    ],
+    [
+      603
+    ],
+    [
+      565
+    ],
+    [
+      622
+    ]
+  ],
+  "context_limit": 32768,
+  "weights": {
+    "model.safetensors": 1999811208
+  }
+}
