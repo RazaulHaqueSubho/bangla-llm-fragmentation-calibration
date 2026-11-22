@@ -1,0 +1,181 @@
+\section{Methodology}
+
+\subsection{Models and Datasets}
+
+For our study, we use the BnMMLU: Measuring Massive Multitask Language Understanding in Bengali  dataset. The dataset contains multiple-choice questions across the 23 domains, including science, humanities, mathematics, and general knowledge. It has primarily two categories: full, and hard.
+
+The full category contains the samples which is simpler for large language models (LLMs) to answer, where as the hard category contains the samples which is difficult for the large language model to answer. Also, the hard category samples contains one extra feature named failure\_ratio, which highlights the failure on large language model during the study.
+
+Since, our study address the cross-lingual study, that is why we translated the dataset into English. Below, we provide the full character of the dataset and translation procedures.
+
+\newpage
+
+\subsubsection{Dataset Characteristics}
+
+\text{Translated to English from Bengali}
+
+\text{Category: Full}
+
+\begin{landscape}
+	\begin{center}
+		\begin{tabulary}{\linewidth}{LLLLLLLLLLLLLL}
+			\hline
+			Unique\_Serial & subject\_name & correct\_answer & question\_en & option\_a\_en & option\_b\_en & option\_c\_en & option\_d\_en & question\_bn & option\_a\_bn & option\_b\_bn & option\_c\_bn & option\_d\_bn \\
+			\hline
+			1&Financial\ Accounting&c&Which\ of\ the following is recorded in the General Journal?&Purchase Journal&Sales Journal&Adjusting Journal&Special Journal&প্রকৃত জাবেদায় লিপিবদ্ধ করা হয় কোনটি?&ক্রয় জাবেদা&বিক্রয় জাবেদা&সমন্বয় জাবেদা&বিশেষ জাবেদা \\
+			\hline
+			2&Financial Accounting&c&Which of the following is a credit?&Decrease in liability&Decrease in expense&Decrease in owner's equity&Decrease in revenue or income&নিচের কোনটি ক্রেডিট?&দায় হ্রাস&ব্যয় হ্রাস&মালিকানা স্বত্ব হ্রাস&রেভিনিউ বা আয় হ্রাস \\
+			\hline
+			3&Financial Accounting&b&At which stage/step of the accounting cycle is the trial balance prepared?&Fourth stage&Fifth stage&Second stage&Third stage&রেওয়ামিল হিসাবচক্রের কোন স্তর/ধাপ?&চতুর্থ স্তর&পঞ্চম স্তর&দ্বিতীয় স্তর&তৃতীয় স্তর\\
+			\hline
+			4&Financial Accounting&a&Most of the family transactions occur in-&Cash&Cheque&Credit&Free of cost&পরিবারের বেশিরভাগ লেনদেন সংঘটিত হয়-&নগদ&চেকে&ধারে&বিনামূল্যে\\
+			\hline
+			5&Financial Accounting&c&Which of the following should be credited for the sale of old machinery?&Old Machinery Account&Cash Account&Machinery Account&Sales Account&পুরাতন যন্ত্রপাতি বিক্রয়ের জন্যে নিচের কোনটিকে ক্রেডিট করতে হবে?&পুরাতন যন্ত্রপাতি হিসাব&মুন্ত্রাস্থি বিজয় শিষ্যব&যন্ত্রপ্লাতি হিসাব&বিক্রয় হিসাব \\
+			\hline
+		\end{tabulary}
+	\end{center}
+\end{landscape}
+
+\newpage
+
+\text{Category: Hard}
+
+\begin{landscape}
+	\begin{center}
+		\scriptsize
+		\begin{tabulary}{\linewidth}{LLLLLLLLLLLLL}
+			\hline
+			Unique\_Serial & subject\_name & correct\_answer & question\_en & option\_a\_en & option\_b\_en & option\_c\_en & option\_d\_en & question\_bn & option\_a\_bn & option\_b\_bn & option\_c\_bn & option\_d\_bn \\
+			\hline
+			1 & Algebra \& Number Theory & b & "If (x+a)/(x+1)(x-3) = B/(x+1) + 1/(x-3), then the values of A and B are-" & A=1 & B=1 & A=1; B=0 & A=5; B=4 & A=0; B=1 & "(x+a)/(x+1)(x-3) = B/(x+1) + 1/(x-3) হলে, A ও B এর মান-" & A=1 & B=1 & A=1; B=0 & A=5; B=4 & A=0; B=1 \\
+			\hline
+			2 & Algebra \& Number Theory & d & The area in square units enclosed by 2x + 3y = 6 and the coordinate axes will be- & 36 & 18 & 6 & 3 & 2x + 3y =6  ও অক্ষদ্বয় দ্বারা বেষ্ঠিত এলাকার বর্গ এককে ক্ষেত্রফল হবে- & 36 & 18 & 6 & 3 \\
+			\hline
+			3 & Algebra \& Number Theory & d & Which of the following is the equation of the straight line located parallel to the x-axis and at a distance of 9 units in the negative direction? & x + 9 = 0 & x - 9 = 0 & y - 9 = 0 & y + 9 = 0 & x-অক্ষের সমান্তরাল এবং ঋণাত্মক দিকে 9 একক দূরত্বে অবস্থিত সরলরেখাটির সমীকরণ নিচের কোনটি? & x + 9 = 0 & x - 9 = 0 & y - 9 = 0 & y + 9 = 0 \\
+			\hline
+			4 & Algebra \& Number Theory & c & Express (1239)10 in binary form- & 10011010011 & 10101010011 & 10011010111 & 10101010111 & <mo>(</mo><mn>1239</mn><msub><mo>)</mo><mn>10</mn></msub> কে দ্বিমিক আকারে প্রকাশ কর- & 10011010011 & 10101010011 & 10011010111 & 10101010111 \\
+			\hline
+			5 & Algebra \& Number Theory & d & "If A = {a,b} and B = {b,c}, then which of the following is a subset of P(A∪ B)?" & P(A) ∪ P(B) & P(A) ∩ P(B) & P(A)\P(B) & All of the above & "যদি A = {a,b} এবং B = {b,c} হয়, তবে P(A∪ B) এর উপসেট কোনটি?" & P(A) ∪ P(B) & P(A) ∩ P(B) & P(A)\P(B) & উপরের সবকয়টি \\
+			\hline
+		\end{tabulary}
+	\end{center}
+\end{landscape}
+
+% \section{Tokenization Fragmentation Measurement}
+
+% \subsection{Text Unit Being Tokenized}
+% % State exactly whether the tokenizer receives question only, question plus options,
+% % or another fixed string. Use the same rule across models and languages.
+
+% \subsection{Tokenizer Execution and Reproducibility}
+% % Tokenizer-only measurement does not require model inference.
+% % Record tokenizer repository/revision, library version, special-token settings,
+% % add_special_tokens setting, and exact input construction.
+
+% \subsection{Word Counting and Normalization}
+% % Define word segmentation for Bangla and English, punctuation treatment,
+% % whitespace, digits, symbols, Unicode normalization, zero-word strings,
+% % and whether special tokens are excluded. These rules must be shared by all authors.
+
+% \subsection{Tokens per Word (TPW)}
+% % Primary proposed fragmentation measure. Confirm final counting rules before analysis.
+% \begin{equation}
+% 	\mathrm{TPW}(x) =
+% 	\frac{N_{\mathrm{tokens}}(x)}
+% 	{N_{\mathrm{words}}(x)}.
+% 	\label{eq:tpw}
+% \end{equation}
+% % Explain aggregation: item-level TPW first; then report distributions/summary
+% % statistics by model, language, and subject. Do not report only one global mean.
+
+% \subsection{Subword Token Retention Ratio (STRR)}
+% % Include only after Naeem/team verifies the exact definition from its source.
+% % State formula, numerator, denominator, token/word alignment method,
+% % treatment of whole-word tokens, and implementation tests.
+% % If the definition cannot be verified, omit STRR from primary analyses and
+% % explain this decision rather than inventing a formula.
+
+% \subsection{Worked Tokenization Examples}
+% % Present five manually checked Bangla-English pairs.
+% % For each: pair ID, exact input text, tokenizer/model revision, token pieces,
+% % token count, word count, TPW, and verified STRR (if retained).
+% % Do not include model answer/inference output in this tokenizer-only table.
+
+% % Suggested Table 2: five worked examples.
+% % Columns: Pair ID | Language | Text | Token pieces | #Tokens | #Words | TPW | STRR.
+
+% \section{Confidence and Calibration Methodology}
+
+% \subsection{Prompt and Multiple-Choice Scoring Protocol}
+% % Provide exact prompt template and chat template.
+% % Explain how A/B/C/D scores are extracted, normalized, and mapped to a prediction.
+% % Specify handling of multi-token answer labels, invalid outputs, ties, and missing scores.
+
+% \subsection{Confidence Definition}
+% % Define confidence as the probability assigned to the predicted answer, if that
+% % is the chosen protocol. State whether scores are logits, normalized probabilities,
+% % verbal self-reports, or another quantity. Do not mix these approaches.
+
+% \subsection{Accuracy}
+% \begin{equation}
+% 	\mathrm{Accuracy} = \frac{1}{N}\sum_{i=1}^{N}
+% 	\mathbb{1}(\hat{y}_i=y_i).
+% 	\label{eq:accuracy}
+% \end{equation}
+% % Define the evaluation population and treatment of invalid/missing predictions.
+
+% \subsection{Brier Score}
+% \begin{equation}
+% 	\mathrm{Brier} =
+% 	\frac{1}{N}\sum_{i=1}^{N}\sum_{k=1}^{K}
+% 	(p_{ik}-y_{ik})^2.
+% 	\label{eq:brier}
+% \end{equation}
+% % State whether this multiclass convention (sum over classes) is used consistently.
+
+% \subsection{Expected Calibration Error (ECE)}
+% \begin{equation}
+% 	\mathrm{ECE} =
+% 	\sum_{b=1}^{B}\frac{|I_b|}{N}
+% 	\left|\mathrm{acc}(I_b)-\mathrm{conf}(I_b)\right|.
+% 	\label{eq:ece}
+% \end{equation}
+% % Freeze bin count, bin boundaries, endpoint convention, confidence definition,
+% % and empty-bin handling. Report bin count and sample size beside every ECE value.
+
+% \subsection{Reliability Diagrams}
+% % Explain binning and plot observed accuracy against mean confidence.
+% % Include the diagonal perfect-calibration reference line.
+% % Plot Bangla and English separately or clearly distinguish them.
+
+% \subsection{Calibration Variants and Data Leakage Prevention}
+% % If temperature scaling is used, specify the calibration/validation split,
+% % fitting procedure, and test split. Never fit temperature on the test set.
+% % Clearly separate raw (uncalibrated) and temperature-scaled results.
+
+% \section{Experimental Setup}
+% \subsection{Evaluation Pipeline}
+% % Describe code entry points, environment, package versions, hardware,
+% % precision, batch size, random seeds, caching, retries, and checkpoint/resume.
+% % Link the exact repository commit used for the final run.
+
+% \subsection{Primary and Secondary Outcomes}
+% % Name one primary fragmentation metric and one primary calibration outcome.
+% % Mark all other metrics and subgroup comparisons as secondary/exploratory.
+
+% \subsection{Statistical Analysis Plan}
+% % Crucial: the observational unit and dependence structure must be explicit.
+% % TPW is available per item and tokenizer; ECE is an aggregate metric, not an
+% % independent per-question label. Do not correlate item TPW with one global ECE
+% % value as if each question had its own ECE.
+% % Define the item-level calibration-error outcome or an appropriate grouped/
+% % hierarchical analysis; account for repeated items within models/subjects.
+% % Specify effect sizes, confidence intervals, clustering/mixed effects,
+% % multiple-comparison correction, missing-data handling, and sensitivity analyses.
+% % Avoid treating thousands of repeated questions as independent model-level replicates.
+
+% \subsection{Robustness and Sensitivity Checks}
+% % Examples if supported by data: question-only vs question-plus-options TPW;
+% % alternative word segmentation; paired-only subset; subject-level analysis;
+% % raw vs temperature-scaled confidence; alternative ECE bin counts.
+% % State which are planned, not all need to be run.
