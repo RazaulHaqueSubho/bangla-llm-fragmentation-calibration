@@ -12,38 +12,54 @@ Since, our study address the cross-lingual study, that is why we translated the 
 
 \subsubsection{Dataset Characteristics}
 
-\subsubsubsection{Category: Full}
+\text{Translated to English from Bengali}
 
-\begin{tabularx}{\textwidth}{
-		| >{\hsize=0.5\hsize\raggedright\arraybackslash}X   % Unique_Serial (narrow)
-		| >{\hsize=1.1\hsize\raggedright\arraybackslash}X   % subject_name
-		| >{\hsize=2.2\hsize\raggedright\arraybackslash}X   % question (extra wide)
-		| >{\hsize=0.8\hsize\raggedright\arraybackslash}X   % correct_answer
-		| >{\hsize=1.2\hsize\raggedright\arraybackslash}X   % options
-		| >{\hsize=0.6\hsize\raggedright\arraybackslash}X   % question_char_count (narrow)
-		| >{\hsize=0.6\hsize\raggedright\arraybackslash}X | % faiture_ratio (narrow)
-	}
-	\hline
-	Unique\_Serial & subject\_name & question & correct\_answer & options & question\_en & option\_a\_en & option\_b\_en & option\_c\_en & option\_d\_en & question\_bn & option\_a\_bn & option\_b\_bn & option\_c\_bn & option\_d\_bn
-\end{tabularx}
+\text{Category: Full}
 
-\subsubsubsection{Category: Hard}
+\begin{landscape}
+	\begin{center}
+		\begin{tabulary}{\linewidth}{LLLLLLLLLLLLLL}
+			\hline
+			Unique\_Serial & subject\_name & correct\_answer & question\_en & option\_a\_en & option\_b\_en & option\_c\_en & option\_d\_en & question\_bn & option\_a\_bn & option\_b\_bn & option\_c\_bn & option\_d\_bn \\
+			\hline
+			1&Financial\ Accounting&c&Which\ of\ the following is recorded in the General Journal?&Purchase Journal&Sales Journal&Adjusting Journal&Special Journal&প্রকৃত জাবেদায় লিপিবদ্ধ করা হয় কোনটি?&ক্রয় জাবেদা&বিক্রয় জাবেদা&সমন্বয় জাবেদা&বিশেষ জাবেদা \\
+			\hline
+			2&Financial Accounting&c&Which of the following is a credit?&Decrease in liability&Decrease in expense&Decrease in owner's equity&Decrease in revenue or income&নিচের কোনটি ক্রেডিট?&দায় হ্রাস&ব্যয় হ্রাস&মালিকানা স্বত্ব হ্রাস&রেভিনিউ বা আয় হ্রাস \\
+			\hline
+			3&Financial Accounting&b&At which stage/step of the accounting cycle is the trial balance prepared?&Fourth stage&Fifth stage&Second stage&Third stage&রেওয়ামিল হিসাবচক্রের কোন স্তর/ধাপ?&চতুর্থ স্তর&পঞ্চম স্তর&দ্বিতীয় স্তর&তৃতীয় স্তর\\
+			\hline
+			4&Financial Accounting&a&Most of the family transactions occur in-&Cash&Cheque&Credit&Free of cost&পরিবারের বেশিরভাগ লেনদেন সংঘটিত হয়-&নগদ&চেকে&ধারে&বিনামূল্যে\\
+			\hline
+			5&Financial Accounting&c&Which of the following should be credited for the sale of old machinery?&Old Machinery Account&Cash Account&Machinery Account&Sales Account&পুরাতন যন্ত্রপাতি বিক্রয়ের জন্যে নিচের কোনটিকে ক্রেডিট করতে হবে?&পুরাতন যন্ত্রপাতি হিসাব&মুন্ত্রাস্থি বিজয় শিষ্যব&যন্ত্রপ্লাতি হিসাব&বিক্রয় হিসাব \\
+			\hline
+		\end{tabulary}
+	\end{center}
+\end{landscape}
 
-\begin{tabularx}{\textwidth}{
-		| >{\hsize=0.5\hsize\raggedright\arraybackslash}X   % Unique_Serial (narrow)
-		| >{\hsize=1.1\hsize\raggedright\arraybackslash}X   % subject_name
-		| >{\hsize=2.2\hsize\raggedright\arraybackslash}X   % question (extra wide)
-		| >{\hsize=0.8\hsize\raggedright\arraybackslash}X   % correct_answer
-		| >{\hsize=1.2\hsize\raggedright\arraybackslash}X   % options
-		| >{\hsize=0.6\hsize\raggedright\arraybackslash}X   % question_char_count (narrow)
-		| >{\hsize=0.6\hsize\raggedright\arraybackslash}X | % faiture_ratio (narrow)
-	}
-	\hline
-	Unique\_Serial & subject\_name            & question                                              & correct\_answer & options & question\_char\_count & faiture\_ratio \\
-	\hline
-	1              & Algebra \& Number Theory & (x+a)/(x+1)(x-3) = B/(x+1) + 1/(x-3) হলে, A ও B এর মান- &                 &         &                       &                \\
-	\hline
-\end{tabularx}
+\newpage
+
+\text{Category: Hard}
+
+\begin{landscape}
+	\begin{center}
+		\scriptsize
+		\begin{tabulary}{\linewidth}{LLLLLLLLLLLLL}
+			\hline
+			Unique\_Serial & subject\_name & correct\_answer & question\_en & option\_a\_en & option\_b\_en & option\_c\_en & option\_d\_en & question\_bn & option\_a\_bn & option\_b\_bn & option\_c\_bn & option\_d\_bn \\
+			\hline
+			1 & Algebra \& Number Theory & b & "If (x+a)/(x+1)(x-3) = B/(x+1) + 1/(x-3), then the values of A and B are-" & A=1 & B=1 & A=1; B=0 & A=5; B=4 & A=0; B=1 & "(x+a)/(x+1)(x-3) = B/(x+1) + 1/(x-3) হলে, A ও B এর মান-" & A=1 & B=1 & A=1; B=0 & A=5; B=4 & A=0; B=1 \\
+			\hline
+			2 & Algebra \& Number Theory & d & The area in square units enclosed by 2x + 3y = 6 and the coordinate axes will be- & 36 & 18 & 6 & 3 & 2x + 3y =6  ও অক্ষদ্বয় দ্বারা বেষ্ঠিত এলাকার বর্গ এককে ক্ষেত্রফল হবে- & 36 & 18 & 6 & 3 \\
+			\hline
+			3 & Algebra \& Number Theory & d & Which of the following is the equation of the straight line located parallel to the x-axis and at a distance of 9 units in the negative direction? & x + 9 = 0 & x - 9 = 0 & y - 9 = 0 & y + 9 = 0 & x-অক্ষের সমান্তরাল এবং ঋণাত্মক দিকে 9 একক দূরত্বে অবস্থিত সরলরেখাটির সমীকরণ নিচের কোনটি? & x + 9 = 0 & x - 9 = 0 & y - 9 = 0 & y + 9 = 0 \\
+			\hline
+			4 & Algebra \& Number Theory & c & Express (1239)10 in binary form- & 10011010011 & 10101010011 & 10011010111 & 10101010111 & <mo>(</mo><mn>1239</mn><msub><mo>)</mo><mn>10</mn></msub> কে দ্বিমিক আকারে প্রকাশ কর- & 10011010011 & 10101010011 & 10011010111 & 10101010111 \\
+			\hline
+			5 & Algebra \& Number Theory & d & "If A = {a,b} and B = {b,c}, then which of the following is a subset of P(A∪ B)?" & P(A) ∪ P(B) & P(A) ∩ P(B) & P(A)\P(B) & All of the above & "যদি A = {a,b} এবং B = {b,c} হয়, তবে P(A∪ B) এর উপসেট কোনটি?" & P(A) ∪ P(B) & P(A) ∩ P(B) & P(A)\P(B) & উপরের সবকয়টি \\
+			\hline
+		\end{tabulary}
+	\end{center}
+\end{landscape}
 
 % \section{Tokenization Fragmentation Measurement}
 
