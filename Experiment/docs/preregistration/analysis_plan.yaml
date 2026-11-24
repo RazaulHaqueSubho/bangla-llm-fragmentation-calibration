@@ -1,0 +1,53 @@
+
+confidence:
+  definition: "max normalized softmax probability over option letters A-D"
+
+
+calibration_metrics:
+  ECE:
+    bin_schemes:
+      - type: uniform
+        n_bins: 10
+      - type: quantile
+        n_bins: 10
+    bootstrap:
+      n_resamples: 1000
+      ci_level: 0.95
+  MCE: true
+  Brier: true
+  multiclass_Brier: true
+  NLL: true
+  AUROC:
+    description: "AUROC of confidence for predicting correctness"
+  calibration_slope: true
+
+primary_predictor:
+  main: overall_tpw       
+  alternatives:
+    - overall_tpc          
+    - grapheme_tpc         
+
+secondary_predictor: overall_strr  
+
+
+outcomes:
+  - confidence
+  - correct              
+  - per_item_Brier
+  - abs_confidence_minus_correct   
+
+
+covariates:
+  - char_length           
+  - prompt_tokens
+  - subject_FE            
+
+
+correction:
+  method: Holm
+  family: outcomes        
+
+
+tests:
+  direction: two-sided    
+  null_result_policy: "A null result is reported as a result."
